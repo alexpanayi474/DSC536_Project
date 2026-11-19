@@ -1,0 +1,1201 @@
+student_id,age,gender,country,university_type,program,year_of_study,uni_ai_policy,uses_ai,primary_ai_tool,primary_use_case,ai_hours_per_week,paid_ai_subscription,prompt_skill_level,ai_assignment_share_pct,study_hours_per_week,cgpa,critical_thinking_score,time_saved_pct,ai_dependency_score,ai_dependency_level,integrity_concern_level,flagged_by_ai_detector,would_recommend_ai
+S0001,20,Female,India,Public,Engineering,2,Allowed,Yes,ChatGPT,Research & Summaries,15.2,No,4,51,13.7,2.88,53,47,8,High,3,Yes,No
+S0002,22,Male,Nigeria,Private,Computer Science,2,No clear policy,Yes,ChatGPT,Research & Summaries,2.7,No,3,11,19.8,3.52,84,29,2,Low,3,No,Yes
+S0003,21,Male,United States,Private,Business,4,Allowed with disclosure,Yes,Perplexity,Coding Help,2.4,No,3,11,20.4,2.94,72,20,2,Low,3,No,Yes
+S0004,22,Female,Bangladesh,Private,Medicine & Health,3,No clear policy,Yes,Claude,Exam Prep,13.8,No,3,46,18.0,2.7,68,23,6,Medium,1,No,Yes
+S0005,20,Male,Bangladesh,Private,Natural Sciences,1,Allowed,Yes,ChatGPT,Writing & Editing,4.7,No,2,9,24.8,3.01,62,19,3,Low,1,No,No
+S0006,21,Male,Canada,Private,Medicine & Health,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,13.2,2.52,49,0,1,Low,4,No,No
+S0007,18,Female,Indonesia,Public,Business,1,Allowed,Yes,DeepSeek,Research & Summaries,3.7,No,1,19,19.7,2.59,52,17,1,Low,5,No,Yes
+S0008,22,Male,India,Public,Arts & Humanities,3,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,20.0,3.14,63,0,1,Low,2,No,No
+S0009,22,Male,Nigeria,Private,Engineering,2,Allowed,Yes,ChatGPT,Coding Help,8.6,No,4,54,23.5,3.58,92,31,6,Medium,3,Yes,Yes
+S0010,20,Female,India,Private,Computer Science,3,No clear policy,Yes,DeepSeek,Assignments & Homework,12.2,No,4,50,16.7,3.08,74,26,8,High,2,No,Yes
+S0011,21,Female,Egypt,Private,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,3.4,No,3,20,16.5,3.28,73,23,1,Low,2,No,Yes
+S0012,22,Female,Indonesia,Private,Natural Sciences,4,Allowed,Yes,ChatGPT,Exam Prep,3.3,No,2,24,16.2,2.97,67,18,3,Low,2,Yes,Yes
+S0013,20,Male,Nigeria,Public,Natural Sciences,2,No clear policy,Yes,ChatGPT,Research & Summaries,3.5,No,2,18,18.5,3.15,66,10,6,Medium,2,No,No
+S0014,18,Female,Brazil,Public,Computer Science,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,21.7,3.15,70,0,1,Low,3,No,No
+S0015,20,Male,United Kingdom,Public,Social Sciences,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,16.5,2.75,58,0,1,Low,5,No,No
+S0016,19,Female,Turkey,Private,Medicine & Health,1,Allowed,Yes,ChatGPT,Translation & Language,3.3,No,3,25,12.2,3.23,71,27,3,Low,4,No,No
+S0017,18,Male,United States,Private,Business,1,No clear policy,Yes,Gemini,Research & Summaries,10.2,No,2,44,20.0,2.9,49,17,8,High,3,No,Yes
+S0018,18,Prefer not to say,Bangladesh,Public,Medicine & Health,1,Allowed with disclosure,Yes,Microsoft Copilot,Writing & Editing,7.2,No,3,29,11.2,2.5,53,12,5,Medium,2,Yes,Yes
+S0019,22,Male,India,Public,Engineering,4,No clear policy,Yes,Claude,Research & Summaries,7.8,No,3,28,9.8,3.35,75,23,5,Medium,3,No,Yes
+S0020,19,Male,India,Private,Engineering,2,Allowed,Yes,Claude,Research & Summaries,6.1,Yes,2,14,18.8,3.13,50,34,3,Low,1,No,Yes
+S0021,20,Female,United Kingdom,Public,Medicine & Health,2,Allowed,Yes,Gemini,Exam Prep,2.3,No,2,26,15.6,2.32,36,11,1,Low,2,No,Yes
+S0022,21,Female,United States,Public,Engineering,4,No clear policy,Yes,ChatGPT,Assignments & Homework,5.8,No,3,31,17.2,2.43,56,27,5,Medium,4,No,Yes
+S0023,20,Female,Nigeria,Public,Social Sciences,3,No clear policy,Yes,DeepSeek,Writing & Editing,7.1,No,2,35,14.9,3.1,69,16,5,Medium,5,No,Yes
+S0024,21,Female,Pakistan,Public,Social Sciences,2,Allowed with disclosure,Yes,Microsoft Copilot,Exam Prep,8.4,No,2,38,16.7,2.76,64,29,6,Medium,3,No,No
+S0025,19,Female,United States,Public,Computer Science,2,No clear policy,Yes,Gemini,Assignments & Homework,9.9,No,4,45,22.6,3.26,75,41,5,Medium,3,No,Yes
+S0026,20,Prefer not to say,Bangladesh,Private,Computer Science,2,Allowed,Yes,ChatGPT,Coding Help,6.0,No,2,34,20.5,3.53,79,25,8,High,2,No,Yes
+S0027,21,Male,India,Private,Arts & Humanities,3,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,23.5,3.21,60,0,1,Low,1,No,No
+S0028,19,Male,Germany,Public,Computer Science,1,Banned,Yes,ChatGPT,Coding Help,17.1,Yes,5,55,19.6,3.74,75,47,8,High,2,Yes,No
+S0029,20,Male,United States,Public,Social Sciences,3,No clear policy,Yes,ChatGPT,Assignments & Homework,10.6,No,3,34,32.0,3.64,73,29,7,High,1,No,Yes
+S0030,20,Female,India,Public,Medicine & Health,1,Allowed with disclosure,Yes,Gemini,Translation & Language,2.9,No,3,22,12.0,2.86,61,11,3,Low,4,No,Yes
+S0031,20,Male,India,Public,Arts & Humanities,3,Banned,Yes,ChatGPT,Exam Prep,4.2,No,3,15,20.2,2.94,59,5,5,Medium,5,No,Yes
+S0032,21,Female,Indonesia,Private,Business,4,No clear policy,Yes,ChatGPT,Translation & Language,4.3,No,2,28,9.2,2.87,50,17,3,Low,4,No,No
+S0033,18,Male,Canada,Public,Computer Science,1,Banned,Yes,ChatGPT,Research & Summaries,5.8,No,4,22,25.9,2.85,60,23,3,Low,5,No,Yes
+S0034,21,Female,Germany,Public,Business,3,Allowed,Yes,ChatGPT,Coding Help,6.8,No,2,37,17.0,2.74,66,20,5,Medium,3,No,No
+S0035,20,Male,Bangladesh,Private,Natural Sciences,2,No clear policy,Yes,ChatGPT,Writing & Editing,2.0,Yes,3,18,13.0,3.46,68,34,2,Low,3,No,Yes
+S0036,19,Male,Egypt,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,5.9,No,2,20,20.9,3.31,78,29,4,Medium,4,No,No
+S0037,22,Male,United Kingdom,Private,Engineering,2,Allowed with disclosure,Yes,DeepSeek,Exam Prep,12.5,Yes,3,45,6.5,3.04,43,49,6,Medium,4,No,Yes
+S0038,18,Female,United States,Private,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,9.8,No,3,52,16.5,3.02,61,35,8,High,2,No,Yes
+S0039,19,Female,Indonesia,Private,Social Sciences,2,Allowed,Yes,Microsoft Copilot,Writing & Editing,8.2,No,3,43,22.0,3.25,60,16,4,Medium,2,No,Yes
+S0040,20,Female,Bangladesh,Private,Engineering,3,Allowed,Yes,ChatGPT,Brainstorming Ideas,14.6,Yes,4,60,22.6,3.47,75,26,9,High,2,No,No
+S0041,20,Male,Nigeria,Private,Computer Science,3,Banned,Yes,ChatGPT,Research & Summaries,9.0,Yes,3,37,17.6,3.15,56,33,7,High,5,No,Yes
+S0042,21,Male,Bangladesh,Private,Social Sciences,3,Allowed with disclosure,Yes,Perplexity,Translation & Language,7.9,No,3,37,19.3,3.32,74,35,4,Medium,1,No,Yes
+S0043,23,Male,India,Public,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,7.7,No,2,31,25.9,3.16,62,29,6,Medium,2,No,Yes
+S0044,20,Male,Brazil,Private,Natural Sciences,2,No clear policy,Yes,ChatGPT,Coding Help,7.8,No,3,31,14.2,2.69,40,24,3,Low,2,No,Yes
+S0045,21,Female,India,Private,Computer Science,4,No clear policy,Yes,ChatGPT,Brainstorming Ideas,15.1,No,5,57,15.8,3.07,55,44,10,High,4,No,Yes
+S0046,22,Female,United Kingdom,Private,Medicine & Health,4,No clear policy,Yes,ChatGPT,Research & Summaries,1.2,No,2,21,27.7,2.77,72,8,4,Medium,2,No,Yes
+S0047,20,Male,Germany,Public,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,12.6,No,3,45,15.7,3.02,42,36,9,High,2,No,Yes
+S0048,18,Male,India,Private,Social Sciences,1,No clear policy,Yes,Gemini,Exam Prep,4.2,Yes,3,27,16.9,2.95,62,37,3,Low,2,Yes,Yes
+S0049,20,Female,Brazil,Private,Social Sciences,2,Allowed with disclosure,Yes,Gemini,Research & Summaries,5.4,No,2,21,18.2,3.59,80,25,2,Low,3,No,Yes
+S0050,20,Female,United Kingdom,Public,Engineering,3,No clear policy,Yes,ChatGPT,Coding Help,19.8,Yes,3,54,16.1,3.48,50,53,8,High,2,Yes,Yes
+S0051,21,Male,Germany,Public,Arts & Humanities,2,Allowed with disclosure,Yes,Gemini,Research & Summaries,19.4,No,3,58,12.2,2.57,39,36,10,High,3,No,Yes
+S0052,19,Female,Bangladesh,Public,Computer Science,1,Allowed with disclosure,Yes,Microsoft Copilot,Coding Help,3.3,No,3,14,20.6,3.26,53,22,1,Low,3,No,No
+S0053,22,Male,United States,Private,Business,4,Banned,Yes,ChatGPT,Exam Prep,2.5,No,3,23,15.3,2.71,37,17,8,High,5,No,Yes
+S0054,21,Female,United Kingdom,Private,Arts & Humanities,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,4.2,No,3,27,15.3,3.73,77,20,5,Medium,5,No,Yes
+S0055,18,Male,United States,Public,Social Sciences,1,Allowed,Yes,ChatGPT,Writing & Editing,5.3,No,3,23,16.3,3.24,57,21,4,Medium,4,No,Yes
+S0056,22,Female,Nigeria,Private,Business,3,Allowed,Yes,Gemini,Exam Prep,14.0,No,3,51,16.5,3.56,53,35,9,High,2,No,Yes
+S0057,19,Male,Germany,Private,Business,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,17.3,2.78,51,0,1,Low,4,No,No
+S0058,19,Male,United States,Public,Medicine & Health,2,No clear policy,Yes,Microsoft Copilot,Exam Prep,6.9,No,3,22,16.3,3.06,59,19,3,Low,3,Yes,Yes
+S0059,19,Female,Pakistan,Private,Medicine & Health,2,No clear policy,Yes,ChatGPT,Exam Prep,6.1,No,2,25,11.3,2.26,50,16,4,Medium,2,No,Yes
+S0060,19,Female,Canada,Public,Computer Science,2,Allowed,Yes,ChatGPT,Coding Help,20.6,No,5,70,12.6,2.58,35,50,10,High,4,Yes,Yes
+S0061,22,Male,United Kingdom,Public,Medicine & Health,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,7.5,No,3,16,15.1,3.08,61,32,5,Medium,4,No,Yes
+S0062,20,Male,Bangladesh,Private,Natural Sciences,3,Allowed,Yes,ChatGPT,Exam Prep,3.0,Yes,2,26,19.0,3.46,65,30,3,Low,2,No,Yes
+S0063,19,Male,United Kingdom,Public,Natural Sciences,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,9.6,No,4,49,19.2,3.61,76,44,5,Medium,3,No,Yes
+S0064,20,Male,Pakistan,Public,Computer Science,2,No clear policy,Yes,ChatGPT,Assignments & Homework,9.2,No,3,41,11.8,3.2,76,16,2,Low,3,No,Yes
+S0065,18,Male,Indonesia,Private,Business,1,Banned,Yes,ChatGPT,Exam Prep,7.8,No,4,41,13.2,3.82,95,34,6,Medium,3,No,Yes
+S0066,19,Male,Egypt,Public,Business,2,Allowed with disclosure,Yes,Microsoft Copilot,Writing & Editing,3.7,No,2,28,7.6,2.17,51,17,2,Low,3,No,No
+S0067,21,Female,Pakistan,Private,Natural Sciences,3,Allowed,Yes,ChatGPT,Research & Summaries,2.0,No,2,24,20.1,3.45,90,11,2,Low,3,Yes,No
+S0068,19,Female,Bangladesh,Private,Engineering,2,Allowed,Yes,ChatGPT,Exam Prep,4.7,No,2,24,17.8,3.03,69,31,3,Low,3,No,Yes
+S0069,20,Male,Brazil,Private,Social Sciences,3,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,20.0,3.38,62,0,1,Low,4,No,No
+S0070,20,Male,Bangladesh,Private,Business,2,Allowed with disclosure,Yes,ChatGPT,Exam Prep,6.4,No,3,11,22.8,3.11,52,23,8,High,2,Yes,Yes
+S0071,20,Male,United Kingdom,Private,Business,3,Allowed,Yes,Perplexity,Assignments & Homework,12.1,No,3,53,15.1,2.89,63,37,8,High,3,No,Yes
+S0072,19,Male,United States,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,7.0,No,3,25,13.9,3.67,73,25,5,Medium,4,No,Yes
+S0073,18,Male,Canada,Public,Social Sciences,1,No clear policy,Yes,ChatGPT,Brainstorming Ideas,5.1,No,2,9,11.7,2.96,77,14,3,Low,3,No,Yes
+S0074,21,Female,Egypt,Public,Business,2,Allowed,Yes,Gemini,Research & Summaries,10.9,No,3,38,21.7,3.08,52,25,7,High,3,No,No
+S0075,24,Female,Indonesia,Private,Computer Science,4,No clear policy,Yes,ChatGPT,Exam Prep,6.2,No,3,31,21.7,3.11,58,36,6,Medium,4,No,Yes
+S0076,21,Male,Germany,Private,Computer Science,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,3.3,No,3,21,17.9,2.62,41,9,3,Low,2,No,Yes
+S0077,18,Female,India,Public,Natural Sciences,1,Banned,Yes,ChatGPT,Exam Prep,2.5,Yes,1,14,13.2,2.46,65,35,3,Low,3,No,Yes
+S0078,19,Male,Egypt,Private,Business,1,Allowed,Yes,ChatGPT,Assignments & Homework,11.5,No,3,44,10.8,2.5,53,27,7,High,3,No,No
+S0079,20,Female,Pakistan,Public,Arts & Humanities,1,Allowed with disclosure,Yes,Gemini,Research & Summaries,9.8,No,2,18,13.0,2.83,49,40,7,High,1,No,Yes
+S0080,20,Male,India,Public,Engineering,3,Allowed with disclosure,Yes,Gemini,Coding Help,3.1,No,3,31,20.3,3.3,78,24,1,Low,4,No,Yes
+S0081,22,Female,India,Public,Social Sciences,4,No clear policy,Yes,ChatGPT,Exam Prep,4.4,No,2,2,21.8,3.46,78,31,3,Low,4,No,Yes
+S0082,20,Male,Nigeria,Public,Engineering,3,Banned,Yes,ChatGPT,Writing & Editing,7.0,No,3,23,22.3,3.15,70,43,4,Medium,5,No,Yes
+S0083,21,Female,United States,Public,Social Sciences,3,Allowed,Yes,ChatGPT,Research & Summaries,5.3,No,3,37,16.9,3.24,53,15,5,Medium,2,No,Yes
+S0084,19,Female,Pakistan,Public,Computer Science,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,18.0,2.44,44,0,1,Low,3,No,No
+S0085,20,Female,Pakistan,Public,Natural Sciences,3,Allowed,No,No AI tool,No AI use,0.0,No,0,0,17.0,2.84,61,0,1,Low,2,No,No
+S0086,19,Female,Germany,Public,Business,2,Banned,Yes,Claude,Assignments & Homework,7.9,No,2,35,22.4,2.68,45,18,5,Medium,3,No,No
+S0087,20,Female,United Kingdom,Public,Engineering,3,No clear policy,Yes,Gemini,Assignments & Homework,2.9,No,3,12,13.6,3.09,87,22,3,Low,3,No,Yes
+S0088,18,Male,Germany,Public,Social Sciences,1,No clear policy,Yes,ChatGPT,Research & Summaries,4.8,No,3,32,21.0,2.92,65,16,6,Medium,2,No,Yes
+S0089,20,Female,United Kingdom,Public,Business,3,Allowed,Yes,ChatGPT,Exam Prep,5.0,No,4,20,13.0,2.75,54,42,4,Medium,4,Yes,Yes
+S0090,18,Male,Indonesia,Public,Arts & Humanities,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,14.0,2.33,52,0,1,Low,3,No,No
+S0091,22,Female,Indonesia,Private,Engineering,2,No clear policy,Yes,ChatGPT,Coding Help,8.2,No,4,35,14.2,2.78,51,35,2,Low,3,No,No
+S0092,18,Male,India,Private,Computer Science,1,Banned,Yes,ChatGPT,Coding Help,7.0,No,3,17,12.5,3.35,79,45,1,Low,4,No,Yes
+S0093,19,Male,Egypt,Private,Natural Sciences,2,Allowed,Yes,Gemini,Assignments & Homework,6.2,No,4,17,25.5,3.4,71,31,3,Low,5,No,Yes
+S0094,21,Male,Canada,Public,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,6.6,No,3,28,16.8,3.09,66,20,3,Low,3,No,Yes
+S0095,20,Male,Nigeria,Private,Business,3,Banned,Yes,Claude,Research & Summaries,2.3,No,3,2,19.1,3.04,59,7,1,Low,3,No,No
+S0096,22,Female,Nigeria,Private,Computer Science,3,Allowed,Yes,ChatGPT,Exam Prep,1.7,Yes,3,15,21.8,3.09,59,27,2,Low,5,Yes,No
+S0097,18,Female,United Kingdom,Public,Social Sciences,1,Allowed with disclosure,Yes,Claude,Research & Summaries,12.7,No,2,33,18.3,3.35,74,18,5,Medium,3,No,Yes
+S0098,23,Male,Indonesia,Private,Business,3,Banned,Yes,Gemini,Research & Summaries,1.2,Yes,3,7,9.6,2.65,52,19,2,Low,5,No,Yes
+S0099,20,Female,India,Public,Business,3,No clear policy,Yes,DeepSeek,Research & Summaries,1.8,No,2,2,13.5,3.03,70,15,1,Low,4,No,Yes
+S0100,22,Female,Germany,Public,Social Sciences,4,Allowed with disclosure,Yes,Perplexity,Writing & Editing,1.1,No,2,2,28.2,3.1,53,11,4,Medium,1,No,Yes
+S0101,21,Female,Turkey,Public,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,22.1,No,2,87,10.8,2.86,44,49,10,High,2,Yes,Yes
+S0102,21,Male,Pakistan,Public,Computer Science,4,No clear policy,Yes,Other,Assignments & Homework,13.8,No,3,36,18.0,2.72,63,34,9,High,2,No,Yes
+S0103,21,Male,Germany,Public,Engineering,4,No clear policy,Yes,ChatGPT,Translation & Language,7.9,No,4,22,18.2,2.89,66,27,10,High,4,No,No
+S0104,21,Female,United States,Public,Social Sciences,4,Allowed with disclosure,Yes,Microsoft Copilot,Exam Prep,11.2,No,2,43,13.2,2.89,70,11,10,High,4,No,Yes
+S0105,22,Female,Canada,Public,Medicine & Health,4,Allowed,Yes,Claude,Research & Summaries,7.3,No,3,42,22.4,3.21,64,26,5,Medium,3,Yes,Yes
+S0106,22,Male,Pakistan,Public,Natural Sciences,4,Allowed,Yes,Microsoft Copilot,Writing & Editing,2.0,No,1,7,22.1,2.69,44,4,4,Medium,2,No,Yes
+S0107,20,Male,Germany,Private,Business,2,No clear policy,Yes,Gemini,Coding Help,7.4,No,3,41,14.5,2.99,70,32,6,Medium,3,Yes,Yes
+S0108,18,Female,Turkey,Private,Engineering,1,No clear policy,Yes,Perplexity,Coding Help,7.3,No,3,19,14.7,3.05,59,30,5,Medium,3,No,Yes
+S0109,21,Male,Germany,Public,Natural Sciences,4,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,1.5,No,2,20,17.4,2.69,54,14,1,Low,3,No,No
+S0110,20,Female,Bangladesh,Public,Natural Sciences,2,No clear policy,Yes,Gemini,Exam Prep,5.2,No,2,31,22.2,3.34,60,29,2,Low,2,Yes,Yes
+S0111,21,Prefer not to say,Nigeria,Private,Natural Sciences,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,12.8,No,2,41,18.9,3.1,50,36,4,Medium,3,No,Yes
+S0112,24,Male,Bangladesh,Public,Business,4,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,9.6,No,3,39,21.5,2.71,67,34,10,High,3,No,No
+S0113,22,Female,Nigeria,Private,Engineering,3,Allowed with disclosure,Yes,Claude,Coding Help,5.0,No,3,15,20.6,3.88,75,18,5,Medium,4,No,Yes
+S0114,19,Female,Pakistan,Public,Medicine & Health,1,Allowed with disclosure,Yes,DeepSeek,Translation & Language,3.9,No,2,10,16.8,3.16,56,30,2,Low,2,No,No
+S0115,20,Female,India,Public,Natural Sciences,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,6.0,No,2,20,12.6,2.89,54,22,5,Medium,3,Yes,Yes
+S0116,22,Male,Pakistan,Public,Social Sciences,4,Allowed,No,No AI tool,No AI use,0.0,No,0,0,21.0,3.38,75,0,1,Low,3,No,No
+S0117,18,Male,Pakistan,Private,Computer Science,1,Banned,Yes,Gemini,Assignments & Homework,5.2,Yes,2,25,17.8,3.17,68,16,5,Medium,4,No,No
+S0118,24,Female,United Kingdom,Private,Natural Sciences,4,No clear policy,Yes,Claude,Exam Prep,1.3,No,3,2,19.4,3.17,79,0,4,Medium,4,No,No
+S0119,20,Female,India,Private,Engineering,3,Banned,Yes,Gemini,Brainstorming Ideas,7.5,No,2,26,16.5,3.35,75,16,3,Low,5,No,Yes
+S0120,22,Female,United Kingdom,Private,Business,4,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,3.3,No,1,18,19.0,3.04,60,11,3,Low,2,No,Yes
+S0121,19,Female,Nigeria,Private,Engineering,2,Banned,Yes,ChatGPT,Research & Summaries,2.1,No,2,35,11.2,2.42,56,18,3,Low,4,Yes,No
+S0122,21,Female,Indonesia,Public,Arts & Humanities,4,No clear policy,Yes,ChatGPT,Translation & Language,11.9,No,3,52,19.4,3.0,64,33,8,High,3,Yes,No
+S0123,18,Female,Bangladesh,Public,Engineering,1,No clear policy,Yes,ChatGPT,Translation & Language,8.5,No,1,35,12.3,2.54,31,14,6,Medium,3,No,Yes
+S0124,21,Male,Bangladesh,Public,Engineering,3,Allowed with disclosure,Yes,Claude,Brainstorming Ideas,2.8,No,2,15,16.5,2.52,48,20,2,Low,2,No,Yes
+S0125,24,Female,Bangladesh,Private,Engineering,4,Allowed with disclosure,Yes,Gemini,Coding Help,7.9,No,4,22,17.0,2.49,51,35,7,High,2,No,Yes
+S0126,19,Female,Pakistan,Public,Engineering,2,Allowed,Yes,DeepSeek,Assignments & Homework,8.6,No,3,23,21.1,3.33,54,17,7,High,3,No,Yes
+S0127,19,Male,Nigeria,Private,Natural Sciences,1,No clear policy,Yes,Gemini,Writing & Editing,4.7,No,3,31,21.8,3.21,64,23,3,Low,2,No,Yes
+S0128,21,Female,Turkey,Public,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,11.2,No,4,50,12.8,2.87,55,27,5,Medium,3,Yes,Yes
+S0129,20,Male,United States,Public,Natural Sciences,3,Allowed,Yes,ChatGPT,Exam Prep,12.6,No,2,64,20.4,3.26,51,26,10,High,3,No,Yes
+S0130,18,Male,United Kingdom,Public,Social Sciences,1,Allowed,Yes,Perplexity,Exam Prep,8.3,No,3,30,18.7,3.07,60,17,8,High,1,No,No
+S0131,21,Male,Egypt,Public,Computer Science,4,Allowed with disclosure,Yes,DeepSeek,Assignments & Homework,18.3,No,4,76,23.0,3.32,51,27,7,High,1,No,Yes
+S0132,20,Female,Nigeria,Public,Business,3,Allowed,Yes,ChatGPT,Exam Prep,6.7,No,3,29,10.0,3.33,63,12,4,Medium,3,No,Yes
+S0133,22,Female,Brazil,Public,Engineering,4,No clear policy,Yes,ChatGPT,Exam Prep,15.4,No,3,52,19.5,3.37,61,43,8,High,3,No,Yes
+S0134,21,Female,Indonesia,Private,Social Sciences,3,Allowed,Yes,Microsoft Copilot,Translation & Language,5.9,No,4,35,16.7,3.03,68,12,3,Low,2,Yes,Yes
+S0135,19,Male,India,Private,Engineering,1,Allowed,Yes,Microsoft Copilot,Brainstorming Ideas,15.2,No,5,55,25.6,3.21,59,42,7,High,3,No,Yes
+S0136,21,Male,Nigeria,Private,Computer Science,3,Allowed with disclosure,Yes,Claude,Research & Summaries,6.5,No,3,24,15.4,2.77,58,31,4,Medium,3,No,Yes
+S0137,19,Male,Brazil,Private,Business,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,10.4,Yes,2,55,20.9,3.12,59,42,10,High,3,No,Yes
+S0138,21,Female,Turkey,Private,Social Sciences,2,Allowed,Yes,ChatGPT,Brainstorming Ideas,8.7,No,3,31,12.4,3.19,66,27,5,Medium,1,No,No
+S0139,19,Male,Bangladesh,Private,Computer Science,1,Allowed,Yes,ChatGPT,Coding Help,18.8,Yes,4,76,19.1,3.03,59,44,10,High,3,No,Yes
+S0140,20,Female,Nigeria,Public,Engineering,1,No clear policy,Yes,ChatGPT,Assignments & Homework,2.2,No,3,27,12.0,3.17,67,50,1,Low,2,No,Yes
+S0141,20,Male,Germany,Private,Engineering,1,Allowed,Yes,ChatGPT,Exam Prep,4.8,Yes,2,26,16.5,2.51,40,26,6,Medium,2,No,Yes
+S0142,19,Female,United States,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,2.8,No,3,10,17.4,2.87,57,2,1,Low,4,No,Yes
+S0143,20,Female,Pakistan,Private,Engineering,2,No clear policy,Yes,ChatGPT,Writing & Editing,5.0,Yes,2,15,24.9,2.76,32,39,5,Medium,3,No,Yes
+S0144,21,Male,Bangladesh,Public,Engineering,2,Allowed with disclosure,Yes,ChatGPT,Exam Prep,7.4,No,3,17,15.1,3.62,57,26,5,Medium,3,No,Yes
+S0145,21,Female,Egypt,Public,Arts & Humanities,3,Allowed with disclosure,Yes,DeepSeek,Assignments & Homework,3.8,No,3,30,16.5,3.09,46,9,2,Low,3,No,Yes
+S0146,20,Male,India,Private,Social Sciences,2,Allowed with disclosure,Yes,Gemini,Exam Prep,4.7,No,3,18,24.1,3.26,60,10,6,Medium,2,No,Yes
+S0147,19,Female,Pakistan,Private,Medicine & Health,2,Allowed with disclosure,Yes,ChatGPT,Exam Prep,1.4,No,2,6,17.8,3.57,72,11,2,Low,4,No,No
+S0148,18,Female,Bangladesh,Private,Arts & Humanities,1,Banned,Yes,Microsoft Copilot,Brainstorming Ideas,8.1,No,3,35,11.7,3.37,69,45,5,Medium,3,No,Yes
+S0149,19,Male,Pakistan,Public,Business,1,No clear policy,Yes,Gemini,Research & Summaries,6.4,No,3,29,16.5,2.58,49,28,7,High,3,No,Yes
+S0150,19,Male,India,Public,Business,2,Allowed with disclosure,Yes,Perplexity,Writing & Editing,3.1,No,3,11,24.4,2.78,56,10,3,Low,2,No,No
+S0151,19,Female,Indonesia,Public,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,6.8,No,3,28,21.5,3.58,67,12,2,Low,4,No,No
+S0152,19,Female,Bangladesh,Public,Arts & Humanities,1,Allowed,Yes,ChatGPT,Coding Help,14.2,No,2,57,13.0,3.22,58,37,9,High,2,No,Yes
+S0153,19,Female,Germany,Private,Business,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,3.4,No,3,40,20.9,3.55,78,5,4,Medium,5,No,Yes
+S0154,18,Female,India,Private,Computer Science,1,Allowed with disclosure,Yes,Microsoft Copilot,Coding Help,3.0,No,5,13,19.1,3.46,87,26,3,Low,4,Yes,No
+S0155,19,Female,Nigeria,Public,Medicine & Health,1,No clear policy,Yes,ChatGPT,Writing & Editing,5.3,No,2,27,22.0,2.73,47,17,7,High,2,No,No
+S0156,20,Male,Pakistan,Private,Computer Science,3,Allowed,Yes,Perplexity,Coding Help,11.4,No,5,45,13.7,3.72,78,36,7,High,3,Yes,Yes
+S0157,19,Male,Canada,Public,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,4.3,No,3,30,26.6,2.93,58,30,5,Medium,5,No,No
+S0158,22,Male,United States,Public,Business,2,Banned,Yes,ChatGPT,Exam Prep,2.1,No,3,29,7.2,2.99,63,21,3,Low,5,No,Yes
+S0159,21,Male,India,Private,Natural Sciences,3,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,5.7,No,4,20,12.2,3.33,68,21,7,High,2,No,Yes
+S0160,21,Male,Brazil,Private,Engineering,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,16.9,4.0,88,0,1,Low,3,No,No
+S0161,22,Female,United Kingdom,Private,Business,3,Allowed with disclosure,Yes,Gemini,Exam Prep,2.6,No,3,26,15.3,2.82,50,8,2,Low,3,No,No
+S0162,20,Female,United States,Public,Arts & Humanities,3,Allowed with disclosure,Yes,Gemini,Research & Summaries,1.6,No,3,27,20.4,3.55,88,28,4,Medium,3,No,Yes
+S0163,19,Female,India,Public,Social Sciences,1,Allowed,Yes,DeepSeek,Exam Prep,3.3,No,4,20,17.3,3.45,81,26,3,Low,2,No,Yes
+S0164,22,Male,Canada,Private,Medicine & Health,4,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,9.7,2.29,61,0,1,Low,3,No,No
+S0165,20,Male,Bangladesh,Private,Arts & Humanities,3,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,13.2,Yes,3,38,22.0,3.2,73,25,10,High,4,No,Yes
+S0166,21,Male,Pakistan,Public,Business,4,Allowed with disclosure,Yes,Microsoft Copilot,Translation & Language,0.9,No,2,7,11.0,2.44,32,16,3,Low,1,No,Yes
+S0167,19,Male,Egypt,Public,Natural Sciences,1,Banned,Yes,ChatGPT,Research & Summaries,9.4,No,4,34,10.3,3.22,69,21,4,Medium,5,No,Yes
+S0168,18,Female,Pakistan,Public,Business,1,No clear policy,Yes,Gemini,Exam Prep,8.2,No,3,23,15.5,2.67,52,16,3,Low,3,No,Yes
+S0169,22,Female,Pakistan,Public,Business,4,Allowed with disclosure,Yes,Other,Research & Summaries,6.4,No,3,21,22.4,3.32,62,23,6,Medium,5,No,Yes
+S0170,21,Female,United States,Public,Engineering,2,Allowed with disclosure,Yes,Gemini,Coding Help,3.5,No,3,5,29.8,2.66,57,18,3,Low,3,No,Yes
+S0171,23,Female,India,Public,Computer Science,4,Banned,Yes,ChatGPT,Coding Help,3.3,Yes,3,5,24.8,3.5,60,29,3,Low,4,No,Yes
+S0172,21,Male,Bangladesh,Public,Computer Science,3,Allowed,Yes,ChatGPT,Coding Help,26.1,No,4,85,11.5,2.16,28,54,10,High,3,No,Yes
+S0173,18,Female,United Kingdom,Public,Business,1,Allowed,Yes,ChatGPT,Writing & Editing,15.6,Yes,4,54,14.7,2.61,54,55,10,High,2,Yes,Yes
+S0174,20,Prefer not to say,Egypt,Public,Computer Science,3,Allowed with disclosure,Yes,DeepSeek,Coding Help,12.4,Yes,2,56,19.8,2.64,58,38,8,High,3,Yes,No
+S0175,20,Male,Indonesia,Public,Social Sciences,2,Allowed,Yes,ChatGPT,Translation & Language,2.5,No,2,20,13.4,2.86,61,29,2,Low,3,No,Yes
+S0176,20,Female,Pakistan,Public,Social Sciences,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,12.9,No,3,58,15.4,2.88,59,37,9,High,4,Yes,Yes
+S0177,20,Female,Turkey,Public,Business,3,No clear policy,Yes,ChatGPT,Assignments & Homework,0.9,No,3,13,19.8,2.98,53,15,1,Low,5,No,Yes
+S0178,21,Male,India,Private,Social Sciences,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,12.6,3.32,72,0,1,Low,3,No,No
+S0179,18,Male,Turkey,Public,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,2.0,No,5,21,16.4,3.57,71,9,1,Low,4,No,Yes
+S0180,19,Male,India,Public,Business,1,No clear policy,Yes,ChatGPT,Research & Summaries,3.4,No,2,23,19.7,2.88,57,5,3,Low,2,No,Yes
+S0181,20,Female,Brazil,Private,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,0.8,Yes,3,2,15.9,2.45,53,5,1,Low,3,No,Yes
+S0182,20,Male,Brazil,Public,Social Sciences,3,No clear policy,Yes,ChatGPT,Coding Help,2.5,No,3,26,24.9,2.85,71,9,1,Low,3,No,No
+S0183,22,Male,Turkey,Private,Computer Science,4,No clear policy,Yes,Gemini,Assignments & Homework,7.4,No,3,34,26.1,3.2,58,23,4,Medium,4,No,Yes
+S0184,20,Male,Egypt,Public,Medicine & Health,2,Allowed with disclosure,Yes,DeepSeek,Brainstorming Ideas,8.1,No,2,24,15.9,3.42,52,29,4,Medium,3,No,Yes
+S0185,19,Female,India,Private,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,5.3,No,3,15,26.1,3.33,68,19,4,Medium,3,No,Yes
+S0186,21,Male,Germany,Private,Natural Sciences,4,Allowed with disclosure,Yes,Gemini,Brainstorming Ideas,8.4,No,2,41,16.0,3.37,79,24,4,Medium,4,No,Yes
+S0187,18,Male,Brazil,Public,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,8.0,No,2,38,15.8,3.26,64,23,6,Medium,3,No,No
+S0188,23,Male,Pakistan,Public,Medicine & Health,3,Allowed with disclosure,Yes,ChatGPT,Coding Help,8.7,No,3,38,21.1,3.57,75,37,7,High,4,No,Yes
+S0189,21,Male,Nigeria,Public,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,0.5,Yes,2,2,21.2,3.0,59,16,1,Low,3,No,No
+S0190,20,Female,Bangladesh,Private,Engineering,3,Banned,Yes,ChatGPT,Translation & Language,2.7,No,3,19,12.9,2.63,48,22,1,Low,5,No,Yes
+S0191,18,Male,India,Public,Natural Sciences,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,24.0,3.15,59,0,1,Low,3,No,No
+S0192,20,Male,United Kingdom,Private,Computer Science,3,Allowed,Yes,ChatGPT,Exam Prep,4.6,Yes,3,28,14.8,3.32,66,24,4,Medium,2,No,Yes
+S0193,20,Male,United States,Public,Natural Sciences,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,5.5,No,4,41,15.7,2.95,46,20,3,Low,4,No,Yes
+S0194,18,Male,Germany,Private,Business,1,No clear policy,Yes,Claude,Brainstorming Ideas,8.1,No,3,23,16.0,4.0,85,37,4,Medium,4,No,Yes
+S0195,22,Female,Nigeria,Private,Business,4,Banned,Yes,DeepSeek,Writing & Editing,1.7,No,1,2,17.7,3.39,67,0,3,Low,4,No,No
+S0196,22,Female,United Kingdom,Private,Engineering,3,Banned,Yes,Gemini,Research & Summaries,3.8,No,2,6,23.2,2.44,41,19,2,Low,3,No,Yes
+S0197,18,Male,Indonesia,Private,Business,1,Allowed,Yes,ChatGPT,Research & Summaries,13.1,Yes,4,60,18.5,3.31,58,55,8,High,4,No,No
+S0198,21,Female,India,Public,Arts & Humanities,3,No clear policy,Yes,ChatGPT,Assignments & Homework,4.0,Yes,3,37,20.1,2.43,53,25,7,High,4,No,Yes
+S0199,19,Female,India,Public,Natural Sciences,2,Allowed with disclosure,Yes,Other,Brainstorming Ideas,6.3,No,3,20,15.9,2.98,84,43,4,Medium,2,No,Yes
+S0200,20,Male,Bangladesh,Public,Social Sciences,3,Allowed,Yes,ChatGPT,Translation & Language,8.0,No,4,32,27.9,3.38,91,27,7,High,3,No,Yes
+S0201,20,Female,Canada,Public,Social Sciences,3,No clear policy,Yes,Gemini,Coding Help,7.3,No,3,33,14.7,3.33,76,20,6,Medium,3,No,Yes
+S0202,21,Male,Nigeria,Public,Natural Sciences,3,Allowed,Yes,ChatGPT,Brainstorming Ideas,5.0,No,3,22,17.4,2.95,67,7,1,Low,2,No,Yes
+S0203,21,Female,India,Public,Computer Science,3,No clear policy,Yes,Other,Brainstorming Ideas,2.6,No,3,18,19.6,3.54,67,16,2,Low,4,Yes,Yes
+S0204,20,Female,Brazil,Private,Natural Sciences,1,Banned,Yes,Perplexity,Brainstorming Ideas,5.6,No,2,28,16.8,3.72,67,27,6,Medium,3,Yes,Yes
+S0205,20,Female,Canada,Public,Business,2,No clear policy,Yes,Perplexity,Research & Summaries,5.1,No,2,25,19.2,2.86,72,40,4,Medium,4,No,No
+S0206,19,Male,Canada,Public,Social Sciences,1,Allowed with disclosure,Yes,Microsoft Copilot,Research & Summaries,9.2,No,3,33,13.6,3.01,65,24,5,Medium,3,No,Yes
+S0207,18,Female,Pakistan,Private,Business,1,Allowed with disclosure,Yes,Gemini,Exam Prep,4.7,No,2,32,14.8,2.87,71,12,2,Low,3,No,No
+S0208,19,Male,India,Public,Computer Science,1,Allowed,Yes,DeepSeek,Research & Summaries,9.1,No,3,46,16.0,3.12,65,29,4,Medium,1,No,No
+S0209,19,Male,Indonesia,Public,Business,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,15.4,3.58,59,0,1,Low,4,No,No
+S0210,20,Female,Indonesia,Public,Computer Science,2,Allowed with disclosure,Yes,Microsoft Copilot,Writing & Editing,6.9,No,3,34,15.6,2.61,51,23,5,Medium,3,No,Yes
+S0211,18,Male,India,Private,Social Sciences,1,Banned,Yes,Microsoft Copilot,Writing & Editing,4.8,No,2,31,22.8,2.65,54,24,7,High,4,No,No
+S0212,21,Female,United Kingdom,Public,Business,4,No clear policy,Yes,ChatGPT,Research & Summaries,10.4,No,2,43,19.5,2.82,48,30,5,Medium,3,No,Yes
+S0213,21,Male,India,Public,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,10.6,No,3,41,16.3,3.38,64,1,6,Medium,5,No,Yes
+S0214,19,Female,United States,Private,Computer Science,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,8.9,No,3,45,11.8,2.44,42,39,6,Medium,3,No,Yes
+S0215,20,Male,Pakistan,Private,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Coding Help,3.7,No,3,19,12.0,2.77,61,23,5,Medium,2,No,Yes
+S0216,18,Female,India,Private,Computer Science,1,Banned,Yes,Other,Coding Help,4.9,No,4,21,15.5,3.2,71,24,4,Medium,3,No,No
+S0217,19,Male,India,Public,Computer Science,2,Banned,Yes,Gemini,Coding Help,4.5,No,4,35,12.9,2.57,50,20,1,Low,4,No,Yes
+S0218,20,Male,Indonesia,Public,Computer Science,2,Banned,Yes,Gemini,Research & Summaries,5.1,No,1,27,21.4,2.73,42,11,7,High,4,No,No
+S0219,21,Female,Germany,Private,Computer Science,4,Banned,Yes,Microsoft Copilot,Writing & Editing,4.0,No,3,23,16.7,2.98,59,15,2,Low,2,No,No
+S0220,19,Male,India,Private,Computer Science,1,Banned,Yes,ChatGPT,Translation & Language,8.8,Yes,3,25,16.9,3.42,61,41,5,Medium,3,Yes,Yes
+S0221,18,Male,United States,Public,Medicine & Health,1,Allowed,Yes,ChatGPT,Brainstorming Ideas,3.2,No,2,19,8.5,2.48,40,4,1,Low,3,No,Yes
+S0222,19,Male,United Kingdom,Public,Business,2,Allowed with disclosure,Yes,Gemini,Exam Prep,3.6,No,3,31,20.4,3.5,60,28,1,Low,1,No,Yes
+S0223,20,Female,Nigeria,Public,Computer Science,3,Banned,Yes,ChatGPT,Exam Prep,11.1,No,4,54,22.8,2.75,54,32,8,High,5,No,Yes
+S0224,21,Male,United Kingdom,Private,Computer Science,4,No clear policy,Yes,ChatGPT,Assignments & Homework,19.7,Yes,4,74,21.6,2.71,34,40,10,High,2,No,Yes
+S0225,20,Male,United States,Public,Computer Science,2,No clear policy,Yes,ChatGPT,Exam Prep,2.1,No,4,5,20.6,2.8,69,25,1,Low,5,No,No
+S0226,21,Female,Bangladesh,Private,Natural Sciences,4,No clear policy,Yes,ChatGPT,Assignments & Homework,13.4,No,4,72,21.1,3.14,54,27,5,Medium,4,No,Yes
+S0227,20,Female,Germany,Public,Engineering,3,Allowed with disclosure,Yes,Gemini,Writing & Editing,2.8,No,3,21,12.6,2.77,69,28,3,Low,2,No,Yes
+S0228,21,Female,Egypt,Public,Social Sciences,4,Allowed with disclosure,Yes,Claude,Brainstorming Ideas,4.6,No,1,28,19.5,2.89,51,30,2,Low,3,No,Yes
+S0229,21,Male,United Kingdom,Public,Engineering,4,Allowed,Yes,ChatGPT,Brainstorming Ideas,2.6,No,3,6,15.6,2.49,46,29,1,Low,4,No,No
+S0230,21,Female,Indonesia,Public,Natural Sciences,4,No clear policy,Yes,ChatGPT,Assignments & Homework,7.7,No,2,31,16.9,3.07,67,21,8,High,3,Yes,Yes
+S0231,19,Female,Pakistan,Public,Natural Sciences,1,Allowed,Yes,Claude,Research & Summaries,8.7,No,4,39,16.7,2.59,55,21,6,Medium,2,Yes,Yes
+S0232,24,Female,India,Public,Social Sciences,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,4.0,Yes,2,11,27.3,3.03,63,18,4,Medium,2,No,No
+S0233,21,Female,Turkey,Private,Medicine & Health,3,No clear policy,Yes,DeepSeek,Assignments & Homework,0.5,No,2,12,21.2,3.03,57,0,2,Low,4,No,No
+S0234,19,Male,United Kingdom,Private,Engineering,1,No clear policy,Yes,ChatGPT,Research & Summaries,6.8,No,3,23,15.6,3.02,62,24,3,Low,3,No,No
+S0235,18,Female,United States,Public,Computer Science,1,Allowed,Yes,ChatGPT,Brainstorming Ideas,8.3,No,3,52,22.9,2.93,56,18,7,High,5,No,Yes
+S0236,18,Male,Bangladesh,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,2.3,No,3,8,11.5,3.17,64,14,4,Medium,2,No,No
+S0237,21,Male,India,Private,Business,2,Allowed with disclosure,Yes,DeepSeek,Exam Prep,9.1,No,3,41,23.0,3.07,59,31,6,Medium,3,No,Yes
+S0238,18,Male,Nigeria,Public,Social Sciences,1,Allowed,Yes,Perplexity,Exam Prep,5.3,No,3,37,16.3,3.9,79,13,2,Low,3,Yes,Yes
+S0239,20,Male,Bangladesh,Public,Engineering,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,21.9,2.97,55,0,1,Low,5,No,No
+S0240,21,Male,United States,Private,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,6.2,Yes,3,20,14.4,2.75,59,38,4,Medium,3,No,Yes
+S0241,19,Male,Canada,Private,Engineering,1,Banned,Yes,ChatGPT,Coding Help,1.6,No,2,9,21.3,2.98,76,7,3,Low,4,No,No
+S0242,19,Male,Egypt,Private,Arts & Humanities,1,Banned,Yes,Gemini,Research & Summaries,1.7,No,3,25,15.8,3.99,89,22,4,Medium,4,No,Yes
+S0243,19,Female,Egypt,Public,Social Sciences,1,No clear policy,Yes,ChatGPT,Exam Prep,5.9,No,2,25,13.5,2.39,55,18,5,Medium,4,No,Yes
+S0244,21,Male,United States,Public,Computer Science,4,No clear policy,Yes,ChatGPT,Coding Help,7.6,No,4,36,18.2,3.02,43,23,6,Medium,1,No,No
+S0245,21,Female,Pakistan,Public,Natural Sciences,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,21.8,2.9,67,0,1,Low,4,No,No
+S0246,20,Female,Pakistan,Private,Arts & Humanities,3,Allowed with disclosure,Yes,Gemini,Research & Summaries,12.0,No,2,49,21.9,2.73,35,32,5,Medium,1,No,No
+S0247,21,Male,United Kingdom,Public,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Coding Help,7.9,No,3,26,18.0,3.31,61,33,5,Medium,4,No,No
+S0248,19,Male,Pakistan,Private,Business,2,Banned,Yes,ChatGPT,Research & Summaries,13.3,No,2,34,12.9,2.55,42,27,5,Medium,3,No,Yes
+S0249,22,Female,Pakistan,Public,Social Sciences,4,Allowed with disclosure,Yes,Gemini,Assignments & Homework,6.1,No,2,25,21.9,3.55,67,14,4,Medium,1,No,No
+S0250,21,Male,India,Private,Business,3,Banned,Yes,ChatGPT,Translation & Language,4.7,No,4,26,21.0,2.9,61,29,4,Medium,3,No,Yes
+S0251,20,Female,Egypt,Public,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,10.2,No,3,46,21.6,3.94,65,27,7,High,3,Yes,Yes
+S0252,20,Male,India,Public,Computer Science,3,Allowed with disclosure,Yes,Microsoft Copilot,Research & Summaries,20.2,No,4,55,20.8,3.51,75,39,10,High,1,Yes,Yes
+S0253,20,Female,Pakistan,Public,Arts & Humanities,2,No clear policy,Yes,Perplexity,Assignments & Homework,2.6,No,2,5,11.9,2.77,58,23,2,Low,3,No,Yes
+S0254,19,Female,Indonesia,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,6.8,No,2,28,16.1,2.66,53,22,4,Medium,4,No,No
+S0255,18,Male,Germany,Public,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,1.5,No,3,30,17.5,2.98,53,22,2,Low,4,No,Yes
+S0256,22,Male,Brazil,Public,Natural Sciences,4,Allowed,Yes,ChatGPT,Brainstorming Ideas,12.3,Yes,1,42,21.5,2.91,49,33,9,High,4,No,Yes
+S0257,19,Female,Bangladesh,Public,Engineering,2,Allowed,Yes,Gemini,Translation & Language,10.9,No,4,52,23.6,2.9,75,40,4,Medium,1,No,Yes
+S0258,22,Female,Indonesia,Private,Arts & Humanities,4,Allowed,Yes,ChatGPT,Assignments & Homework,5.0,No,2,38,22.8,2.96,47,19,2,Low,2,No,Yes
+S0259,22,Female,Egypt,Public,Engineering,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,16.3,3.36,63,0,1,Low,2,No,No
+S0260,19,Female,United Kingdom,Public,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,21.1,No,4,86,16.7,2.51,49,44,10,High,3,No,No
+S0261,20,Female,Egypt,Public,Social Sciences,2,Allowed with disclosure,Yes,Gemini,Brainstorming Ideas,4.5,No,2,8,21.8,3.15,69,33,2,Low,3,No,Yes
+S0262,18,Male,United Kingdom,Public,Natural Sciences,1,Allowed,Yes,Perplexity,Assignments & Homework,11.7,No,3,64,19.1,3.84,70,32,9,High,2,No,No
+S0263,20,Female,United States,Private,Engineering,3,No clear policy,Yes,ChatGPT,Translation & Language,7.8,Yes,3,27,17.9,3.58,72,30,8,High,4,Yes,Yes
+S0264,19,Male,Canada,Public,Computer Science,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,8.4,No,4,35,21.4,3.25,63,33,7,High,1,No,Yes
+S0265,21,Female,Nigeria,Public,Business,3,No clear policy,Yes,Microsoft Copilot,Writing & Editing,1.4,No,2,17,13.3,2.83,65,2,2,Low,3,No,Yes
+S0266,18,Male,India,Public,Engineering,1,No clear policy,Yes,Gemini,Exam Prep,3.8,No,2,41,27.6,2.82,52,18,1,Low,4,No,Yes
+S0267,18,Female,United Kingdom,Public,Social Sciences,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,19.3,3.26,59,0,1,Low,5,No,No
+S0268,21,Male,Pakistan,Private,Arts & Humanities,1,Allowed with disclosure,Yes,Microsoft Copilot,Research & Summaries,6.7,No,3,32,18.9,3.42,81,29,7,High,4,No,No
+S0269,21,Female,Indonesia,Public,Business,4,No clear policy,Yes,ChatGPT,Writing & Editing,14.4,No,3,58,14.6,2.23,43,40,8,High,4,Yes,Yes
+S0270,18,Female,United Kingdom,Private,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,1.4,No,3,17,22.9,2.77,49,29,2,Low,3,No,Yes
+S0271,20,Female,Pakistan,Private,Engineering,3,No clear policy,Yes,Other,Brainstorming Ideas,16.2,No,3,67,19.7,3.12,59,28,9,High,2,Yes,No
+S0272,20,Male,Indonesia,Public,Medicine & Health,2,Allowed with disclosure,Yes,Claude,Exam Prep,5.3,Yes,3,25,19.8,3.1,58,34,4,Medium,4,No,Yes
+S0273,19,Male,Egypt,Public,Engineering,1,Allowed with disclosure,Yes,Other,Translation & Language,4.4,No,2,18,10.8,2.39,47,39,6,Medium,3,No,Yes
+S0274,19,Female,Brazil,Public,Computer Science,1,No clear policy,Yes,DeepSeek,Research & Summaries,3.0,Yes,2,11,22.9,3.73,75,22,5,Medium,4,No,No
+S0275,20,Male,United States,Public,Computer Science,3,Allowed with disclosure,Yes,ChatGPT,Translation & Language,22.1,No,4,76,13.0,3.12,46,41,10,High,1,No,No
+S0276,22,Female,Germany,Public,Computer Science,2,Allowed with disclosure,Yes,Claude,Exam Prep,13.8,Yes,3,42,18.7,2.82,46,43,10,High,3,Yes,No
+S0277,21,Female,Pakistan,Public,Computer Science,4,Allowed with disclosure,Yes,Claude,Coding Help,6.5,No,4,14,21.4,2.87,59,44,5,Medium,5,No,Yes
+S0278,20,Male,Pakistan,Public,Arts & Humanities,3,Banned,Yes,DeepSeek,Writing & Editing,5.8,No,3,20,16.2,2.38,49,5,4,Medium,3,No,Yes
+S0279,21,Male,Bangladesh,Public,Computer Science,3,Allowed,Yes,DeepSeek,Assignments & Homework,2.9,No,3,24,17.1,2.96,66,27,6,Medium,5,No,Yes
+S0280,20,Female,United States,Private,Social Sciences,1,Allowed with disclosure,Yes,Gemini,Exam Prep,1.9,No,2,22,21.4,3.44,66,3,1,Low,1,No,Yes
+S0281,19,Male,Brazil,Public,Social Sciences,2,Allowed with disclosure,Yes,Gemini,Exam Prep,4.9,No,3,34,9.7,3.51,62,17,5,Medium,4,No,Yes
+S0282,18,Male,India,Private,Business,1,No clear policy,Yes,ChatGPT,Writing & Editing,6.1,No,4,19,16.3,3.84,81,25,4,Medium,2,No,Yes
+S0283,21,Female,Pakistan,Public,Business,4,Banned,No,No AI tool,No AI use,0.0,No,0,0,18.2,2.53,38,0,1,Low,3,No,No
+S0284,20,Female,Nigeria,Public,Natural Sciences,1,No clear policy,Yes,ChatGPT,Research & Summaries,8.9,No,2,40,17.7,3.72,100,28,8,High,3,Yes,No
+S0285,20,Female,Indonesia,Public,Engineering,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,11.6,3.05,62,0,1,Low,3,No,No
+S0286,20,Female,Indonesia,Public,Engineering,1,No clear policy,Yes,ChatGPT,Exam Prep,4.5,No,2,34,13.1,2.75,56,10,4,Medium,5,No,No
+S0287,21,Female,Brazil,Public,Computer Science,1,No clear policy,Yes,Claude,Brainstorming Ideas,16.3,No,3,60,16.0,2.64,51,44,5,Medium,3,Yes,Yes
+S0288,23,Female,Egypt,Public,Computer Science,4,Banned,No,No AI tool,No AI use,0.0,No,0,0,22.9,3.45,74,0,1,Low,4,No,No
+S0289,20,Female,United Kingdom,Public,Business,2,No clear policy,Yes,Perplexity,Assignments & Homework,9.1,No,3,33,14.4,3.7,66,35,4,Medium,3,No,Yes
+S0290,19,Male,Canada,Public,Engineering,2,Allowed with disclosure,Yes,Microsoft Copilot,Assignments & Homework,11.4,No,3,44,19.1,3.35,65,34,7,High,5,No,Yes
+S0291,20,Female,United States,Private,Social Sciences,3,Banned,Yes,Perplexity,Exam Prep,3.1,No,3,23,19.2,3.1,73,21,5,Medium,4,No,Yes
+S0292,19,Male,Bangladesh,Public,Social Sciences,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,19.4,3.08,63,0,1,Low,5,No,No
+S0293,21,Female,Indonesia,Public,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,4.1,No,2,9,17.7,3.16,54,19,1,Low,4,No,No
+S0294,22,Female,United States,Public,Natural Sciences,3,Allowed,Yes,Gemini,Writing & Editing,10.1,No,3,39,23.6,3.01,55,31,4,Medium,3,No,No
+S0295,20,Female,Brazil,Public,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,7.4,No,4,31,14.7,2.46,50,35,4,Medium,3,Yes,No
+S0296,20,Prefer not to say,United Kingdom,Public,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,2.3,No,1,33,12.8,2.98,65,23,4,Medium,4,No,No
+S0297,19,Female,Pakistan,Private,Arts & Humanities,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,16.4,3.37,77,0,1,Low,3,No,No
+S0298,20,Male,Pakistan,Public,Computer Science,2,No clear policy,Yes,DeepSeek,Exam Prep,9.9,No,3,37,17.5,3.89,85,19,6,Medium,1,No,Yes
+S0299,20,Female,United Kingdom,Private,Medicine & Health,2,Allowed with disclosure,Yes,DeepSeek,Exam Prep,4.7,No,3,9,14.7,3.03,70,4,4,Medium,5,No,No
+S0300,20,Female,Brazil,Public,Business,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,12.9,No,2,45,17.9,2.91,45,38,8,High,4,No,No
+S0301,21,Male,Brazil,Public,Computer Science,1,Allowed,Yes,ChatGPT,Writing & Editing,15.3,Yes,4,49,18.4,3.38,46,44,8,High,2,No,Yes
+S0302,20,Female,Bangladesh,Public,Natural Sciences,3,Allowed,Yes,Claude,Writing & Editing,3.2,Yes,2,5,11.9,2.95,59,20,2,Low,5,No,Yes
+S0303,19,Female,Pakistan,Public,Computer Science,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,2.6,No,3,18,9.3,3.43,70,16,2,Low,4,No,No
+S0304,21,Male,United Kingdom,Private,Computer Science,3,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,3.5,No,4,10,17.0,3.09,67,20,1,Low,4,No,No
+S0305,20,Male,India,Public,Natural Sciences,3,Allowed,No,No AI tool,No AI use,0.0,No,0,0,16.6,3.61,69,0,1,Low,2,No,No
+S0306,18,Female,Bangladesh,Public,Arts & Humanities,1,Allowed,Yes,ChatGPT,Writing & Editing,4.1,No,2,19,20.3,3.17,74,16,4,Medium,1,No,No
+S0307,22,Male,United Kingdom,Private,Natural Sciences,3,No clear policy,Yes,Gemini,Coding Help,8.1,No,3,19,20.0,3.21,68,41,5,Medium,3,No,Yes
+S0308,18,Male,United States,Public,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,4.8,No,3,29,15.2,2.92,65,34,3,Low,3,No,Yes
+S0309,20,Male,United States,Private,Business,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,18.2,3.11,61,0,1,Low,4,No,No
+S0310,19,Female,Pakistan,Public,Business,1,Allowed,Yes,ChatGPT,Writing & Editing,3.7,Yes,2,19,17.8,3.01,57,19,3,Low,2,No,Yes
+S0311,18,Male,India,Private,Engineering,1,Allowed,Yes,ChatGPT,Exam Prep,10.9,No,4,53,23.2,3.28,45,33,8,High,5,Yes,No
+S0312,21,Female,Turkey,Private,Computer Science,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,1.1,Yes,3,14,25.1,2.98,61,26,1,Low,1,No,Yes
+S0313,24,Male,United Kingdom,Public,Computer Science,4,No clear policy,Yes,ChatGPT,Research & Summaries,12.6,No,3,44,17.6,3.26,61,37,10,High,4,No,Yes
+S0314,19,Male,Indonesia,Private,Engineering,2,Banned,Yes,ChatGPT,Exam Prep,8.8,No,3,31,18.0,2.97,53,31,4,Medium,3,No,Yes
+S0315,20,Female,Turkey,Public,Social Sciences,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,24.8,2.73,62,0,1,Low,3,No,No
+S0316,21,Female,India,Private,Computer Science,1,Allowed,Yes,ChatGPT,Research & Summaries,8.7,No,3,25,17.6,3.25,73,30,2,Low,2,No,No
+S0317,21,Male,United States,Public,Business,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,18.9,2.41,53,0,1,Low,2,No,No
+S0318,19,Male,United Kingdom,Public,Arts & Humanities,2,No clear policy,Yes,Gemini,Exam Prep,4.8,No,4,17,17.5,3.23,74,22,4,Medium,5,No,No
+S0319,18,Male,Pakistan,Private,Arts & Humanities,1,Allowed with disclosure,Yes,Gemini,Exam Prep,2.7,No,2,23,16.8,2.63,61,13,1,Low,5,No,Yes
+S0320,19,Female,Pakistan,Public,Computer Science,2,Banned,Yes,ChatGPT,Research & Summaries,0.6,No,3,6,19.9,2.57,50,19,2,Low,3,No,Yes
+S0321,19,Female,Turkey,Public,Natural Sciences,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,17.3,2.82,69,0,1,Low,4,No,No
+S0322,19,Female,Turkey,Public,Social Sciences,1,No clear policy,Yes,Gemini,Research & Summaries,3.0,No,3,7,13.1,3.22,72,15,1,Low,2,No,Yes
+S0323,23,Male,United States,Private,Computer Science,4,No clear policy,Yes,ChatGPT,Coding Help,10.4,No,4,31,17.3,3.34,84,30,6,Medium,3,No,Yes
+S0324,20,Female,Brazil,Private,Engineering,3,No clear policy,Yes,Gemini,Assignments & Homework,5.7,No,3,26,21.4,3.43,60,20,3,Low,4,No,Yes
+S0325,21,Male,United Kingdom,Public,Natural Sciences,3,No clear policy,Yes,Microsoft Copilot,Translation & Language,8.8,No,3,13,21.5,3.56,79,29,4,Medium,2,No,Yes
+S0326,22,Male,Brazil,Private,Natural Sciences,3,Allowed,Yes,ChatGPT,Exam Prep,2.2,No,2,2,17.9,2.46,44,18,1,Low,3,No,No
+S0327,20,Male,Bangladesh,Public,Social Sciences,2,Allowed with disclosure,Yes,Other,Writing & Editing,1.6,No,3,18,19.7,3.24,73,19,1,Low,2,No,Yes
+S0328,20,Male,United States,Public,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,2.8,No,3,22,19.9,2.84,71,21,4,Medium,4,No,No
+S0329,21,Male,Indonesia,Private,Computer Science,4,Allowed with disclosure,Yes,ChatGPT,Coding Help,1.0,No,4,12,10.0,2.74,70,21,4,Medium,2,No,Yes
+S0330,21,Male,Turkey,Private,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,1.2,No,3,32,20.5,2.85,54,18,1,Low,3,No,Yes
+S0331,19,Male,India,Private,Engineering,2,Banned,Yes,ChatGPT,Writing & Editing,4.7,No,3,24,18.2,3.07,64,19,2,Low,5,No,Yes
+S0332,21,Female,Indonesia,Public,Social Sciences,4,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,14.0,Yes,3,56,17.9,4.0,89,36,10,High,3,Yes,No
+S0333,22,Female,United States,Public,Arts & Humanities,3,No clear policy,Yes,Microsoft Copilot,Assignments & Homework,6.2,No,2,36,11.7,2.75,46,15,4,Medium,5,No,Yes
+S0334,18,Female,Nigeria,Private,Business,1,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,10.8,No,2,26,22.4,3.12,49,24,5,Medium,4,No,Yes
+S0335,21,Male,Brazil,Public,Business,2,Banned,Yes,ChatGPT,Writing & Editing,2.3,Yes,2,13,23.3,3.43,57,24,1,Low,4,No,Yes
+S0336,18,Male,United States,Private,Engineering,1,Banned,Yes,ChatGPT,Writing & Editing,5.6,No,4,23,13.2,3.17,71,24,4,Medium,3,No,Yes
+S0337,18,Female,Turkey,Public,Computer Science,1,Allowed,Yes,Microsoft Copilot,Assignments & Homework,4.9,No,5,26,22.4,3.59,73,25,5,Medium,1,No,Yes
+S0338,19,Male,United States,Public,Computer Science,2,Banned,Yes,Gemini,Coding Help,3.6,No,3,6,21.9,3.42,83,17,5,Medium,2,No,Yes
+S0339,20,Male,Egypt,Public,Natural Sciences,3,Allowed,Yes,ChatGPT,Exam Prep,8.4,No,3,36,19.6,3.12,63,24,8,High,4,Yes,Yes
+S0340,19,Male,Indonesia,Public,Computer Science,1,No clear policy,Yes,Other,Exam Prep,7.7,No,4,30,11.1,3.12,67,27,2,Low,3,No,Yes
+S0341,19,Male,Indonesia,Private,Business,2,No clear policy,Yes,Claude,Brainstorming Ideas,10.1,No,3,46,15.9,2.67,51,25,5,Medium,4,No,No
+S0342,21,Male,Indonesia,Public,Business,2,No clear policy,Yes,ChatGPT,Coding Help,2.9,No,3,20,13.0,2.55,44,9,3,Low,4,No,Yes
+S0343,19,Female,Pakistan,Public,Arts & Humanities,1,No clear policy,Yes,ChatGPT,Writing & Editing,12.7,No,2,50,11.7,3.39,60,21,9,High,2,No,Yes
+S0344,20,Male,Nigeria,Private,Business,3,Allowed with disclosure,Yes,Gemini,Exam Prep,7.7,No,2,60,18.0,3.01,75,15,6,Medium,2,Yes,Yes
+S0345,18,Female,Brazil,Public,Medicine & Health,1,Allowed with disclosure,Yes,Perplexity,Exam Prep,2.9,No,1,34,18.0,3.76,77,22,3,Low,2,No,Yes
+S0346,20,Female,United Kingdom,Public,Social Sciences,3,Allowed,Yes,ChatGPT,Research & Summaries,15.4,No,3,59,15.0,3.14,53,45,10,High,5,No,Yes
+S0347,21,Female,United Kingdom,Private,Engineering,3,No clear policy,Yes,ChatGPT,Assignments & Homework,4.3,No,3,30,17.5,2.87,59,18,7,High,3,No,Yes
+S0348,22,Male,India,Private,Natural Sciences,4,Allowed,Yes,ChatGPT,Research & Summaries,4.4,No,3,22,22.0,2.83,61,9,1,Low,4,No,No
+S0349,19,Male,India,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,4.9,No,4,28,24.1,3.24,74,24,7,High,2,No,No
+S0350,18,Female,Canada,Public,Computer Science,1,Allowed with disclosure,Yes,DeepSeek,Coding Help,18.1,No,4,62,17.4,3.49,69,33,7,High,3,No,No
+S0351,20,Male,Pakistan,Private,Arts & Humanities,1,Allowed,Yes,ChatGPT,Research & Summaries,2.8,No,3,29,17.5,2.99,58,9,2,Low,3,Yes,Yes
+S0352,21,Male,Brazil,Public,Engineering,2,No clear policy,Yes,Gemini,Brainstorming Ideas,6.3,No,3,37,13.4,2.86,54,9,2,Low,2,Yes,Yes
+S0353,19,Female,Pakistan,Private,Business,1,Banned,Yes,ChatGPT,Writing & Editing,7.2,No,3,19,16.4,3.44,73,30,6,Medium,5,No,Yes
+S0354,20,Prefer not to say,United States,Public,Computer Science,3,No clear policy,Yes,Microsoft Copilot,Brainstorming Ideas,7.2,No,3,15,18.1,3.32,60,22,6,Medium,4,No,No
+S0355,19,Female,Pakistan,Public,Engineering,2,Banned,Yes,Microsoft Copilot,Writing & Editing,3.3,No,2,15,23.0,2.8,50,17,2,Low,4,No,Yes
+S0356,18,Male,Nigeria,Public,Arts & Humanities,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,20.2,3.18,59,0,1,Low,3,No,No
+S0357,18,Female,India,Private,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,5.0,No,5,21,24.1,3.75,79,15,3,Low,3,No,Yes
+S0358,18,Female,United States,Private,Medicine & Health,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,18.2,2.94,70,0,1,Low,3,No,No
+S0359,20,Male,India,Public,Computer Science,3,Allowed,Yes,Other,Coding Help,16.0,Yes,5,54,8.3,2.59,48,51,10,High,2,No,Yes
+S0360,18,Male,United Kingdom,Public,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,3.9,No,3,26,15.0,3.24,76,25,6,Medium,4,No,Yes
+S0361,20,Male,Nigeria,Private,Social Sciences,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,12.7,2.48,52,0,1,Low,2,No,No
+S0362,22,Female,India,Public,Computer Science,3,No clear policy,Yes,Perplexity,Coding Help,7.9,No,4,21,19.8,3.62,79,18,6,Medium,5,No,Yes
+S0363,19,Male,Canada,Public,Natural Sciences,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,12.1,Yes,2,54,6.3,3.03,55,48,9,High,4,No,Yes
+S0364,20,Male,Canada,Public,Business,3,No clear policy,Yes,Microsoft Copilot,Exam Prep,2.0,No,2,2,19.8,2.53,57,0,1,Low,3,No,No
+S0365,19,Female,Egypt,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,2.7,No,4,30,16.5,3.12,72,22,1,Low,2,No,Yes
+S0366,23,Female,United States,Public,Engineering,3,No clear policy,Yes,ChatGPT,Brainstorming Ideas,9.1,No,3,36,18.7,3.18,58,29,6,Medium,4,No,No
+S0367,19,Prefer not to say,Indonesia,Public,Business,2,Banned,Yes,ChatGPT,Research & Summaries,2.0,No,2,2,18.2,2.94,65,37,3,Low,5,No,Yes
+S0368,18,Male,Pakistan,Private,Medicine & Health,1,Allowed,Yes,ChatGPT,Research & Summaries,9.0,No,2,49,22.6,3.54,74,23,3,Low,4,No,Yes
+S0369,20,Female,Egypt,Private,Arts & Humanities,3,Allowed,Yes,ChatGPT,Exam Prep,2.7,No,3,26,17.0,2.54,72,27,5,Medium,3,No,Yes
+S0370,18,Female,India,Private,Business,1,Allowed with disclosure,Yes,Gemini,Assignments & Homework,3.0,No,2,18,10.0,2.83,64,24,1,Low,2,No,No
+S0371,23,Male,Bangladesh,Private,Engineering,3,No clear policy,Yes,ChatGPT,Research & Summaries,7.2,No,3,37,18.1,3.65,79,24,6,Medium,3,No,Yes
+S0372,24,Female,Pakistan,Private,Social Sciences,4,Allowed,Yes,Gemini,Exam Prep,3.0,No,4,29,23.2,3.8,70,24,5,Medium,4,No,Yes
+S0373,18,Female,Turkey,Public,Business,1,Allowed with disclosure,Yes,Gemini,Translation & Language,4.3,No,2,37,10.6,2.63,47,15,2,Low,2,No,No
+S0374,20,Female,United States,Public,Business,2,No clear policy,Yes,Other,Research & Summaries,7.6,No,3,38,21.5,3.16,77,29,5,Medium,3,No,Yes
+S0375,20,Male,Egypt,Public,Computer Science,3,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,4.5,No,3,19,11.3,2.69,55,20,5,Medium,2,Yes,Yes
+S0376,20,Male,Pakistan,Public,Social Sciences,2,Allowed with disclosure,Yes,Gemini,Writing & Editing,1.8,No,2,6,14.0,2.98,69,10,1,Low,3,No,No
+S0377,22,Male,Indonesia,Public,Social Sciences,3,Allowed with disclosure,Yes,Gemini,Brainstorming Ideas,7.5,Yes,3,29,13.9,2.47,40,36,7,High,2,No,Yes
+S0378,20,Male,Bangladesh,Private,Business,1,No clear policy,Yes,ChatGPT,Assignments & Homework,6.5,No,2,29,11.5,3.17,70,18,5,Medium,2,No,No
+S0379,20,Female,India,Public,Engineering,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,15.3,2.6,75,0,1,Low,2,No,No
+S0380,18,Male,Nigeria,Public,Medicine & Health,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,17.0,2.87,67,0,1,Low,4,No,No
+S0381,23,Female,Pakistan,Private,Social Sciences,3,No clear policy,Yes,ChatGPT,Writing & Editing,4.4,No,3,31,15.2,3.23,53,15,3,Low,2,No,Yes
+S0382,23,Female,United Kingdom,Public,Natural Sciences,3,Allowed,Yes,ChatGPT,Assignments & Homework,19.1,No,2,58,17.8,2.74,54,52,10,High,3,No,No
+S0383,21,Male,United States,Public,Social Sciences,3,Allowed with disclosure,Yes,Microsoft Copilot,Brainstorming Ideas,11.3,No,2,31,14.0,3.3,56,34,3,Low,3,No,Yes
+S0384,23,Female,Pakistan,Private,Business,4,No clear policy,Yes,Microsoft Copilot,Research & Summaries,10.9,No,4,42,17.4,3.02,63,24,6,Medium,3,No,Yes
+S0385,21,Male,United States,Public,Natural Sciences,4,Allowed,Yes,Perplexity,Exam Prep,5.8,No,2,29,17.8,2.78,68,17,3,Low,2,No,Yes
+S0386,18,Male,India,Public,Medicine & Health,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,28.1,3.2,58,0,1,Low,3,No,No
+S0387,23,Male,India,Private,Natural Sciences,3,Allowed,Yes,ChatGPT,Exam Prep,9.2,Yes,3,43,24.1,3.73,81,30,4,Medium,2,Yes,Yes
+S0388,19,Female,Indonesia,Public,Business,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,18.0,3.37,69,0,1,Low,2,No,No
+S0389,20,Female,Germany,Public,Business,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,19.4,3.14,57,0,1,Low,2,No,No
+S0390,20,Male,Pakistan,Private,Business,3,No clear policy,Yes,ChatGPT,Research & Summaries,8.0,No,2,49,19.8,2.82,60,6,5,Medium,2,No,Yes
+S0391,19,Male,Brazil,Public,Business,2,No clear policy,Yes,ChatGPT,Translation & Language,1.2,No,2,29,20.0,3.56,74,17,3,Low,3,No,Yes
+S0392,19,Male,Bangladesh,Private,Engineering,2,No clear policy,Yes,ChatGPT,Exam Prep,3.7,No,2,23,17.3,2.95,58,14,3,Low,3,No,No
+S0393,20,Male,Germany,Private,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Translation & Language,6.9,No,3,40,21.1,3.69,64,27,7,High,4,No,Yes
+S0394,21,Female,Bangladesh,Private,Engineering,3,No clear policy,Yes,Gemini,Research & Summaries,11.3,Yes,3,47,17.4,2.83,52,27,6,Medium,4,No,Yes
+S0395,21,Male,Nigeria,Public,Social Sciences,4,No clear policy,Yes,ChatGPT,Coding Help,3.7,Yes,1,13,11.7,2.86,63,28,2,Low,5,No,Yes
+S0396,20,Female,Nigeria,Public,Social Sciences,3,Allowed with disclosure,Yes,Gemini,Writing & Editing,13.3,No,4,51,16.6,3.4,81,29,7,High,3,No,Yes
+S0397,22,Male,India,Public,Natural Sciences,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,14.9,2.67,52,0,1,Low,3,No,No
+S0398,20,Female,Turkey,Private,Medicine & Health,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,2.1,No,3,26,16.8,3.15,58,23,4,Medium,3,No,Yes
+S0399,19,Male,Germany,Public,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,1.7,No,2,17,8.4,3.06,71,18,3,Low,2,No,No
+S0400,21,Male,Germany,Public,Natural Sciences,2,Banned,Yes,DeepSeek,Writing & Editing,6.8,No,2,20,13.8,2.72,65,32,3,Low,3,No,Yes
+S0401,21,Female,India,Public,Business,3,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,18.4,3.77,75,0,1,Low,3,No,No
+S0402,18,Male,India,Public,Computer Science,1,Allowed with disclosure,Yes,DeepSeek,Coding Help,4.7,No,3,21,19.1,3.36,67,35,2,Low,4,Yes,Yes
+S0403,19,Female,United States,Public,Business,1,Banned,Yes,DeepSeek,Research & Summaries,5.3,No,3,23,17.8,2.32,50,13,6,Medium,2,No,Yes
+S0404,21,Male,Pakistan,Private,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Coding Help,9.4,Yes,3,33,13.0,2.88,47,28,6,Medium,3,Yes,Yes
+S0405,18,Female,Pakistan,Public,Arts & Humanities,1,Allowed with disclosure,Yes,Perplexity,Exam Prep,3.2,No,2,17,5.8,2.29,54,30,2,Low,2,Yes,No
+S0406,20,Female,Nigeria,Public,Engineering,3,Banned,Yes,ChatGPT,Coding Help,2.7,No,3,10,21.3,2.58,58,26,1,Low,5,No,Yes
+S0407,20,Male,Bangladesh,Public,Natural Sciences,2,Allowed with disclosure,Yes,Gemini,Writing & Editing,3.8,No,2,7,16.9,2.6,56,10,3,Low,3,No,Yes
+S0408,23,Female,Brazil,Public,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,7.2,No,3,26,18.4,2.97,44,26,5,Medium,3,No,No
+S0409,20,Female,Pakistan,Public,Arts & Humanities,1,Banned,Yes,ChatGPT,Research & Summaries,2.2,No,3,13,18.3,3.06,78,22,4,Medium,5,No,No
+S0410,22,Male,Brazil,Public,Arts & Humanities,3,Banned,Yes,ChatGPT,Assignments & Homework,5.5,No,3,21,15.0,3.16,62,27,7,High,4,No,Yes
+S0411,21,Female,India,Public,Medicine & Health,4,Allowed,Yes,Gemini,Exam Prep,4.8,No,3,31,20.1,3.04,59,9,7,High,5,No,No
+S0412,22,Female,Turkey,Public,Arts & Humanities,3,No clear policy,Yes,ChatGPT,Brainstorming Ideas,1.8,No,3,9,17.8,3.07,67,9,1,Low,3,No,Yes
+S0413,19,Female,Indonesia,Public,Engineering,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,14.1,3.39,73,0,1,Low,3,No,No
+S0414,21,Female,Nigeria,Private,Computer Science,4,Allowed,Yes,DeepSeek,Exam Prep,2.9,Yes,2,31,15.9,2.89,41,26,3,Low,2,Yes,Yes
+S0415,20,Male,United States,Public,Arts & Humanities,3,Allowed,Yes,Claude,Exam Prep,4.3,No,3,34,19.5,3.09,73,20,6,Medium,2,No,Yes
+S0416,20,Male,Pakistan,Private,Engineering,3,Allowed,Yes,ChatGPT,Writing & Editing,6.5,No,2,20,18.4,2.92,58,23,6,Medium,3,No,Yes
+S0417,20,Male,Canada,Private,Business,1,Allowed,Yes,Perplexity,Research & Summaries,4.7,No,3,33,23.1,3.06,68,19,6,Medium,2,No,Yes
+S0418,20,Female,United Kingdom,Public,Arts & Humanities,3,Allowed,Yes,ChatGPT,Brainstorming Ideas,2.5,No,3,17,23.3,2.87,63,22,5,Medium,3,No,Yes
+S0419,21,Male,Pakistan,Public,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Exam Prep,11.8,No,4,60,20.2,2.77,64,23,8,High,4,Yes,Yes
+S0420,21,Female,Germany,Public,Business,3,Allowed with disclosure,Yes,Microsoft Copilot,Exam Prep,3.8,No,3,16,20.5,3.05,66,22,1,Low,4,No,Yes
+S0421,22,Female,Pakistan,Public,Business,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,1.3,No,3,11,14.8,3.41,63,21,1,Low,5,No,No
+S0422,21,Female,United States,Public,Business,4,Allowed,Yes,Perplexity,Assignments & Homework,3.3,No,3,10,20.0,3.41,69,25,2,Low,2,No,No
+S0423,20,Female,Germany,Public,Medicine & Health,1,Allowed with disclosure,Yes,Gemini,Exam Prep,4.2,No,3,31,11.0,2.6,68,21,3,Low,2,No,No
+S0424,20,Female,Canada,Private,Business,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,8.6,No,2,42,21.0,3.45,80,22,5,Medium,3,Yes,Yes
+S0425,22,Prefer not to say,India,Public,Business,4,Allowed,Yes,Microsoft Copilot,Writing & Editing,8.0,No,3,44,17.1,3.14,67,17,6,Medium,1,No,Yes
+S0426,21,Male,India,Public,Natural Sciences,3,Allowed with disclosure,Yes,DeepSeek,Brainstorming Ideas,1.4,No,2,10,18.7,2.76,57,24,2,Low,5,No,Yes
+S0427,19,Female,Bangladesh,Public,Arts & Humanities,1,No clear policy,Yes,ChatGPT,Research & Summaries,4.5,No,2,29,22.9,2.96,71,24,5,Medium,5,Yes,No
+S0428,20,Female,Pakistan,Public,Arts & Humanities,2,Allowed with disclosure,Yes,Gemini,Writing & Editing,1.1,No,2,29,20.3,2.59,52,8,1,Low,4,No,No
+S0429,21,Male,Indonesia,Public,Engineering,4,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,23.9,2.74,58,0,1,Low,4,No,No
+S0430,22,Male,Indonesia,Private,Engineering,4,Banned,Yes,ChatGPT,Coding Help,6.9,No,2,58,20.5,2.52,48,28,6,Medium,2,No,No
+S0431,19,Male,Germany,Public,Business,2,Allowed with disclosure,Yes,ChatGPT,Translation & Language,7.8,No,1,34,17.1,3.07,76,10,3,Low,4,Yes,No
+S0432,18,Male,Pakistan,Public,Social Sciences,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,13.5,3.16,68,0,1,Low,4,No,No
+S0433,21,Female,Pakistan,Public,Natural Sciences,1,No clear policy,Yes,ChatGPT,Assignments & Homework,3.1,No,3,30,22.2,3.77,77,17,3,Low,2,No,Yes
+S0434,19,Female,Indonesia,Public,Computer Science,1,No clear policy,Yes,ChatGPT,Coding Help,17.2,Yes,4,81,24.6,2.34,44,54,10,High,3,No,Yes
+S0435,19,Male,Pakistan,Private,Arts & Humanities,1,Banned,Yes,ChatGPT,Exam Prep,3.2,No,2,6,20.5,3.26,52,34,3,Low,3,No,Yes
+S0436,19,Male,Pakistan,Public,Business,2,No clear policy,Yes,ChatGPT,Exam Prep,4.4,No,4,15,14.5,3.18,58,35,5,Medium,3,No,No
+S0437,21,Male,Canada,Public,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,2.4,No,2,11,19.9,3.56,59,20,5,Medium,4,No,No
+S0438,19,Female,India,Public,Medicine & Health,2,Banned,Yes,ChatGPT,Exam Prep,2.6,No,5,16,11.8,2.88,64,22,1,Low,2,No,No
+S0439,18,Male,United States,Private,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,12.1,No,3,58,12.5,3.42,64,28,10,High,4,Yes,No
+S0440,24,Male,United States,Public,Natural Sciences,4,Allowed,Yes,ChatGPT,Coding Help,1.6,No,1,38,17.0,2.39,60,6,3,Low,3,No,No
+S0441,21,Male,Brazil,Private,Social Sciences,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,13.3,2.37,65,0,1,Low,4,No,No
+S0442,18,Male,United States,Private,Social Sciences,1,Allowed,Yes,ChatGPT,Assignments & Homework,7.2,No,2,32,19.2,2.39,55,16,3,Low,3,No,Yes
+S0443,21,Female,Turkey,Private,Social Sciences,3,No clear policy,Yes,Gemini,Writing & Editing,2.2,No,4,13,18.3,3.13,57,29,3,Low,3,No,No
+S0444,18,Male,United Kingdom,Public,Arts & Humanities,1,Banned,Yes,ChatGPT,Exam Prep,2.9,Yes,2,14,22.2,2.89,59,33,5,Medium,3,No,Yes
+S0445,19,Female,India,Public,Engineering,1,Allowed,Yes,ChatGPT,Brainstorming Ideas,6.4,No,2,16,18.2,2.94,60,30,2,Low,5,No,Yes
+S0446,20,Male,India,Private,Business,3,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,11.9,No,2,36,17.1,3.15,56,45,8,High,5,No,Yes
+S0447,21,Female,Brazil,Public,Business,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,14.1,3.24,64,0,1,Low,5,No,No
+S0448,23,Female,India,Public,Social Sciences,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,2.9,No,2,2,14.7,3.37,57,32,3,Low,3,No,No
+S0449,20,Male,Germany,Private,Natural Sciences,2,No clear policy,Yes,ChatGPT,Coding Help,5.4,No,1,37,30.9,3.08,57,23,3,Low,4,No,No
+S0450,21,Female,Germany,Public,Business,4,Allowed,Yes,ChatGPT,Translation & Language,8.4,No,3,34,14.8,3.47,62,31,10,High,1,Yes,No
+S0451,18,Male,Egypt,Public,Natural Sciences,1,Allowed,Yes,DeepSeek,Exam Prep,8.5,No,1,33,20.8,3.59,82,20,7,High,2,Yes,No
+S0452,21,Male,Pakistan,Public,Business,4,No clear policy,Yes,ChatGPT,Translation & Language,6.2,No,2,30,25.1,2.94,52,24,6,Medium,3,Yes,Yes
+S0453,20,Male,India,Public,Arts & Humanities,3,No clear policy,Yes,Perplexity,Research & Summaries,14.6,No,3,47,21.0,2.57,42,27,9,High,3,No,Yes
+S0454,21,Female,Nigeria,Private,Business,4,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,4.9,No,3,41,21.4,2.76,56,22,7,High,3,No,Yes
+S0455,19,Female,Bangladesh,Private,Engineering,1,No clear policy,Yes,ChatGPT,Coding Help,7.9,No,3,32,18.6,2.96,54,23,4,Medium,5,No,Yes
+S0456,18,Male,Pakistan,Private,Business,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,1.7,No,3,14,13.2,2.45,48,21,3,Low,4,No,Yes
+S0457,18,Male,Indonesia,Public,Business,1,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,1.5,No,3,34,15.6,2.72,59,23,1,Low,1,No,Yes
+S0458,24,Male,Brazil,Private,Business,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,4.5,Yes,4,2,22.1,2.48,55,34,2,Low,3,No,Yes
+S0459,18,Male,India,Public,Natural Sciences,1,Allowed with disclosure,Yes,Gemini,Assignments & Homework,2.8,No,3,10,20.5,3.56,100,22,1,Low,3,No,Yes
+S0460,21,Female,Pakistan,Public,Business,1,Allowed with disclosure,Yes,Gemini,Writing & Editing,2.3,No,2,11,23.0,3.05,75,14,6,Medium,2,No,Yes
+S0461,19,Female,Turkey,Public,Business,2,Allowed,Yes,ChatGPT,Translation & Language,5.5,No,3,13,15.4,2.82,51,0,4,Medium,4,No,Yes
+S0462,21,Female,United Kingdom,Private,Computer Science,4,No clear policy,Yes,ChatGPT,Assignments & Homework,3.6,Yes,3,13,21.0,2.92,58,36,3,Low,3,No,Yes
+S0463,20,Female,Indonesia,Public,Social Sciences,2,No clear policy,Yes,Gemini,Writing & Editing,9.7,No,3,42,14.0,2.93,50,17,5,Medium,4,No,Yes
+S0464,19,Female,United Kingdom,Public,Arts & Humanities,1,Allowed with disclosure,Yes,DeepSeek,Coding Help,7.3,No,3,33,15.3,3.16,56,31,2,Low,2,No,Yes
+S0465,21,Female,India,Private,Natural Sciences,2,Allowed,Yes,ChatGPT,Coding Help,5.2,No,3,14,22.6,3.43,53,25,5,Medium,1,No,Yes
+S0466,20,Female,Pakistan,Public,Social Sciences,3,Allowed,Yes,DeepSeek,Research & Summaries,7.3,No,2,31,17.1,2.58,47,25,4,Medium,4,No,No
+S0467,20,Female,United States,Private,Engineering,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,11.2,No,3,50,19.9,2.94,64,32,7,High,1,No,No
+S0468,18,Female,Nigeria,Private,Arts & Humanities,1,Allowed,Yes,Claude,Assignments & Homework,5.2,No,3,8,15.0,3.49,66,28,6,Medium,3,No,Yes
+S0469,19,Female,Pakistan,Public,Computer Science,2,No clear policy,Yes,ChatGPT,Exam Prep,5.1,No,4,26,20.3,3.42,77,32,4,Medium,4,No,Yes
+S0470,19,Male,United States,Public,Arts & Humanities,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,12.3,2.85,58,0,1,Low,4,No,No
+S0471,18,Female,United States,Private,Social Sciences,1,No clear policy,Yes,Gemini,Writing & Editing,2.2,No,3,11,21.7,3.94,77,13,1,Low,3,No,No
+S0472,20,Male,Nigeria,Public,Arts & Humanities,3,Allowed with disclosure,Yes,Claude,Translation & Language,6.7,No,4,41,15.0,2.9,53,33,6,Medium,3,No,No
+S0473,21,Female,India,Public,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Exam Prep,19.1,Yes,3,66,22.6,3.28,53,37,10,High,2,Yes,Yes
+S0474,19,Female,Indonesia,Public,Computer Science,1,No clear policy,Yes,ChatGPT,Research & Summaries,1.0,No,3,16,21.3,3.09,67,28,3,Low,2,No,No
+S0475,20,Male,Bangladesh,Public,Social Sciences,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,20.9,2.34,45,0,1,Low,2,No,No
+S0476,19,Male,Turkey,Public,Computer Science,2,Allowed,Yes,ChatGPT,Exam Prep,2.3,No,5,18,18.6,3.49,76,9,4,Medium,2,No,No
+S0477,18,Male,Turkey,Public,Natural Sciences,1,Allowed,Yes,ChatGPT,Exam Prep,7.5,No,4,45,16.1,2.93,75,38,7,High,3,No,Yes
+S0478,22,Female,Indonesia,Public,Engineering,2,No clear policy,Yes,ChatGPT,Writing & Editing,8.1,No,5,41,22.2,3.51,74,36,6,Medium,4,Yes,Yes
+S0479,18,Male,India,Public,Computer Science,1,Allowed with disclosure,Yes,Gemini,Brainstorming Ideas,14.9,No,5,77,18.2,3.17,80,29,10,High,2,Yes,No
+S0480,19,Male,Turkey,Public,Engineering,2,No clear policy,Yes,ChatGPT,Brainstorming Ideas,10.9,No,4,65,9.0,2.68,53,25,7,High,5,Yes,No
+S0481,20,Male,India,Public,Computer Science,3,Allowed with disclosure,Yes,Perplexity,Assignments & Homework,17.5,No,4,60,15.9,2.94,39,36,10,High,3,No,Yes
+S0482,20,Female,United States,Public,Business,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,12.8,2.98,84,0,1,Low,4,No,No
+S0483,21,Female,India,Public,Engineering,4,Allowed,Yes,ChatGPT,Coding Help,11.5,No,3,47,24.4,3.73,67,22,7,High,5,No,No
+S0484,19,Female,United States,Private,Engineering,1,Banned,Yes,DeepSeek,Brainstorming Ideas,12.1,Yes,3,57,14.2,2.72,38,17,6,Medium,3,Yes,No
+S0485,19,Female,Pakistan,Private,Computer Science,1,No clear policy,Yes,Claude,Coding Help,10.2,No,3,43,15.3,2.75,63,31,6,Medium,2,No,Yes
+S0486,19,Female,Egypt,Private,Social Sciences,2,No clear policy,Yes,ChatGPT,Assignments & Homework,10.2,No,1,58,19.8,3.04,41,6,7,High,3,Yes,Yes
+S0487,22,Female,Pakistan,Private,Social Sciences,3,Allowed,Yes,ChatGPT,Writing & Editing,3.8,No,3,24,17.5,2.73,75,14,2,Low,4,No,No
+S0488,23,Male,United Kingdom,Public,Business,3,Allowed,Yes,Claude,Research & Summaries,5.7,No,3,24,22.7,2.61,54,21,1,Low,1,No,No
+S0489,18,Female,Turkey,Private,Medicine & Health,1,No clear policy,Yes,Gemini,Assignments & Homework,3.6,No,3,5,17.5,3.27,63,23,2,Low,2,Yes,Yes
+S0490,18,Male,Pakistan,Private,Natural Sciences,1,Banned,Yes,ChatGPT,Writing & Editing,6.5,No,4,12,15.5,2.88,71,22,4,Medium,2,No,Yes
+S0491,20,Male,Germany,Private,Arts & Humanities,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,15.4,2.56,57,0,1,Low,2,No,No
+S0492,19,Female,United Kingdom,Public,Social Sciences,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,19.5,2.74,61,0,1,Low,5,No,No
+S0493,20,Male,Brazil,Public,Business,1,Banned,Yes,Gemini,Exam Prep,4.2,No,3,10,19.0,3.48,61,23,2,Low,4,No,Yes
+S0494,21,Male,Nigeria,Public,Arts & Humanities,1,Banned,Yes,Perplexity,Research & Summaries,6.7,No,4,37,15.7,3.1,65,39,7,High,3,No,Yes
+S0495,21,Male,Turkey,Public,Natural Sciences,3,No clear policy,Yes,DeepSeek,Exam Prep,4.9,No,2,23,24.1,2.75,60,15,3,Low,1,No,Yes
+S0496,20,Female,Canada,Private,Engineering,2,Banned,Yes,ChatGPT,Translation & Language,8.5,No,3,50,20.2,2.92,53,46,7,High,4,No,Yes
+S0497,21,Female,Germany,Public,Natural Sciences,4,Allowed with disclosure,Yes,Claude,Research & Summaries,9.9,No,2,21,16.7,3.34,56,30,6,Medium,2,No,Yes
+S0498,20,Female,Bangladesh,Public,Natural Sciences,2,Allowed with disclosure,Yes,Gemini,Assignments & Homework,2.9,No,1,9,17.9,2.57,53,6,4,Medium,1,No,Yes
+S0499,18,Female,Pakistan,Private,Arts & Humanities,1,Allowed,Yes,ChatGPT,Writing & Editing,5.7,No,3,35,18.1,3.01,65,20,4,Medium,3,No,Yes
+S0500,20,Female,India,Private,Business,3,No clear policy,Yes,ChatGPT,Coding Help,3.3,No,3,22,18.6,3.59,73,9,1,Low,4,No,No
+S0501,21,Male,Indonesia,Public,Business,1,Allowed,Yes,Gemini,Assignments & Homework,1.3,No,4,19,15.9,2.54,73,25,5,Medium,3,No,Yes
+S0502,19,Female,India,Public,Computer Science,2,No clear policy,Yes,Gemini,Exam Prep,8.6,No,4,33,9.2,3.04,76,24,2,Low,2,No,Yes
+S0503,21,Female,Indonesia,Public,Business,2,No clear policy,Yes,ChatGPT,Research & Summaries,6.4,Yes,3,25,16.3,2.89,58,22,7,High,2,Yes,Yes
+S0504,18,Female,India,Public,Engineering,1,Banned,Yes,Gemini,Coding Help,6.3,No,3,16,14.5,2.41,44,26,6,Medium,5,No,No
+S0505,23,Female,Pakistan,Public,Social Sciences,4,No clear policy,Yes,Claude,Exam Prep,7.2,No,3,44,12.7,2.61,63,36,3,Low,3,No,No
+S0506,18,Male,India,Private,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,0.7,Yes,1,18,12.6,2.86,54,30,4,Medium,2,No,Yes
+S0507,20,Female,United States,Public,Social Sciences,3,Allowed,Yes,Claude,Writing & Editing,2.6,No,3,25,20.5,3.04,70,7,1,Low,2,No,Yes
+S0508,18,Female,Pakistan,Public,Computer Science,1,Banned,Yes,ChatGPT,Research & Summaries,3.9,No,3,16,19.0,3.53,61,26,6,Medium,3,No,No
+S0509,21,Male,United States,Private,Medicine & Health,3,Allowed with disclosure,Yes,Claude,Exam Prep,2.2,No,2,9,14.1,2.7,53,24,1,Low,2,No,No
+S0510,21,Male,Canada,Public,Natural Sciences,4,No clear policy,Yes,Claude,Assignments & Homework,2.1,No,2,14,18.8,3.15,62,33,2,Low,1,No,No
+S0511,18,Male,United States,Private,Engineering,1,Allowed with disclosure,Yes,Gemini,Research & Summaries,9.4,No,4,30,9.7,2.5,58,42,4,Medium,4,No,Yes
+S0512,20,Female,United Kingdom,Public,Business,2,Allowed with disclosure,Yes,Perplexity,Research & Summaries,11.9,No,3,57,18.8,2.74,49,38,7,High,4,No,Yes
+S0513,20,Male,Egypt,Public,Medicine & Health,2,No clear policy,Yes,Microsoft Copilot,Translation & Language,5.0,No,3,21,19.0,2.47,61,20,2,Low,4,No,Yes
+S0514,18,Male,India,Public,Engineering,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,22.4,2.34,50,0,1,Low,2,No,No
+S0515,21,Female,United Kingdom,Public,Business,3,Banned,Yes,ChatGPT,Brainstorming Ideas,6.4,No,2,22,21.9,3.29,83,21,6,Medium,4,No,No
+S0516,22,Female,Egypt,Public,Social Sciences,4,Allowed with disclosure,Yes,Microsoft Copilot,Brainstorming Ideas,9.2,No,3,44,16.1,3.43,76,19,6,Medium,2,No,No
+S0517,22,Male,United Kingdom,Private,Computer Science,3,Banned,Yes,Microsoft Copilot,Coding Help,4.8,No,5,20,12.4,3.17,68,24,6,Medium,3,No,Yes
+S0518,21,Male,Germany,Public,Arts & Humanities,2,Banned,Yes,ChatGPT,Translation & Language,1.2,No,1,11,19.5,3.02,60,7,2,Low,4,No,No
+S0519,18,Female,United Kingdom,Private,Natural Sciences,1,Banned,Yes,Gemini,Writing & Editing,4.4,No,2,13,17.3,2.73,67,18,3,Low,4,Yes,No
+S0520,19,Male,Pakistan,Private,Arts & Humanities,1,No clear policy,Yes,Claude,Exam Prep,5.1,No,3,30,16.0,3.43,75,22,2,Low,2,No,No
+S0521,21,Female,Brazil,Private,Business,4,Allowed,Yes,ChatGPT,Assignments & Homework,1.9,No,2,19,12.1,3.0,56,19,2,Low,3,No,Yes
+S0522,20,Male,Indonesia,Private,Social Sciences,3,Allowed with disclosure,Yes,Gemini,Research & Summaries,7.5,No,2,34,14.9,2.6,58,28,5,Medium,4,No,No
+S0523,21,Male,Indonesia,Private,Social Sciences,3,Banned,Yes,Claude,Research & Summaries,2.7,No,3,29,11.2,2.93,63,9,4,Medium,4,No,Yes
+S0524,20,Male,Germany,Public,Engineering,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,21.9,Yes,4,65,15.4,2.87,56,57,9,High,2,Yes,Yes
+S0525,18,Male,Bangladesh,Public,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,4.9,No,3,15,15.9,3.08,73,21,5,Medium,1,No,Yes
+S0526,21,Female,Nigeria,Public,Computer Science,2,Allowed with disclosure,Yes,Gemini,Assignments & Homework,12.1,Yes,5,43,15.5,3.91,96,40,4,Medium,3,No,Yes
+S0527,21,Female,Egypt,Private,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,4.4,No,3,33,14.4,3.23,64,18,6,Medium,1,Yes,No
+S0528,18,Male,Egypt,Private,Business,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,18.8,3.07,62,0,1,Low,2,No,No
+S0529,19,Male,India,Public,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,4.4,No,4,6,17.0,2.97,75,17,7,High,4,No,No
+S0530,20,Female,Indonesia,Private,Business,3,Banned,Yes,ChatGPT,Assignments & Homework,2.3,Yes,3,17,12.2,2.88,69,25,1,Low,4,No,Yes
+S0531,20,Female,Brazil,Private,Natural Sciences,1,Allowed,Yes,Gemini,Writing & Editing,8.6,No,2,45,12.8,2.42,52,16,8,High,3,No,Yes
+S0532,18,Male,Indonesia,Private,Engineering,1,Banned,Yes,ChatGPT,Assignments & Homework,6.3,Yes,4,23,13.6,3.28,66,38,8,High,3,Yes,Yes
+S0533,20,Female,India,Public,Engineering,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,19.8,3.01,72,0,1,Low,2,No,No
+S0534,20,Female,Egypt,Public,Natural Sciences,3,Allowed with disclosure,Yes,Gemini,Writing & Editing,4.5,No,2,22,18.9,2.4,56,26,4,Medium,3,Yes,No
+S0535,19,Male,Brazil,Private,Engineering,2,Allowed,Yes,DeepSeek,Assignments & Homework,11.5,No,3,29,27.9,3.16,62,24,4,Medium,1,No,Yes
+S0536,23,Male,India,Private,Engineering,3,Banned,Yes,Microsoft Copilot,Translation & Language,2.1,No,2,19,17.0,3.07,68,14,2,Low,4,No,Yes
+S0537,21,Female,United Kingdom,Public,Business,2,Allowed,Yes,Gemini,Writing & Editing,6.1,No,3,30,19.6,2.77,55,10,3,Low,2,No,No
+S0538,19,Female,Pakistan,Public,Social Sciences,2,Allowed with disclosure,Yes,DeepSeek,Assignments & Homework,4.7,No,3,13,15.4,3.82,89,18,3,Low,3,Yes,Yes
+S0539,18,Female,Brazil,Private,Medicine & Health,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,9.3,No,3,32,13.2,3.02,71,34,6,Medium,2,No,Yes
+S0540,20,Female,Germany,Public,Computer Science,2,Banned,Yes,ChatGPT,Coding Help,8.8,No,3,22,14.7,3.75,86,26,6,Medium,4,No,Yes
+S0541,22,Male,Germany,Public,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,4.1,No,2,26,24.5,3.51,73,19,4,Medium,2,No,Yes
+S0542,22,Male,Turkey,Public,Business,3,Allowed,Yes,ChatGPT,Research & Summaries,6.9,No,2,30,18.8,3.05,71,21,4,Medium,2,No,No
+S0543,21,Female,Canada,Public,Computer Science,3,No clear policy,Yes,Gemini,Coding Help,20.6,No,2,62,14.8,3.02,44,27,9,High,3,No,Yes
+S0544,20,Male,Pakistan,Private,Natural Sciences,3,Banned,Yes,ChatGPT,Exam Prep,0.5,No,3,5,15.5,3.05,66,25,4,Medium,1,No,Yes
+S0545,18,Male,Canada,Public,Social Sciences,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,21.1,3.17,76,0,1,Low,3,No,No
+S0546,20,Male,United Kingdom,Private,Computer Science,3,Allowed,Yes,ChatGPT,Research & Summaries,8.3,No,3,46,24.3,3.28,65,24,4,Medium,2,No,Yes
+S0547,20,Female,India,Public,Social Sciences,3,No clear policy,Yes,ChatGPT,Writing & Editing,2.8,No,2,6,13.0,3.19,58,21,7,High,2,Yes,Yes
+S0548,20,Male,Bangladesh,Private,Business,3,Allowed,Yes,Claude,Research & Summaries,2.6,No,2,25,14.2,2.99,59,26,1,Low,2,No,No
+S0549,22,Female,United Kingdom,Public,Engineering,4,Allowed,No,No AI tool,No AI use,0.0,No,0,0,21.6,3.03,58,0,1,Low,3,No,No
+S0550,21,Male,Turkey,Private,Natural Sciences,1,Allowed with disclosure,Yes,Perplexity,Exam Prep,5.7,No,2,35,11.9,2.48,61,25,3,Low,4,Yes,Yes
+S0551,20,Male,Indonesia,Public,Business,1,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,2.0,No,1,3,13.4,2.51,54,24,1,Low,3,No,Yes
+S0552,21,Male,Pakistan,Private,Natural Sciences,4,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,21.3,2.87,69,0,1,Low,4,No,No
+S0553,21,Male,United States,Private,Arts & Humanities,2,Allowed with disclosure,Yes,Microsoft Copilot,Exam Prep,9.2,No,4,31,16.6,3.14,61,36,7,High,3,Yes,Yes
+S0554,21,Male,Turkey,Public,Computer Science,4,No clear policy,Yes,ChatGPT,Coding Help,3.4,No,4,14,20.5,3.0,71,41,1,Low,2,No,Yes
+S0555,21,Male,Germany,Private,Engineering,2,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,12.1,No,3,50,27.7,3.25,62,31,8,High,4,No,Yes
+S0556,19,Male,Turkey,Public,Natural Sciences,2,Allowed with disclosure,Yes,Claude,Brainstorming Ideas,4.4,No,3,25,13.8,2.84,45,14,4,Medium,3,No,Yes
+S0557,21,Female,Germany,Public,Natural Sciences,3,No clear policy,Yes,Gemini,Exam Prep,5.4,No,1,19,12.8,2.98,57,15,5,Medium,3,No,No
+S0558,19,Female,India,Public,Computer Science,2,No clear policy,Yes,Microsoft Copilot,Coding Help,15.4,No,4,54,13.8,3.1,56,30,9,High,3,No,Yes
+S0559,19,Male,United Kingdom,Public,Engineering,1,Banned,Yes,ChatGPT,Writing & Editing,3.5,No,3,26,16.0,3.7,79,23,4,Medium,3,No,No
+S0560,22,Female,United Kingdom,Public,Medicine & Health,2,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,16.4,No,3,63,22.0,2.86,35,36,10,High,4,No,Yes
+S0561,20,Female,Indonesia,Public,Arts & Humanities,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,18.6,2.87,53,0,1,Low,4,No,No
+S0562,21,Female,Bangladesh,Private,Social Sciences,4,No clear policy,Yes,Gemini,Assignments & Homework,7.0,No,2,40,22.1,3.43,66,13,7,High,2,No,Yes
+S0563,21,Female,India,Public,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Coding Help,9.0,No,3,51,21.1,2.99,50,17,5,Medium,4,No,Yes
+S0564,19,Male,Brazil,Public,Business,1,No clear policy,Yes,Gemini,Writing & Editing,4.7,No,3,13,22.9,3.27,71,16,4,Medium,1,Yes,No
+S0565,20,Female,United States,Public,Social Sciences,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,24.1,3.03,58,0,1,Low,3,No,No
+S0566,22,Female,United States,Public,Arts & Humanities,3,Allowed with disclosure,Yes,Gemini,Exam Prep,1.0,No,1,12,13.0,3.34,57,6,1,Low,2,No,Yes
+S0567,20,Female,Egypt,Private,Business,1,No clear policy,Yes,ChatGPT,Writing & Editing,0.8,Yes,4,17,15.4,3.18,79,17,2,Low,3,No,Yes
+S0568,20,Female,Nigeria,Public,Arts & Humanities,1,Banned,Yes,DeepSeek,Research & Summaries,9.8,No,2,39,21.0,2.74,51,30,10,High,5,No,Yes
+S0569,19,Female,Nigeria,Public,Engineering,1,No clear policy,Yes,DeepSeek,Assignments & Homework,10.0,No,3,55,13.6,3.18,67,29,8,High,3,No,Yes
+S0570,21,Female,Indonesia,Public,Business,4,Allowed with disclosure,Yes,ChatGPT,Coding Help,16.3,No,3,68,20.8,2.64,52,43,9,High,3,No,Yes
+S0571,22,Female,Brazil,Private,Engineering,2,Allowed with disclosure,Yes,DeepSeek,Brainstorming Ideas,12.3,No,3,53,11.6,2.49,55,10,8,High,3,No,No
+S0572,18,Male,Egypt,Private,Computer Science,1,No clear policy,Yes,Gemini,Research & Summaries,2.7,No,2,17,13.7,2.75,64,12,3,Low,3,No,No
+S0573,19,Female,Nigeria,Public,Medicine & Health,1,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,18.0,Yes,4,77,19.6,2.42,32,49,10,High,3,Yes,Yes
+S0574,19,Female,Germany,Private,Social Sciences,1,No clear policy,Yes,ChatGPT,Research & Summaries,6.1,No,3,32,17.0,3.07,64,21,6,Medium,1,No,Yes
+S0575,20,Male,India,Private,Social Sciences,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,10.4,2.6,35,0,1,Low,3,No,No
+S0576,19,Male,India,Public,Social Sciences,1,Allowed,Yes,Other,Brainstorming Ideas,12.6,No,3,50,12.3,3.11,50,28,6,Medium,3,Yes,Yes
+S0577,21,Male,United Kingdom,Private,Computer Science,3,Banned,Yes,ChatGPT,Research & Summaries,3.5,Yes,3,19,11.4,2.53,71,34,2,Low,4,No,Yes
+S0578,21,Male,Pakistan,Private,Social Sciences,4,Allowed with disclosure,Yes,Gemini,Research & Summaries,5.4,No,2,29,15.0,3.15,65,31,2,Low,2,No,No
+S0579,22,Male,India,Public,Natural Sciences,3,No clear policy,Yes,ChatGPT,Brainstorming Ideas,4.5,Yes,2,24,15.3,2.91,70,43,2,Low,5,No,Yes
+S0580,19,Male,Brazil,Public,Social Sciences,1,Allowed,Yes,Microsoft Copilot,Assignments & Homework,9.6,No,3,33,16.8,3.12,64,20,3,Low,3,No,Yes
+S0581,18,Male,Nigeria,Private,Computer Science,1,Banned,Yes,Other,Assignments & Homework,4.5,No,1,31,20.9,2.58,54,15,4,Medium,5,No,No
+S0582,19,Female,Pakistan,Public,Business,1,Allowed with disclosure,Yes,ChatGPT,Translation & Language,1.8,No,2,18,22.6,3.46,73,33,1,Low,3,No,Yes
+S0583,19,Male,India,Public,Engineering,2,Allowed with disclosure,Yes,Claude,Coding Help,4.5,No,3,34,23.3,3.1,67,24,4,Medium,2,No,Yes
+S0584,19,Female,Germany,Public,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,6.1,No,4,26,18.5,3.48,80,36,3,Low,3,No,Yes
+S0585,19,Female,United States,Public,Natural Sciences,1,Allowed with disclosure,Yes,DeepSeek,Assignments & Homework,2.6,No,2,4,14.2,2.74,50,17,6,Medium,3,No,Yes
+S0586,20,Male,Germany,Private,Natural Sciences,3,No clear policy,Yes,ChatGPT,Research & Summaries,5.0,No,4,31,18.1,3.58,69,37,4,Medium,1,No,Yes
+S0587,19,Male,Pakistan,Public,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,5.9,Yes,4,13,10.1,3.53,67,39,4,Medium,3,No,Yes
+S0588,20,Female,Turkey,Public,Arts & Humanities,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,21.2,3.81,58,0,1,Low,3,No,No
+S0589,20,Male,India,Private,Engineering,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,1.9,No,3,11,12.7,2.34,56,11,1,Low,3,No,No
+S0590,18,Female,Bangladesh,Public,Computer Science,1,Allowed,Yes,DeepSeek,Coding Help,9.9,No,3,34,16.7,2.82,56,31,5,Medium,3,No,Yes
+S0591,20,Female,United States,Private,Business,3,No clear policy,Yes,Perplexity,Research & Summaries,7.0,Yes,2,29,24.3,3.32,52,33,5,Medium,3,No,No
+S0592,19,Male,Germany,Public,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,0.7,No,2,14,13.6,3.18,68,13,1,Low,5,No,No
+S0593,19,Female,Egypt,Public,Arts & Humanities,1,Banned,Yes,ChatGPT,Research & Summaries,6.0,No,2,15,13.7,3.73,73,16,4,Medium,3,No,No
+S0594,23,Female,India,Public,Engineering,4,Allowed,Yes,Gemini,Research & Summaries,2.0,Yes,3,6,16.9,2.62,59,27,1,Low,1,No,Yes
+S0595,22,Female,India,Private,Engineering,4,Banned,Yes,ChatGPT,Writing & Editing,3.9,Yes,4,10,20.1,2.96,55,24,3,Low,3,No,Yes
+S0596,23,Prefer not to say,Pakistan,Private,Business,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,6.1,No,3,24,22.8,2.75,52,10,2,Low,1,No,Yes
+S0597,22,Male,Canada,Public,Social Sciences,4,Banned,Yes,Gemini,Writing & Editing,5.2,No,3,32,25.5,3.4,75,30,6,Medium,4,No,Yes
+S0598,22,Female,United States,Private,Social Sciences,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,12.3,Yes,2,58,20.5,2.97,48,26,7,High,3,No,No
+S0599,19,Female,Indonesia,Private,Engineering,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,22.1,2.46,52,0,1,Low,5,No,No
+S0600,23,Male,Pakistan,Private,Business,4,No clear policy,Yes,DeepSeek,Brainstorming Ideas,16.3,No,2,62,8.0,3.24,52,45,10,High,5,Yes,No
+S0601,20,Female,United Kingdom,Public,Engineering,3,Allowed with disclosure,Yes,Claude,Writing & Editing,11.3,No,4,46,21.3,3.55,73,41,8,High,4,No,Yes
+S0602,19,Female,Brazil,Public,Arts & Humanities,1,No clear policy,Yes,ChatGPT,Translation & Language,7.9,No,3,39,8.2,3.79,77,16,5,Medium,1,Yes,Yes
+S0603,21,Male,United Kingdom,Public,Computer Science,4,Allowed with disclosure,Yes,ChatGPT,Coding Help,6.0,No,3,20,25.6,3.42,59,18,3,Low,3,No,Yes
+S0604,21,Female,United States,Public,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,7.5,No,3,37,25.6,2.52,41,27,3,Low,2,Yes,No
+S0605,20,Female,Turkey,Public,Arts & Humanities,2,Allowed,Yes,ChatGPT,Translation & Language,5.3,No,2,44,12.0,2.59,56,31,5,Medium,2,No,Yes
+S0606,19,Male,United Kingdom,Public,Natural Sciences,2,Allowed,Yes,DeepSeek,Assignments & Homework,9.2,No,2,43,12.9,2.96,43,10,4,Medium,4,No,Yes
+S0607,21,Female,Indonesia,Public,Computer Science,2,Banned,Yes,Microsoft Copilot,Exam Prep,7.7,No,3,32,17.2,2.68,71,21,4,Medium,3,No,Yes
+S0608,19,Female,India,Public,Computer Science,2,Allowed,Yes,ChatGPT,Translation & Language,4.7,No,3,24,16.1,3.29,40,18,6,Medium,1,Yes,Yes
+S0609,18,Female,Germany,Public,Arts & Humanities,1,Banned,Yes,Claude,Writing & Editing,1.8,No,1,18,23.1,3.02,56,15,1,Low,4,No,Yes
+S0610,18,Female,Nigeria,Public,Natural Sciences,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,22.4,2.22,48,0,1,Low,5,No,No
+S0611,21,Female,Indonesia,Public,Arts & Humanities,4,No clear policy,Yes,Perplexity,Research & Summaries,4.4,No,2,28,17.5,3.25,77,4,2,Low,2,Yes,Yes
+S0612,20,Male,Pakistan,Public,Social Sciences,3,Allowed with disclosure,Yes,Microsoft Copilot,Exam Prep,1.8,No,2,2,17.2,3.52,57,21,1,Low,3,No,No
+S0613,21,Female,Canada,Public,Computer Science,4,No clear policy,Yes,ChatGPT,Coding Help,5.5,No,2,37,21.2,3.92,87,30,10,High,3,No,No
+S0614,20,Male,Nigeria,Private,Engineering,3,Allowed with disclosure,Yes,Gemini,Writing & Editing,12.1,No,4,38,22.7,3.59,74,41,8,High,3,No,Yes
+S0615,20,Male,Turkey,Public,Medicine & Health,2,No clear policy,Yes,ChatGPT,Writing & Editing,1.6,No,2,46,23.9,2.39,44,13,2,Low,2,No,Yes
+S0616,20,Male,Germany,Public,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,2.5,No,4,16,21.3,3.42,66,44,2,Low,3,No,Yes
+S0617,18,Male,United States,Public,Engineering,1,No clear policy,Yes,ChatGPT,Research & Summaries,8.5,No,3,40,19.2,3.09,56,34,6,Medium,3,No,Yes
+S0618,22,Female,Canada,Public,Arts & Humanities,4,No clear policy,Yes,Microsoft Copilot,Writing & Editing,6.0,No,3,34,22.1,3.76,77,25,8,High,3,No,No
+S0619,20,Female,India,Public,Natural Sciences,2,Allowed with disclosure,Yes,Gemini,Assignments & Homework,5.7,No,2,19,23.0,3.2,62,28,4,Medium,4,No,No
+S0620,20,Male,Pakistan,Public,Arts & Humanities,2,Banned,Yes,Gemini,Research & Summaries,5.9,No,2,21,14.5,3.38,61,0,3,Low,4,No,No
+S0621,20,Female,Brazil,Private,Engineering,3,Allowed,Yes,Claude,Writing & Editing,8.5,No,3,32,20.6,2.33,55,19,6,Medium,2,No,Yes
+S0622,19,Male,Turkey,Public,Social Sciences,2,Allowed with disclosure,Yes,Gemini,Assignments & Homework,2.9,No,2,5,20.6,2.15,54,21,2,Low,2,No,Yes
+S0623,19,Female,Turkey,Public,Engineering,2,Allowed with disclosure,Yes,Gemini,Writing & Editing,1.8,No,2,22,11.7,1.98,47,9,5,Medium,3,No,No
+S0624,22,Male,United States,Public,Natural Sciences,2,Allowed,Yes,ChatGPT,Writing & Editing,25.0,No,5,87,16.1,3.4,48,57,10,High,4,Yes,Yes
+S0625,18,Male,Brazil,Public,Natural Sciences,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,6.7,No,2,30,18.3,3.62,55,22,5,Medium,4,Yes,Yes
+S0626,22,Male,Brazil,Private,Computer Science,3,Allowed with disclosure,Yes,ChatGPT,Coding Help,12.5,No,5,44,19.0,2.37,70,44,8,High,3,No,Yes
+S0627,19,Male,India,Public,Business,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,7.8,No,4,44,20.2,3.49,57,24,10,High,4,Yes,Yes
+S0628,21,Male,Canada,Private,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,5.8,No,3,40,16.4,3.34,82,29,3,Low,4,No,No
+S0629,22,Male,Egypt,Public,Social Sciences,2,No clear policy,Yes,ChatGPT,Research & Summaries,4.1,Yes,3,29,17.1,2.62,57,6,2,Low,3,No,Yes
+S0630,19,Male,Bangladesh,Private,Engineering,1,No clear policy,Yes,ChatGPT,Translation & Language,8.5,No,3,24,17.7,3.3,68,33,4,Medium,3,Yes,No
+S0631,21,Male,India,Public,Computer Science,2,Allowed with disclosure,Yes,DeepSeek,Exam Prep,5.6,No,3,37,16.6,3.21,45,17,4,Medium,3,No,No
+S0632,22,Male,Germany,Private,Computer Science,3,Allowed,Yes,DeepSeek,Coding Help,11.4,No,3,27,25.6,2.83,71,29,5,Medium,2,No,No
+S0633,19,Female,Indonesia,Private,Social Sciences,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,11.7,2.38,56,0,1,Low,4,No,No
+S0634,18,Female,Germany,Public,Computer Science,1,Allowed with disclosure,Yes,Gemini,Assignments & Homework,1.7,No,3,17,15.7,2.84,48,9,1,Low,5,No,Yes
+S0635,21,Male,Egypt,Private,Computer Science,1,Allowed,Yes,ChatGPT,Assignments & Homework,8.1,No,3,19,16.9,2.82,60,41,4,Medium,2,No,Yes
+S0636,20,Male,Indonesia,Private,Engineering,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,17.7,2.82,69,0,1,Low,3,No,No
+S0637,21,Female,Brazil,Private,Computer Science,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,11.0,No,4,42,11.8,3.32,62,32,10,High,3,No,No
+S0638,19,Female,Brazil,Public,Engineering,2,Allowed,Yes,ChatGPT,Brainstorming Ideas,22.7,Yes,2,86,18.3,2.52,45,51,10,High,3,Yes,Yes
+S0639,22,Male,India,Private,Computer Science,3,Banned,Yes,ChatGPT,Coding Help,2.1,No,3,3,16.5,2.91,65,17,1,Low,1,No,Yes
+S0640,21,Female,Bangladesh,Public,Engineering,2,Allowed with disclosure,Yes,Microsoft Copilot,Writing & Editing,4.3,No,3,24,16.1,3.26,55,28,4,Medium,1,No,Yes
+S0641,20,Female,Turkey,Public,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,6.0,No,3,38,23.3,2.94,73,19,6,Medium,3,Yes,Yes
+S0642,22,Female,United States,Public,Social Sciences,2,Allowed,Yes,ChatGPT,Brainstorming Ideas,5.4,No,3,23,18.7,2.7,48,15,4,Medium,3,No,No
+S0643,23,Female,India,Public,Medicine & Health,3,Allowed,Yes,ChatGPT,Research & Summaries,7.7,Yes,2,40,23.9,3.26,77,34,1,Low,2,No,Yes
+S0644,20,Female,Pakistan,Private,Computer Science,1,Allowed,Yes,Gemini,Coding Help,13.1,Yes,4,37,15.3,2.51,39,50,7,High,3,No,Yes
+S0645,20,Male,India,Public,Arts & Humanities,3,No clear policy,Yes,ChatGPT,Writing & Editing,2.4,Yes,3,14,33.2,3.75,75,20,3,Low,4,No,Yes
+S0646,20,Female,Germany,Public,Medicine & Health,3,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,6.9,No,3,49,22.4,3.03,66,37,2,Low,3,No,No
+S0647,19,Male,Indonesia,Public,Computer Science,2,No clear policy,Yes,ChatGPT,Assignments & Homework,17.0,Yes,3,68,17.7,2.99,45,47,10,High,3,Yes,No
+S0648,18,Female,United States,Public,Natural Sciences,1,Allowed with disclosure,Yes,Gemini,Research & Summaries,4.2,No,1,35,21.2,2.81,52,6,3,Low,2,No,Yes
+S0649,21,Male,Canada,Public,Arts & Humanities,3,No clear policy,Yes,ChatGPT,Assignments & Homework,2.4,No,3,20,21.3,2.96,64,31,1,Low,5,No,No
+S0650,20,Male,Pakistan,Public,Arts & Humanities,3,No clear policy,Yes,ChatGPT,Assignments & Homework,5.2,No,2,23,16.8,3.44,66,18,4,Medium,4,No,Yes
+S0651,20,Male,Turkey,Public,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,14.7,No,5,53,20.6,3.51,66,41,9,High,4,Yes,No
+S0652,21,Female,Indonesia,Public,Computer Science,1,No clear policy,Yes,Claude,Coding Help,3.6,No,2,12,20.8,3.37,79,8,3,Low,3,No,No
+S0653,19,Male,United Kingdom,Private,Arts & Humanities,2,No clear policy,Yes,ChatGPT,Writing & Editing,7.1,Yes,3,9,17.7,3.14,67,28,5,Medium,4,No,Yes
+S0654,21,Male,United States,Private,Business,2,No clear policy,Yes,Microsoft Copilot,Writing & Editing,1.3,No,2,13,14.4,2.83,61,18,5,Medium,3,No,No
+S0655,19,Female,Indonesia,Public,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,7.5,Yes,2,29,16.0,2.86,53,31,2,Low,4,No,No
+S0656,20,Female,India,Public,Natural Sciences,3,Banned,Yes,ChatGPT,Brainstorming Ideas,7.4,Yes,3,29,14.0,3.92,89,31,3,Low,3,No,Yes
+S0657,19,Male,Indonesia,Private,Natural Sciences,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,13.5,3.48,72,0,1,Low,3,No,No
+S0658,21,Female,Indonesia,Public,Arts & Humanities,3,Allowed,Yes,DeepSeek,Assignments & Homework,5.4,No,3,36,16.7,3.2,57,22,8,High,3,No,Yes
+S0659,19,Female,Egypt,Private,Arts & Humanities,2,Banned,Yes,ChatGPT,Translation & Language,5.6,No,2,33,20.3,3.5,81,21,4,Medium,4,No,Yes
+S0660,22,Female,Indonesia,Private,Arts & Humanities,2,Allowed with disclosure,Yes,Perplexity,Assignments & Homework,2.4,No,3,4,17.6,2.19,48,18,1,Low,3,No,Yes
+S0661,20,Male,United Kingdom,Public,Engineering,1,Banned,Yes,ChatGPT,Writing & Editing,6.0,No,3,31,17.0,3.8,68,25,5,Medium,5,No,No
+S0662,20,Female,Nigeria,Private,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,11.9,No,3,29,15.5,3.21,82,30,7,High,4,No,No
+S0663,20,Male,United Kingdom,Public,Computer Science,2,Allowed with disclosure,Yes,Microsoft Copilot,Coding Help,6.3,No,4,11,20.2,3.56,73,21,2,Low,3,No,No
+S0664,18,Female,India,Public,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,4.3,No,3,9,23.8,3.31,57,24,5,Medium,3,No,Yes
+S0665,22,Female,Egypt,Public,Natural Sciences,4,Banned,Yes,ChatGPT,Writing & Editing,4.6,No,3,31,15.5,2.71,47,20,5,Medium,5,No,Yes
+S0666,21,Male,Pakistan,Private,Medicine & Health,3,Allowed with disclosure,Yes,ChatGPT,Coding Help,1.6,No,2,7,15.8,3.12,73,8,2,Low,2,No,Yes
+S0667,21,Female,India,Public,Computer Science,4,Banned,Yes,ChatGPT,Coding Help,7.4,No,5,30,21.4,3.9,88,40,5,Medium,4,Yes,Yes
+S0668,19,Female,Indonesia,Public,Engineering,2,No clear policy,Yes,ChatGPT,Translation & Language,0.8,No,2,15,13.7,3.05,64,10,2,Low,3,No,Yes
+S0669,22,Male,Egypt,Private,Computer Science,2,No clear policy,Yes,DeepSeek,Exam Prep,7.9,No,2,40,11.4,2.08,54,22,4,Medium,5,No,Yes
+S0670,20,Male,India,Private,Arts & Humanities,3,Allowed,Yes,Gemini,Writing & Editing,6.1,Yes,3,40,17.3,2.95,73,27,5,Medium,2,No,No
+S0671,21,Male,Egypt,Private,Medicine & Health,4,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,24.1,3.17,60,0,1,Low,5,No,No
+S0672,20,Male,Turkey,Public,Computer Science,3,Allowed,Yes,ChatGPT,Coding Help,5.9,No,3,31,19.2,2.76,54,25,7,High,3,No,No
+S0673,18,Male,Canada,Public,Engineering,1,No clear policy,Yes,Microsoft Copilot,Brainstorming Ideas,8.6,No,3,27,20.3,3.62,75,33,8,High,2,No,No
+S0674,20,Female,Germany,Public,Computer Science,3,Allowed,Yes,Perplexity,Coding Help,5.9,Yes,3,22,17.3,2.7,64,27,7,High,2,No,No
+S0675,22,Male,United States,Private,Natural Sciences,2,No clear policy,Yes,ChatGPT,Brainstorming Ideas,5.7,No,2,29,26.3,3.64,70,15,5,Medium,4,Yes,Yes
+S0676,18,Female,Pakistan,Private,Natural Sciences,1,Allowed with disclosure,Yes,Perplexity,Writing & Editing,5.4,No,2,24,20.4,2.59,57,14,5,Medium,3,Yes,Yes
+S0677,19,Female,Bangladesh,Public,Computer Science,1,Allowed,Yes,ChatGPT,Coding Help,6.2,No,3,19,20.7,3.51,82,17,1,Low,2,No,Yes
+S0678,21,Female,Bangladesh,Public,Engineering,4,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,12.9,Yes,1,44,16.5,2.83,44,27,8,High,2,Yes,No
+S0679,19,Female,Pakistan,Public,Computer Science,2,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,11.5,No,3,63,25.1,3.13,57,42,5,Medium,3,Yes,Yes
+S0680,20,Female,Pakistan,Public,Natural Sciences,3,Allowed,Yes,ChatGPT,Writing & Editing,7.1,No,3,35,16.3,3.23,50,26,6,Medium,2,No,Yes
+S0681,19,Male,India,Public,Engineering,2,Allowed with disclosure,Yes,Claude,Writing & Editing,9.7,No,4,50,21.6,2.61,79,22,4,Medium,3,No,Yes
+S0682,19,Male,United Kingdom,Public,Engineering,1,No clear policy,Yes,Gemini,Writing & Editing,9.7,No,2,50,21.3,2.93,58,32,3,Low,5,No,Yes
+S0683,22,Female,Canada,Public,Computer Science,3,Allowed,Yes,Gemini,Coding Help,13.7,Yes,5,60,18.2,3.63,82,45,7,High,2,No,Yes
+S0684,18,Male,Germany,Public,Social Sciences,1,Allowed with disclosure,Yes,Perplexity,Research & Summaries,6.9,No,1,17,19.9,2.61,51,29,5,Medium,3,No,Yes
+S0685,19,Male,United Kingdom,Public,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,4.3,No,2,13,14.9,3.48,78,24,2,Low,4,No,Yes
+S0686,20,Male,Canada,Private,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,1.8,Yes,1,15,19.1,2.24,40,21,1,Low,3,No,Yes
+S0687,21,Female,Turkey,Private,Social Sciences,3,No clear policy,Yes,ChatGPT,Research & Summaries,17.0,No,4,73,19.7,3.18,56,35,10,High,2,No,Yes
+S0688,20,Male,United States,Private,Business,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,10.6,No,2,50,17.7,2.7,54,38,8,High,1,No,Yes
+S0689,18,Female,Germany,Private,Natural Sciences,1,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,9.5,No,2,41,22.0,3.01,62,24,6,Medium,2,No,Yes
+S0690,21,Male,Indonesia,Private,Social Sciences,3,Allowed,Yes,Gemini,Research & Summaries,9.3,No,2,48,18.6,2.36,48,20,5,Medium,3,No,Yes
+S0691,22,Male,Pakistan,Public,Computer Science,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,22.3,3.06,53,0,1,Low,5,No,No
+S0692,19,Female,Germany,Private,Computer Science,1,Banned,Yes,ChatGPT,Coding Help,5.6,No,2,38,11.8,2.9,48,17,6,Medium,3,Yes,No
+S0693,20,Female,Canada,Private,Engineering,3,Allowed with disclosure,Yes,DeepSeek,Coding Help,10.7,No,2,39,17.1,3.06,65,20,8,High,4,No,Yes
+S0694,19,Female,United States,Private,Social Sciences,2,No clear policy,Yes,Microsoft Copilot,Exam Prep,4.5,Yes,1,12,12.2,2.39,42,24,3,Low,3,No,Yes
+S0695,21,Female,Brazil,Private,Computer Science,3,Allowed,Yes,Gemini,Coding Help,2.7,No,2,3,18.2,3.17,60,6,3,Low,2,No,Yes
+S0696,22,Female,Turkey,Private,Social Sciences,4,No clear policy,Yes,ChatGPT,Brainstorming Ideas,3.8,No,3,8,16.4,2.83,47,25,3,Low,3,No,Yes
+S0697,18,Female,Canada,Public,Medicine & Health,1,Allowed,Yes,DeepSeek,Research & Summaries,3.7,No,3,14,16.3,2.87,60,21,4,Medium,4,No,Yes
+S0698,19,Male,United Kingdom,Public,Medicine & Health,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,13.0,3.28,69,0,1,Low,3,No,No
+S0699,20,Female,Brazil,Private,Computer Science,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,9.2,No,1,42,27.8,3.14,64,23,5,Medium,3,Yes,Yes
+S0700,21,Female,Brazil,Private,Natural Sciences,4,No clear policy,Yes,Claude,Brainstorming Ideas,7.9,No,3,17,16.2,2.89,44,17,6,Medium,2,No,Yes
+S0701,21,Female,United States,Public,Medicine & Health,3,Allowed with disclosure,Yes,ChatGPT,Translation & Language,4.8,Yes,1,18,17.7,2.9,69,23,2,Low,2,No,No
+S0702,23,Male,Pakistan,Public,Natural Sciences,3,No clear policy,Yes,ChatGPT,Exam Prep,9.7,No,3,32,22.2,3.31,85,23,8,High,4,No,Yes
+S0703,23,Female,Egypt,Public,Engineering,4,No clear policy,Yes,ChatGPT,Assignments & Homework,8.5,No,3,21,14.2,3.55,74,34,7,High,3,No,No
+S0704,18,Female,United States,Public,Natural Sciences,1,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,9.6,No,4,28,13.9,3.36,66,24,6,Medium,4,No,Yes
+S0705,22,Male,India,Private,Computer Science,3,Banned,Yes,ChatGPT,Writing & Editing,5.9,No,2,25,17.3,2.94,68,25,4,Medium,5,No,No
+S0706,20,Female,India,Public,Business,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,19.4,3.23,59,0,1,Low,4,No,No
+S0707,19,Male,United States,Private,Engineering,2,Allowed,Yes,Gemini,Exam Prep,8.6,No,4,50,16.2,2.85,70,20,10,High,1,No,No
+S0708,21,Male,Germany,Private,Arts & Humanities,3,Allowed,Yes,ChatGPT,Brainstorming Ideas,2.4,No,2,27,18.7,2.26,45,0,5,Medium,3,No,No
+S0709,19,Female,United Kingdom,Public,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,8.3,No,3,37,18.2,2.59,52,34,7,High,3,No,Yes
+S0710,18,Male,United States,Private,Arts & Humanities,1,No clear policy,Yes,ChatGPT,Research & Summaries,13.5,No,2,61,24.3,3.79,54,26,9,High,4,No,No
+S0711,21,Male,Pakistan,Private,Business,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,19.3,3.23,61,0,1,Low,3,No,No
+S0712,19,Male,Egypt,Private,Engineering,1,Allowed,Yes,Gemini,Exam Prep,7.1,No,4,30,26.6,3.02,71,23,5,Medium,3,Yes,Yes
+S0713,23,Female,Pakistan,Private,Medicine & Health,3,Banned,Yes,DeepSeek,Writing & Editing,4.4,Yes,1,30,19.0,2.75,54,18,4,Medium,2,No,Yes
+S0714,22,Female,Indonesia,Public,Medicine & Health,4,Banned,No,No AI tool,No AI use,0.0,No,0,0,23.3,2.66,58,0,1,Low,3,No,No
+S0715,21,Female,Pakistan,Private,Engineering,1,Allowed with disclosure,Yes,Gemini,Brainstorming Ideas,3.7,No,2,33,14.7,3.05,62,23,6,Medium,3,No,Yes
+S0716,22,Male,United Kingdom,Private,Business,4,Banned,Yes,Gemini,Coding Help,6.5,Yes,3,35,17.9,3.59,72,28,7,High,4,No,Yes
+S0717,19,Male,Canada,Private,Computer Science,1,No clear policy,Yes,ChatGPT,Writing & Editing,2.6,No,3,2,15.1,3.42,49,26,1,Low,4,No,Yes
+S0718,21,Male,Nigeria,Public,Arts & Humanities,1,Allowed,Yes,ChatGPT,Translation & Language,19.2,Yes,4,73,17.4,3.45,59,53,10,High,4,Yes,Yes
+S0719,21,Female,Brazil,Private,Computer Science,2,No clear policy,Yes,DeepSeek,Research & Summaries,6.3,No,3,20,20.8,2.71,56,29,7,High,4,No,Yes
+S0720,19,Male,Pakistan,Private,Arts & Humanities,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,12.4,3.63,79,0,1,Low,4,No,No
+S0721,21,Male,Turkey,Public,Business,4,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,4.8,No,3,27,24.2,3.35,71,15,1,Low,4,No,Yes
+S0722,21,Female,Nigeria,Public,Natural Sciences,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,22.5,2.62,50,0,1,Low,3,No,No
+S0723,19,Female,Egypt,Public,Medicine & Health,1,Allowed,Yes,ChatGPT,Assignments & Homework,1.3,No,2,36,16.8,2.79,57,13,1,Low,2,Yes,No
+S0724,18,Female,Egypt,Public,Computer Science,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,16.6,3.69,73,0,1,Low,3,No,No
+S0725,23,Female,Brazil,Public,Natural Sciences,3,Allowed,Yes,Microsoft Copilot,Writing & Editing,9.0,Yes,4,33,21.9,3.06,75,40,7,High,3,No,Yes
+S0726,20,Male,Canada,Private,Medicine & Health,2,No clear policy,Yes,Microsoft Copilot,Assignments & Homework,3.9,No,2,9,14.1,2.74,51,23,4,Medium,5,No,Yes
+S0727,20,Female,Egypt,Public,Engineering,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,16.4,2.25,46,0,1,Low,4,No,No
+S0728,19,Male,Brazil,Private,Social Sciences,1,Allowed,Yes,ChatGPT,Writing & Editing,5.5,No,4,22,25.0,3.3,61,20,4,Medium,2,No,No
+S0729,22,Male,Germany,Public,Arts & Humanities,3,Allowed with disclosure,Yes,Perplexity,Exam Prep,1.7,No,2,20,20.9,3.53,70,16,1,Low,2,No,No
+S0730,19,Female,United Kingdom,Public,Business,2,Allowed with disclosure,Yes,Microsoft Copilot,Assignments & Homework,0.9,No,3,8,16.3,2.78,62,15,2,Low,3,No,Yes
+S0731,19,Female,United Kingdom,Public,Social Sciences,1,Allowed with disclosure,Yes,Gemini,Exam Prep,6.5,No,3,39,3.4,3.19,52,13,5,Medium,3,No,Yes
+S0732,19,Male,Nigeria,Public,Computer Science,2,Allowed with disclosure,Yes,DeepSeek,Coding Help,2.5,No,4,18,13.8,3.54,82,29,1,Low,3,No,Yes
+S0733,22,Female,Germany,Private,Engineering,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,15.3,2.46,49,0,1,Low,3,No,No
+S0734,20,Male,Pakistan,Public,Arts & Humanities,2,Allowed with disclosure,Yes,DeepSeek,Translation & Language,4.9,No,3,17,9.2,2.65,55,28,4,Medium,3,No,No
+S0735,19,Female,Pakistan,Private,Engineering,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,18.4,2.65,63,0,1,Low,5,No,No
+S0736,19,Male,United States,Private,Medicine & Health,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,14.5,2.34,52,0,1,Low,3,No,No
+S0737,19,Male,India,Private,Computer Science,2,Allowed,Yes,Gemini,Research & Summaries,5.0,No,2,32,11.8,3.19,51,18,5,Medium,4,No,No
+S0738,19,Male,Nigeria,Private,Arts & Humanities,2,No clear policy,Yes,ChatGPT,Assignments & Homework,8.7,No,2,39,13.5,3.02,74,27,3,Low,2,No,Yes
+S0739,20,Female,Egypt,Private,Medicine & Health,3,Allowed,No,No AI tool,No AI use,0.0,No,0,0,24.8,3.54,72,0,1,Low,4,No,No
+S0740,21,Male,India,Public,Computer Science,3,No clear policy,Yes,ChatGPT,Research & Summaries,3.4,Yes,3,15,13.4,2.68,52,32,5,Medium,4,No,Yes
+S0741,20,Female,Turkey,Public,Medicine & Health,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,12.4,2.68,37,0,1,Low,3,No,No
+S0742,18,Female,Bangladesh,Public,Arts & Humanities,1,Banned,Yes,DeepSeek,Assignments & Homework,10.7,No,3,49,15.6,3.58,58,24,7,High,3,No,Yes
+S0743,19,Female,Brazil,Private,Engineering,1,Allowed,Yes,ChatGPT,Writing & Editing,7.0,Yes,2,20,18.4,3.32,62,24,3,Low,2,No,No
+S0744,21,Male,Pakistan,Public,Engineering,3,Allowed with disclosure,Yes,Gemini,Assignments & Homework,5.3,No,3,30,22.6,3.27,52,26,6,Medium,4,No,No
+S0745,20,Male,Germany,Private,Computer Science,1,Allowed,Yes,Gemini,Exam Prep,3.9,No,3,21,13.4,2.93,71,3,4,Medium,2,Yes,No
+S0746,21,Male,United Kingdom,Private,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Coding Help,4.0,Yes,2,24,24.7,2.92,54,22,4,Medium,3,Yes,Yes
+S0747,18,Female,Turkey,Private,Natural Sciences,1,Banned,Yes,Gemini,Writing & Editing,3.1,Yes,3,8,15.6,3.11,61,34,5,Medium,5,No,No
+S0748,19,Male,Pakistan,Public,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,5.0,No,2,19,10.9,3.24,63,14,4,Medium,3,No,Yes
+S0749,21,Female,United Kingdom,Private,Computer Science,4,Allowed with disclosure,Yes,Other,Coding Help,20.4,No,4,70,13.5,3.16,67,25,10,High,2,No,Yes
+S0750,22,Male,Turkey,Public,Arts & Humanities,3,Allowed with disclosure,Yes,Claude,Assignments & Homework,7.2,No,2,34,24.6,3.25,84,26,5,Medium,2,No,No
+S0751,20,Male,Nigeria,Public,Business,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,9.1,2.7,61,0,1,Low,5,No,No
+S0752,21,Male,India,Private,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,2.2,No,2,18,19.5,3.07,56,17,3,Low,2,No,No
+S0753,22,Female,Turkey,Public,Arts & Humanities,4,No clear policy,Yes,ChatGPT,Exam Prep,11.8,No,2,51,23.5,3.09,53,33,7,High,2,No,No
+S0754,19,Male,India,Public,Engineering,2,Banned,Yes,Claude,Writing & Editing,2.0,No,3,11,27.0,3.24,59,15,2,Low,4,No,Yes
+S0755,20,Female,Pakistan,Public,Medicine & Health,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,17.4,2.45,56,0,1,Low,2,No,No
+S0756,21,Female,Pakistan,Public,Computer Science,1,Allowed with disclosure,Yes,Claude,Exam Prep,3.5,No,3,19,14.0,2.57,50,34,2,Low,2,No,Yes
+S0757,20,Male,Canada,Private,Arts & Humanities,2,Allowed,Yes,Gemini,Brainstorming Ideas,5.6,Yes,2,32,7.5,3.32,73,33,4,Medium,2,No,Yes
+S0758,21,Female,Turkey,Public,Social Sciences,3,Allowed with disclosure,Yes,Microsoft Copilot,Exam Prep,3.8,No,2,16,10.1,2.71,68,14,5,Medium,3,No,Yes
+S0759,18,Male,Indonesia,Public,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,3.6,No,2,9,20.7,3.0,57,25,1,Low,2,No,Yes
+S0760,23,Male,Brazil,Public,Social Sciences,3,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,4.3,No,2,21,21.4,2.84,61,12,5,Medium,4,No,No
+S0761,21,Female,Indonesia,Private,Engineering,4,Banned,Yes,ChatGPT,Research & Summaries,3.5,No,3,15,20.3,2.79,46,19,3,Low,3,No,Yes
+S0762,20,Male,Indonesia,Public,Natural Sciences,3,Allowed,Yes,ChatGPT,Brainstorming Ideas,2.1,Yes,2,14,18.3,3.31,81,24,2,Low,4,No,No
+S0763,19,Female,United Kingdom,Public,Natural Sciences,1,Allowed with disclosure,Yes,Gemini,Writing & Editing,9.8,No,2,45,15.3,2.64,70,30,8,High,4,No,Yes
+S0764,20,Female,Nigeria,Public,Engineering,1,Allowed,Yes,ChatGPT,Coding Help,9.2,No,3,25,13.2,3.17,67,36,9,High,4,No,Yes
+S0765,18,Female,Egypt,Public,Medicine & Health,1,Banned,Yes,DeepSeek,Writing & Editing,2.9,No,2,9,14.1,2.92,65,14,4,Medium,4,No,Yes
+S0766,20,Male,United Kingdom,Private,Social Sciences,3,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,7.2,No,2,25,24.7,3.0,55,24,6,Medium,2,No,Yes
+S0767,19,Female,India,Private,Arts & Humanities,1,Allowed with disclosure,Yes,DeepSeek,Writing & Editing,10.9,No,3,54,15.2,2.9,36,32,7,High,3,Yes,Yes
+S0768,19,Female,Indonesia,Private,Social Sciences,2,No clear policy,Yes,ChatGPT,Assignments & Homework,10.1,No,3,36,13.2,2.84,58,35,7,High,1,No,Yes
+S0769,19,Female,Pakistan,Private,Arts & Humanities,1,No clear policy,Yes,ChatGPT,Assignments & Homework,10.5,No,2,39,17.3,2.85,55,17,6,Medium,3,No,Yes
+S0770,21,Female,Germany,Private,Computer Science,3,Banned,Yes,Microsoft Copilot,Research & Summaries,5.0,No,4,24,20.8,3.47,75,14,1,Low,3,No,No
+S0771,20,Female,Indonesia,Public,Engineering,3,Allowed,Yes,ChatGPT,Assignments & Homework,7.4,No,3,46,23.3,2.97,58,33,6,Medium,4,No,Yes
+S0772,19,Male,Brazil,Public,Social Sciences,2,Banned,Yes,Gemini,Research & Summaries,8.2,No,4,30,12.3,2.87,60,28,6,Medium,4,No,Yes
+S0773,19,Male,Germany,Private,Social Sciences,1,Allowed with disclosure,Yes,Claude,Research & Summaries,2.7,No,2,33,12.8,2.43,40,15,8,High,4,No,No
+S0774,20,Male,United States,Public,Business,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,21.5,3.01,78,0,1,Low,4,No,No
+S0775,21,Male,India,Private,Business,4,Allowed with disclosure,Yes,ChatGPT,Coding Help,3.0,No,3,13,17.1,2.72,69,25,5,Medium,2,No,No
+S0776,24,Male,United Kingdom,Private,Computer Science,4,Banned,Yes,Other,Coding Help,2.7,No,3,15,12.6,3.08,76,16,3,Low,3,No,Yes
+S0777,22,Male,Brazil,Public,Natural Sciences,4,Banned,Yes,Claude,Writing & Editing,1.2,No,3,9,16.8,2.52,58,26,5,Medium,2,No,Yes
+S0778,21,Female,United Kingdom,Public,Computer Science,4,Allowed,Yes,ChatGPT,Coding Help,31.6,No,5,99,19.0,3.16,51,64,10,High,3,Yes,Yes
+S0779,20,Male,Canada,Private,Medicine & Health,3,Allowed with disclosure,Yes,Gemini,Research & Summaries,4.2,Yes,3,9,12.1,2.94,47,21,5,Medium,3,Yes,No
+S0780,19,Female,Egypt,Public,Natural Sciences,1,Allowed,Yes,Other,Assignments & Homework,12.1,No,3,39,22.7,3.3,51,33,7,High,3,Yes,Yes
+S0781,22,Male,Nigeria,Public,Business,4,No clear policy,Yes,ChatGPT,Writing & Editing,8.2,No,4,30,21.8,3.57,78,35,5,Medium,2,Yes,Yes
+S0782,18,Male,Brazil,Public,Business,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,2.2,No,3,32,20.0,3.2,83,18,4,Medium,3,No,Yes
+S0783,19,Male,Turkey,Private,Engineering,2,Banned,Yes,ChatGPT,Writing & Editing,5.0,No,2,37,13.9,3.33,72,16,8,High,3,No,Yes
+S0784,21,Female,United Kingdom,Private,Social Sciences,4,Allowed with disclosure,Yes,Microsoft Copilot,Assignments & Homework,1.3,No,3,15,22.3,3.11,70,26,1,Low,2,No,Yes
+S0785,23,Female,India,Private,Natural Sciences,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,14.6,Yes,3,57,23.2,3.05,56,50,5,Medium,5,No,Yes
+S0786,21,Female,Canada,Public,Business,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,4.1,No,2,17,22.4,2.7,62,3,4,Medium,4,No,Yes
+S0787,23,Male,Turkey,Private,Business,4,Banned,Yes,ChatGPT,Exam Prep,7.2,No,2,39,15.9,2.95,70,13,7,High,3,Yes,No
+S0788,19,Male,Egypt,Public,Natural Sciences,1,No clear policy,Yes,Gemini,Writing & Editing,5.1,No,3,33,21.7,2.93,51,27,4,Medium,4,No,No
+S0789,20,Female,Pakistan,Public,Engineering,1,Banned,Yes,ChatGPT,Exam Prep,1.2,Yes,3,14,15.7,2.76,55,31,3,Low,3,No,Yes
+S0790,21,Male,United Kingdom,Private,Computer Science,1,Allowed with disclosure,Yes,Gemini,Coding Help,18.2,No,3,56,13.3,2.88,47,24,7,High,3,No,Yes
+S0791,22,Male,Pakistan,Private,Computer Science,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,24.7,3.13,68,0,1,Low,5,No,No
+S0792,18,Male,United Kingdom,Public,Social Sciences,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,20.8,2.8,63,0,1,Low,4,No,No
+S0793,19,Male,United States,Private,Social Sciences,2,No clear policy,Yes,ChatGPT,Writing & Editing,8.7,Yes,3,18,19.6,3.4,55,28,2,Low,3,No,No
+S0794,21,Male,India,Private,Business,2,Allowed,Yes,ChatGPT,Coding Help,3.6,No,2,16,15.3,3.57,67,19,1,Low,2,Yes,Yes
+S0795,22,Female,Egypt,Public,Computer Science,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,4.4,No,2,20,16.7,3.21,62,23,3,Low,3,No,No
+S0796,20,Female,Brazil,Public,Social Sciences,3,Banned,Yes,ChatGPT,Translation & Language,4.2,No,3,24,16.5,2.4,62,13,6,Medium,5,No,No
+S0797,21,Female,United States,Public,Natural Sciences,3,Banned,Yes,ChatGPT,Assignments & Homework,12.4,No,3,36,15.7,3.06,56,21,5,Medium,5,No,No
+S0798,19,Female,Canada,Public,Natural Sciences,2,Banned,Yes,Claude,Assignments & Homework,3.9,No,3,5,18.6,3.0,65,18,1,Low,5,No,Yes
+S0799,19,Male,India,Public,Natural Sciences,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,8.2,3.08,65,0,1,Low,5,No,No
+S0800,21,Female,India,Public,Natural Sciences,4,No clear policy,Yes,ChatGPT,Research & Summaries,11.7,No,3,53,20.7,3.9,84,37,8,High,3,No,No
+S0801,20,Female,Canada,Public,Computer Science,3,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,5.6,No,3,44,16.8,2.63,50,26,1,Low,3,Yes,Yes
+S0802,23,Female,Nigeria,Public,Engineering,4,Banned,No,No AI tool,No AI use,0.0,No,0,0,18.8,2.75,54,0,1,Low,4,No,No
+S0803,19,Female,Canada,Private,Engineering,1,Banned,Yes,ChatGPT,Coding Help,3.6,No,2,19,15.7,3.0,56,18,2,Low,5,No,Yes
+S0804,22,Male,United States,Private,Arts & Humanities,4,Allowed,No,No AI tool,No AI use,0.0,No,0,0,23.7,3.11,67,0,1,Low,2,No,No
+S0805,21,Female,India,Private,Engineering,4,No clear policy,Yes,Claude,Coding Help,1.9,Yes,3,13,18.6,2.75,56,25,3,Low,5,No,Yes
+S0806,23,Male,United States,Public,Medicine & Health,4,No clear policy,Yes,ChatGPT,Assignments & Homework,5.3,Yes,2,26,23.2,3.64,89,15,4,Medium,4,Yes,Yes
+S0807,19,Male,Brazil,Public,Computer Science,2,Banned,Yes,Other,Writing & Editing,8.4,No,3,57,13.0,2.92,50,22,4,Medium,3,Yes,Yes
+S0808,20,Male,Turkey,Public,Engineering,3,Allowed,Yes,ChatGPT,Brainstorming Ideas,8.2,No,4,26,23.8,3.21,69,37,5,Medium,3,No,Yes
+S0809,19,Male,Indonesia,Public,Business,2,No clear policy,Yes,ChatGPT,Coding Help,0.9,No,2,2,13.7,3.16,64,27,1,Low,2,No,Yes
+S0810,20,Female,Egypt,Private,Business,3,No clear policy,Yes,Microsoft Copilot,Assignments & Homework,6.1,No,2,33,20.7,3.36,82,21,4,Medium,2,No,No
+S0811,19,Female,Bangladesh,Public,Arts & Humanities,1,Allowed with disclosure,Yes,Claude,Assignments & Homework,5.1,No,3,15,16.4,2.74,52,28,2,Low,4,No,Yes
+S0812,23,Female,Turkey,Public,Computer Science,3,No clear policy,Yes,ChatGPT,Assignments & Homework,9.6,No,4,45,27.9,2.86,67,43,6,Medium,2,No,Yes
+S0813,19,Female,Egypt,Public,Medicine & Health,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,6.9,No,3,28,17.8,2.92,72,27,6,Medium,3,Yes,Yes
+S0814,18,Female,India,Public,Arts & Humanities,1,No clear policy,Yes,Claude,Assignments & Homework,4.9,No,3,25,18.7,2.71,50,30,3,Low,3,Yes,No
+S0815,19,Female,Pakistan,Public,Natural Sciences,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,6.4,No,4,19,14.2,3.54,76,25,4,Medium,2,No,Yes
+S0816,20,Female,Pakistan,Public,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,7.0,No,2,18,16.5,3.32,69,24,4,Medium,4,No,No
+S0817,18,Female,Canada,Private,Natural Sciences,1,No clear policy,Yes,ChatGPT,Research & Summaries,7.4,No,3,31,24.1,3.62,72,10,7,High,3,No,Yes
+S0818,21,Male,Canada,Public,Natural Sciences,3,Allowed,No,No AI tool,No AI use,0.0,No,0,0,16.6,3.33,74,0,1,Low,2,No,No
+S0819,20,Male,India,Public,Engineering,3,No clear policy,Yes,ChatGPT,Exam Prep,6.5,Yes,4,17,20.7,3.11,58,25,2,Low,3,No,Yes
+S0820,23,Male,Egypt,Public,Engineering,4,No clear policy,Yes,ChatGPT,Assignments & Homework,6.2,No,3,25,15.9,3.44,75,30,5,Medium,3,No,Yes
+S0821,22,Female,India,Public,Medicine & Health,4,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,6.6,No,2,26,18.3,3.23,71,23,2,Low,2,No,Yes
+S0822,18,Female,Brazil,Public,Natural Sciences,1,Allowed with disclosure,Yes,DeepSeek,Research & Summaries,6.7,No,3,36,21.9,3.51,70,26,7,High,5,No,No
+S0823,20,Female,India,Private,Engineering,3,No clear policy,Yes,Claude,Exam Prep,2.9,No,3,27,23.5,3.53,77,32,4,Medium,2,Yes,Yes
+S0824,19,Female,Brazil,Public,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,16.4,No,4,55,9.5,2.88,59,22,9,High,3,No,Yes
+S0825,21,Female,Pakistan,Public,Medicine & Health,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,2.7,No,3,14,18.2,2.46,58,23,6,Medium,2,No,Yes
+S0826,18,Female,Germany,Private,Business,1,No clear policy,Yes,Claude,Research & Summaries,2.8,No,2,8,17.0,3.38,70,18,5,Medium,3,No,Yes
+S0827,18,Male,Bangladesh,Public,Natural Sciences,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,14.7,2.62,31,0,1,Low,2,No,No
+S0828,23,Female,Nigeria,Public,Business,4,Allowed with disclosure,Yes,Gemini,Research & Summaries,6.9,No,2,33,18.1,3.3,72,19,5,Medium,1,No,Yes
+S0829,20,Female,Indonesia,Public,Engineering,3,No clear policy,Yes,Gemini,Coding Help,5.4,No,3,25,27.0,3.87,75,21,6,Medium,3,Yes,Yes
+S0830,19,Female,Bangladesh,Private,Social Sciences,1,Allowed,Yes,ChatGPT,Brainstorming Ideas,2.8,No,3,19,13.2,2.97,54,16,3,Low,4,No,Yes
+S0831,20,Female,Egypt,Public,Computer Science,3,No clear policy,Yes,ChatGPT,Writing & Editing,17.5,Yes,3,70,18.2,2.8,45,52,10,High,2,No,Yes
+S0832,20,Male,United States,Public,Natural Sciences,2,Banned,Yes,ChatGPT,Assignments & Homework,1.0,No,3,21,9.7,3.1,61,23,2,Low,3,No,Yes
+S0833,22,Female,United States,Private,Arts & Humanities,2,Banned,Yes,ChatGPT,Writing & Editing,3.0,No,3,17,19.6,3.35,70,18,7,High,3,No,Yes
+S0834,20,Male,India,Public,Computer Science,3,No clear policy,Yes,ChatGPT,Brainstorming Ideas,11.9,No,3,52,17.1,2.99,73,32,6,Medium,4,No,No
+S0835,21,Male,Pakistan,Public,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,11.5,No,4,33,11.4,2.8,53,43,6,Medium,3,No,No
+S0836,21,Female,Pakistan,Private,Arts & Humanities,2,Banned,Yes,ChatGPT,Exam Prep,3.6,No,2,37,21.6,3.92,75,33,7,High,5,No,Yes
+S0837,20,Male,Turkey,Private,Computer Science,2,No clear policy,Yes,ChatGPT,Research & Summaries,8.4,No,4,39,15.6,2.95,65,25,4,Medium,4,No,No
+S0838,20,Male,Pakistan,Private,Business,3,No clear policy,Yes,Gemini,Writing & Editing,3.7,No,2,3,19.4,2.29,53,13,4,Medium,3,No,No
+S0839,20,Female,Nigeria,Public,Arts & Humanities,1,No clear policy,Yes,Microsoft Copilot,Brainstorming Ideas,12.8,No,4,46,23.4,3.71,63,28,6,Medium,2,No,Yes
+S0840,21,Female,Germany,Private,Computer Science,3,Banned,Yes,ChatGPT,Brainstorming Ideas,3.4,No,3,7,21.8,2.2,47,26,1,Low,3,No,No
+S0841,20,Male,Germany,Public,Computer Science,3,Allowed,Yes,DeepSeek,Assignments & Homework,4.5,Yes,5,20,18.5,3.31,61,15,2,Low,2,No,No
+S0842,18,Male,United States,Private,Engineering,1,Allowed,Yes,ChatGPT,Coding Help,7.3,No,3,19,16.9,2.62,43,14,3,Low,1,No,No
+S0843,19,Female,Pakistan,Private,Computer Science,2,Banned,Yes,ChatGPT,Coding Help,8.9,No,3,41,16.3,2.93,66,26,6,Medium,3,No,Yes
+S0844,18,Female,India,Private,Computer Science,1,No clear policy,Yes,Microsoft Copilot,Exam Prep,5.2,No,3,21,15.8,2.92,74,25,5,Medium,3,No,No
+S0845,19,Male,Nigeria,Private,Business,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,0.9,No,4,9,17.0,3.4,83,23,2,Low,3,No,Yes
+S0846,19,Male,Indonesia,Private,Business,2,Allowed,Yes,ChatGPT,Writing & Editing,8.9,No,4,34,19.1,3.28,70,42,6,Medium,5,Yes,Yes
+S0847,21,Female,United States,Public,Arts & Humanities,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,4.1,No,2,18,15.6,3.03,54,28,5,Medium,3,Yes,Yes
+S0848,20,Female,United States,Public,Arts & Humanities,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,15.5,2.23,54,0,1,Low,3,No,No
+S0849,21,Female,Turkey,Public,Computer Science,4,Allowed,Yes,ChatGPT,Coding Help,6.8,No,3,46,19.7,2.87,56,36,6,Medium,5,Yes,Yes
+S0850,22,Female,Pakistan,Private,Business,4,No clear policy,Yes,ChatGPT,Assignments & Homework,15.0,No,2,43,18.4,3.43,62,25,7,High,3,No,No
+S0851,18,Male,Germany,Public,Computer Science,1,Banned,Yes,ChatGPT,Writing & Editing,9.6,No,5,36,24.2,3.37,69,17,6,Medium,4,No,Yes
+S0852,20,Male,Egypt,Private,Engineering,3,Allowed,Yes,ChatGPT,Exam Prep,6.3,No,5,41,15.2,3.31,76,21,3,Low,3,No,Yes
+S0853,20,Male,United States,Public,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,8.1,No,4,20,18.9,3.24,69,35,5,Medium,1,No,Yes
+S0854,19,Male,India,Private,Business,2,Allowed,Yes,ChatGPT,Translation & Language,11.6,No,3,41,12.2,2.95,44,35,8,High,4,No,Yes
+S0855,19,Female,Bangladesh,Public,Computer Science,1,Allowed with disclosure,Yes,Gemini,Exam Prep,9.3,No,4,39,17.1,3.29,64,31,9,High,2,No,No
+S0856,19,Male,Germany,Public,Arts & Humanities,1,Allowed with disclosure,Yes,Gemini,Research & Summaries,7.6,No,3,31,17.5,3.46,55,48,6,Medium,2,Yes,Yes
+S0857,21,Female,Indonesia,Private,Business,3,Allowed with disclosure,Yes,ChatGPT,Coding Help,7.0,No,1,35,25.5,2.66,50,22,3,Low,2,No,No
+S0858,19,Female,Brazil,Public,Computer Science,1,Allowed with disclosure,Yes,Microsoft Copilot,Research & Summaries,10.3,Yes,5,47,19.0,3.19,85,34,8,High,3,No,Yes
+S0859,21,Male,Bangladesh,Public,Business,2,No clear policy,Yes,ChatGPT,Translation & Language,5.0,No,3,32,10.3,2.95,54,33,1,Low,4,No,Yes
+S0860,24,Male,United States,Private,Social Sciences,4,No clear policy,Yes,ChatGPT,Exam Prep,1.9,No,2,11,28.9,3.15,64,16,2,Low,3,No,Yes
+S0861,20,Female,Nigeria,Private,Business,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,18.7,3.19,73,0,1,Low,2,No,No
+S0862,19,Female,Germany,Public,Business,1,No clear policy,Yes,Gemini,Research & Summaries,2.9,No,3,33,13.1,3.33,53,16,6,Medium,2,No,Yes
+S0863,21,Male,Pakistan,Public,Social Sciences,4,No clear policy,Yes,ChatGPT,Assignments & Homework,1.8,No,2,12,22.8,3.17,71,16,2,Low,3,No,Yes
+S0864,21,Male,Germany,Private,Computer Science,3,Allowed,Yes,ChatGPT,Coding Help,7.4,No,4,33,16.8,3.51,83,30,5,Medium,3,Yes,Yes
+S0865,20,Female,Brazil,Public,Arts & Humanities,3,No clear policy,Yes,ChatGPT,Exam Prep,4.1,No,3,39,13.0,3.03,74,17,5,Medium,3,No,No
+S0866,18,Male,Pakistan,Public,Arts & Humanities,1,Allowed with disclosure,Yes,Gemini,Assignments & Homework,9.9,No,2,57,24.5,3.56,76,25,10,High,4,No,No
+S0867,24,Male,Canada,Private,Engineering,4,No clear policy,Yes,Claude,Assignments & Homework,5.2,No,2,25,17.8,2.31,60,7,5,Medium,3,No,Yes
+S0868,20,Female,Pakistan,Private,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,9.6,No,3,32,23.7,3.03,74,16,6,Medium,2,No,Yes
+S0869,19,Male,Pakistan,Public,Medicine & Health,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,13.2,2.82,72,0,1,Low,2,No,No
+S0870,21,Female,United Kingdom,Public,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,6.3,No,2,11,15.8,2.92,63,15,6,Medium,4,No,No
+S0871,19,Male,Canada,Public,Engineering,1,No clear policy,Yes,ChatGPT,Exam Prep,19.3,No,5,79,12.3,3.41,63,51,10,High,1,Yes,Yes
+S0872,20,Prefer not to say,Germany,Private,Business,1,Allowed,Yes,ChatGPT,Translation & Language,9.8,No,3,44,13.2,2.72,60,30,6,Medium,2,Yes,Yes
+S0873,18,Female,Germany,Public,Arts & Humanities,1,No clear policy,Yes,ChatGPT,Exam Prep,4.6,No,3,11,29.1,3.33,76,17,3,Low,2,No,No
+S0874,18,Female,Pakistan,Public,Arts & Humanities,1,Allowed,Yes,DeepSeek,Translation & Language,4.2,No,2,11,26.9,2.85,72,15,5,Medium,2,No,Yes
+S0875,21,Female,Germany,Public,Natural Sciences,4,Allowed,No,No AI tool,No AI use,0.0,No,0,0,21.3,2.66,55,0,1,Low,2,No,No
+S0876,21,Female,United Kingdom,Public,Business,3,No clear policy,Yes,Gemini,Exam Prep,7.2,No,3,32,18.1,3.27,54,33,5,Medium,5,Yes,Yes
+S0877,20,Female,Pakistan,Private,Engineering,2,Allowed,Yes,Gemini,Writing & Editing,0.6,No,4,17,18.1,2.97,64,20,1,Low,4,No,Yes
+S0878,19,Female,Canada,Private,Arts & Humanities,2,Allowed with disclosure,Yes,DeepSeek,Translation & Language,1.1,No,2,4,17.9,3.23,64,14,2,Low,4,No,No
+S0879,21,Female,India,Public,Business,4,Allowed,No,No AI tool,No AI use,0.0,No,0,0,22.3,3.04,63,0,1,Low,3,No,No
+S0880,20,Female,United States,Private,Social Sciences,2,No clear policy,Yes,ChatGPT,Exam Prep,7.3,No,3,34,14.5,3.46,71,26,4,Medium,2,No,Yes
+S0881,21,Female,United States,Private,Social Sciences,2,Allowed with disclosure,Yes,Gemini,Research & Summaries,4.5,No,2,32,18.9,2.55,44,27,6,Medium,4,No,No
+S0882,18,Female,Nigeria,Public,Business,1,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,3.0,No,3,7,15.8,2.91,60,24,3,Low,2,No,Yes
+S0883,18,Female,Turkey,Public,Computer Science,1,Banned,Yes,ChatGPT,Coding Help,4.3,No,2,21,22.1,3.06,51,27,2,Low,2,No,Yes
+S0884,20,Male,Canada,Public,Business,1,Banned,Yes,ChatGPT,Writing & Editing,5.0,Yes,2,32,18.3,2.95,72,30,3,Low,4,No,Yes
+S0885,21,Male,India,Public,Social Sciences,2,Allowed with disclosure,Yes,Microsoft Copilot,Translation & Language,3.3,Yes,2,2,13.8,2.66,42,24,5,Medium,2,No,Yes
+S0886,20,Male,India,Public,Arts & Humanities,2,Banned,Yes,ChatGPT,Assignments & Homework,2.8,No,3,18,23.0,3.49,74,17,8,High,5,No,No
+S0887,20,Male,United States,Public,Business,2,Allowed,Yes,Claude,Exam Prep,2.8,No,2,20,18.7,3.34,62,4,3,Low,2,No,No
+S0888,20,Male,Bangladesh,Private,Social Sciences,3,Allowed,No,No AI tool,No AI use,0.0,No,0,0,17.9,2.93,55,0,1,Low,2,No,No
+S0889,19,Female,Brazil,Public,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,4.5,No,4,18,13.4,3.47,69,28,3,Low,3,No,Yes
+S0890,19,Female,United Kingdom,Private,Arts & Humanities,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,19.4,2.96,65,0,1,Low,5,No,No
+S0891,21,Female,United States,Private,Engineering,4,No clear policy,Yes,ChatGPT,Research & Summaries,12.0,No,4,48,15.3,2.21,39,29,6,Medium,4,Yes,No
+S0892,21,Female,Germany,Private,Engineering,3,Banned,Yes,Gemini,Writing & Editing,2.1,No,3,2,20.3,3.11,53,16,2,Low,5,No,No
+S0893,22,Male,United States,Private,Natural Sciences,3,Allowed,Yes,Perplexity,Translation & Language,6.7,No,4,27,22.9,3.79,81,30,5,Medium,3,No,Yes
+S0894,21,Female,Turkey,Public,Social Sciences,2,Banned,Yes,Gemini,Assignments & Homework,4.9,No,4,23,11.6,2.33,34,26,1,Low,3,Yes,Yes
+S0895,19,Male,Brazil,Public,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Exam Prep,2.3,No,3,6,16.8,3.26,68,16,1,Low,3,No,Yes
+S0896,22,Male,Canada,Public,Business,4,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,23.6,3.62,69,0,1,Low,3,No,No
+S0897,22,Male,Egypt,Private,Business,2,Allowed with disclosure,Yes,ChatGPT,Exam Prep,11.1,No,3,60,23.3,2.94,55,34,10,High,2,No,Yes
+S0898,20,Female,Nigeria,Private,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,2.7,No,1,19,18.0,2.38,42,18,5,Medium,4,No,Yes
+S0899,20,Female,Nigeria,Public,Medicine & Health,2,Allowed with disclosure,Yes,Other,Research & Summaries,6.5,No,3,38,13.9,2.6,54,23,6,Medium,3,No,Yes
+S0900,18,Male,Canada,Public,Engineering,1,No clear policy,Yes,DeepSeek,Translation & Language,3.8,No,3,25,14.0,3.29,73,29,5,Medium,3,No,Yes
+S0901,19,Female,Nigeria,Public,Computer Science,2,Allowed,Yes,Gemini,Coding Help,10.6,No,3,58,16.1,2.86,49,9,10,High,1,No,No
+S0902,19,Male,Egypt,Private,Business,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,16.8,2.27,55,0,1,Low,2,No,No
+S0903,18,Male,United States,Private,Computer Science,1,No clear policy,Yes,Other,Coding Help,7.6,Yes,2,19,13.7,2.13,43,17,4,Medium,3,No,Yes
+S0904,21,Female,Bangladesh,Private,Social Sciences,4,No clear policy,Yes,ChatGPT,Exam Prep,19.5,No,3,71,21.7,2.47,43,39,10,High,2,No,Yes
+S0905,19,Female,Pakistan,Public,Business,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,20.3,3.59,67,0,1,Low,1,No,No
+S0906,19,Male,Egypt,Public,Business,2,Allowed,Yes,ChatGPT,Exam Prep,8.1,No,4,20,16.6,2.83,46,26,3,Low,4,No,Yes
+S0907,20,Female,Pakistan,Public,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,3.9,No,1,2,21.2,3.11,46,7,2,Low,2,No,Yes
+S0908,20,Female,Indonesia,Private,Social Sciences,2,No clear policy,Yes,ChatGPT,Writing & Editing,2.0,No,2,19,11.5,3.36,72,11,1,Low,3,No,Yes
+S0909,21,Female,Bangladesh,Public,Social Sciences,4,Banned,Yes,DeepSeek,Assignments & Homework,6.0,Yes,3,26,11.8,2.45,53,23,3,Low,4,No,Yes
+S0910,23,Female,Egypt,Public,Computer Science,3,No clear policy,Yes,Gemini,Exam Prep,6.3,Yes,4,31,9.8,2.69,61,39,3,Low,2,No,Yes
+S0911,20,Male,Pakistan,Private,Arts & Humanities,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,11.7,2.6,66,0,1,Low,5,No,No
+S0912,20,Male,India,Public,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,8.6,No,3,46,19.2,2.9,69,33,5,Medium,3,No,Yes
+S0913,22,Male,Canada,Private,Computer Science,3,Banned,Yes,ChatGPT,Assignments & Homework,2.4,No,3,25,16.0,2.93,57,13,6,Medium,4,No,Yes
+S0914,18,Male,United States,Private,Computer Science,1,No clear policy,Yes,ChatGPT,Coding Help,10.1,No,2,46,14.0,2.91,67,25,8,High,3,No,Yes
+S0915,21,Male,United States,Public,Natural Sciences,4,Allowed,Yes,Gemini,Assignments & Homework,1.6,No,2,18,28.2,3.69,51,22,3,Low,3,No,No
+S0916,21,Male,India,Public,Engineering,2,No clear policy,Yes,ChatGPT,Research & Summaries,4.7,No,4,31,12.3,2.85,62,37,3,Low,3,No,No
+S0917,20,Female,Pakistan,Public,Natural Sciences,1,Allowed with disclosure,Yes,Gemini,Writing & Editing,8.1,No,3,30,22.0,2.81,57,22,4,Medium,4,No,Yes
+S0918,19,Female,Turkey,Public,Natural Sciences,2,Allowed,Yes,ChatGPT,Writing & Editing,7.4,No,3,21,21.3,3.3,73,9,5,Medium,1,Yes,No
+S0919,22,Female,Germany,Public,Computer Science,2,Allowed with disclosure,Yes,Claude,Assignments & Homework,3.9,No,4,3,14.6,3.29,76,30,1,Low,2,No,No
+S0920,21,Male,Canada,Private,Social Sciences,4,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,1.1,Yes,3,16,14.7,2.93,70,19,1,Low,3,No,Yes
+S0921,20,Male,Bangladesh,Private,Social Sciences,1,Allowed,Yes,ChatGPT,Research & Summaries,5.2,Yes,3,30,11.5,2.99,47,37,8,High,3,Yes,No
+S0922,21,Male,United States,Private,Business,2,No clear policy,Yes,ChatGPT,Translation & Language,6.2,Yes,2,40,13.9,3.03,56,36,7,High,4,No,Yes
+S0923,21,Prefer not to say,Indonesia,Private,Natural Sciences,4,Banned,Yes,ChatGPT,Exam Prep,3.6,No,3,19,20.5,3.12,60,27,3,Low,3,Yes,No
+S0924,21,Female,Indonesia,Private,Business,3,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,2.7,No,2,3,22.9,2.96,69,20,3,Low,3,No,No
+S0925,19,Female,Germany,Public,Business,2,Banned,Yes,Gemini,Assignments & Homework,4.1,No,2,31,14.5,2.73,49,15,4,Medium,4,No,No
+S0926,22,Female,Nigeria,Public,Computer Science,4,Allowed with disclosure,Yes,Gemini,Coding Help,1.4,No,4,6,18.1,3.34,67,17,3,Low,2,No,No
+S0927,18,Male,Pakistan,Public,Business,1,Banned,Yes,Gemini,Writing & Editing,5.4,No,2,33,17.2,2.71,61,23,3,Low,3,No,Yes
+S0928,20,Female,Bangladesh,Private,Computer Science,3,Banned,Yes,Microsoft Copilot,Research & Summaries,4.3,No,3,22,17.7,3.32,67,1,3,Low,4,No,Yes
+S0929,18,Male,United Kingdom,Public,Social Sciences,1,No clear policy,Yes,ChatGPT,Assignments & Homework,11.8,No,3,32,19.1,2.53,61,38,5,Medium,2,No,No
+S0930,18,Female,United States,Public,Computer Science,1,Banned,Yes,DeepSeek,Exam Prep,3.2,No,4,14,12.3,2.49,50,17,4,Medium,3,No,Yes
+S0931,23,Female,India,Public,Business,4,Banned,No,No AI tool,No AI use,0.0,No,0,0,14.3,2.34,68,0,1,Low,4,No,No
+S0932,21,Male,Brazil,Public,Social Sciences,4,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,10.7,No,2,44,15.1,2.98,66,18,6,Medium,3,No,Yes
+S0933,20,Female,India,Public,Arts & Humanities,3,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,20.4,2.92,47,0,1,Low,3,Yes,No
+S0934,19,Male,Indonesia,Public,Medicine & Health,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,23.1,3.27,72,0,1,Low,1,No,No
+S0935,22,Male,India,Private,Business,4,No clear policy,Yes,ChatGPT,Research & Summaries,3.3,No,2,22,18.8,3.36,53,15,2,Low,3,No,Yes
+S0936,20,Female,Brazil,Public,Business,2,Allowed,Yes,ChatGPT,Assignments & Homework,8.9,No,2,42,27.8,3.25,58,36,7,High,2,Yes,Yes
+S0937,19,Female,United Kingdom,Private,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Exam Prep,7.0,No,2,22,22.4,3.19,54,16,4,Medium,4,No,No
+S0938,18,Female,Brazil,Private,Social Sciences,1,No clear policy,Yes,Claude,Coding Help,2.5,No,3,28,14.4,2.16,45,33,3,Low,4,No,No
+S0939,20,Male,United States,Private,Business,2,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,4.0,No,2,17,17.1,3.09,83,36,6,Medium,4,No,Yes
+S0940,19,Female,Bangladesh,Private,Arts & Humanities,1,Banned,Yes,Gemini,Brainstorming Ideas,8.0,Yes,4,22,12.2,2.77,67,29,4,Medium,4,No,Yes
+S0941,19,Male,Nigeria,Public,Engineering,2,Allowed with disclosure,Yes,Gemini,Research & Summaries,11.4,No,2,43,8.0,2.62,43,33,7,High,3,No,Yes
+S0942,19,Male,Egypt,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,7.3,No,3,32,18.1,3.19,62,19,4,Medium,4,No,Yes
+S0943,21,Female,Nigeria,Private,Arts & Humanities,3,Banned,Yes,Claude,Research & Summaries,6.1,No,4,31,23.2,3.44,67,24,4,Medium,3,No,Yes
+S0944,20,Male,Pakistan,Private,Social Sciences,3,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,5.4,No,2,17,22.4,2.91,55,11,1,Low,3,No,No
+S0945,22,Male,Pakistan,Public,Medicine & Health,4,Banned,Yes,Gemini,Exam Prep,1.6,No,3,22,23.7,3.78,77,19,5,Medium,3,No,Yes
+S0946,22,Male,India,Public,Computer Science,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,8.4,No,3,23,14.3,3.55,73,30,5,Medium,4,No,Yes
+S0947,19,Female,Bangladesh,Private,Natural Sciences,1,Allowed,Yes,Microsoft Copilot,Coding Help,17.1,Yes,4,60,10.6,3.88,67,48,10,High,3,No,No
+S0948,22,Female,Pakistan,Public,Natural Sciences,4,Allowed,Yes,ChatGPT,Research & Summaries,6.3,No,3,12,22.1,3.18,67,28,4,Medium,2,No,Yes
+S0949,23,Female,Egypt,Public,Computer Science,4,No clear policy,Yes,ChatGPT,Exam Prep,9.3,No,3,38,19.3,3.53,73,24,5,Medium,3,No,Yes
+S0950,19,Female,India,Public,Engineering,2,Banned,Yes,Microsoft Copilot,Assignments & Homework,3.2,No,2,8,23.1,2.93,47,7,3,Low,5,Yes,Yes
+S0951,21,Female,United States,Public,Engineering,2,Allowed with disclosure,Yes,Microsoft Copilot,Coding Help,10.2,No,3,51,22.4,3.02,57,33,4,Medium,5,Yes,No
+S0952,19,Female,Pakistan,Public,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,3.8,No,3,9,19.5,3.33,60,10,1,Low,5,No,Yes
+S0953,18,Female,India,Public,Computer Science,1,No clear policy,Yes,DeepSeek,Exam Prep,5.0,No,3,25,10.6,3.15,65,21,5,Medium,3,No,No
+S0954,20,Female,United Kingdom,Public,Computer Science,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,2.3,No,2,20,9.7,2.18,40,24,4,Medium,2,No,Yes
+S0955,21,Female,United States,Public,Engineering,2,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,15.6,No,4,62,13.3,3.14,41,47,8,High,1,No,Yes
+S0956,19,Male,Pakistan,Public,Business,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,3.6,No,2,12,12.9,3.0,47,23,4,Medium,3,No,Yes
+S0957,24,Female,Brazil,Private,Engineering,4,No clear policy,Yes,ChatGPT,Assignments & Homework,9.3,No,3,28,16.8,3.34,73,35,4,Medium,1,No,Yes
+S0958,21,Male,Egypt,Public,Engineering,4,Allowed,Yes,Perplexity,Writing & Editing,19.5,Yes,3,66,22.0,2.94,54,34,10,High,2,No,Yes
+S0959,19,Male,India,Public,Medicine & Health,2,Allowed,Yes,Gemini,Assignments & Homework,4.2,No,3,33,22.5,3.07,51,26,3,Low,3,No,Yes
+S0960,21,Male,India,Public,Engineering,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,11.0,2.93,53,0,1,Low,4,No,No
+S0961,20,Male,Brazil,Private,Medicine & Health,2,No clear policy,Yes,ChatGPT,Exam Prep,12.4,No,2,52,18.3,3.1,63,33,9,High,3,Yes,Yes
+S0962,18,Male,United States,Public,Business,1,No clear policy,Yes,ChatGPT,Exam Prep,1.2,No,2,22,16.9,3.21,62,10,1,Low,1,Yes,Yes
+S0963,21,Male,Pakistan,Private,Engineering,2,No clear policy,Yes,ChatGPT,Writing & Editing,5.0,Yes,3,18,25.0,2.74,53,29,1,Low,3,No,Yes
+S0964,20,Female,Pakistan,Public,Computer Science,1,Allowed,Yes,Gemini,Research & Summaries,6.4,No,3,41,13.6,3.06,50,17,2,Low,4,No,Yes
+S0965,21,Male,Egypt,Public,Computer Science,3,No clear policy,Yes,Gemini,Research & Summaries,11.0,No,3,31,11.7,3.08,61,22,9,High,2,No,Yes
+S0966,21,Male,Brazil,Private,Engineering,4,No clear policy,Yes,ChatGPT,Writing & Editing,4.7,No,2,20,19.5,2.69,55,8,3,Low,3,No,Yes
+S0967,18,Female,United Kingdom,Public,Social Sciences,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,19.3,3.23,59,0,1,Low,5,No,No
+S0968,20,Male,Pakistan,Public,Arts & Humanities,1,No clear policy,Yes,ChatGPT,Exam Prep,3.0,No,3,8,9.7,3.61,72,11,3,Low,1,No,Yes
+S0969,21,Male,Indonesia,Private,Computer Science,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,18.6,3.46,58,0,1,Low,4,No,No
+S0970,19,Male,Bangladesh,Public,Arts & Humanities,1,No clear policy,Yes,ChatGPT,Research & Summaries,6.2,No,2,32,14.7,3.16,54,27,5,Medium,1,No,Yes
+S0971,18,Female,Bangladesh,Public,Engineering,1,Allowed,Yes,Gemini,Coding Help,3.6,No,2,22,16.0,2.41,57,22,6,Medium,5,No,No
+S0972,20,Female,Canada,Private,Engineering,3,No clear policy,Yes,Gemini,Coding Help,19.9,No,3,64,17.0,3.27,61,33,10,High,2,No,Yes
+S0973,18,Male,Turkey,Public,Computer Science,1,Allowed,Yes,ChatGPT,Assignments & Homework,9.5,No,2,30,20.6,2.83,60,28,5,Medium,4,No,Yes
+S0974,20,Female,Pakistan,Public,Computer Science,3,Allowed,Yes,DeepSeek,Brainstorming Ideas,5.8,No,4,21,9.2,2.87,58,20,8,High,2,No,Yes
+S0975,21,Male,United Kingdom,Public,Computer Science,1,No clear policy,Yes,ChatGPT,Coding Help,5.6,No,4,35,23.3,2.82,72,25,5,Medium,3,No,No
+S0976,19,Female,Bangladesh,Public,Engineering,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,16.5,3.25,54,0,1,Low,2,No,No
+S0977,20,Male,Egypt,Private,Arts & Humanities,3,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,23.2,3.26,73,0,1,Low,2,No,No
+S0978,21,Female,Bangladesh,Public,Arts & Humanities,4,No clear policy,Yes,ChatGPT,Assignments & Homework,6.8,No,3,44,19.8,3.01,73,18,5,Medium,3,No,No
+S0979,20,Female,India,Public,Social Sciences,2,Banned,Yes,ChatGPT,Writing & Editing,5.2,No,3,30,22.1,3.59,61,29,4,Medium,4,No,Yes
+S0980,20,Male,Nigeria,Public,Natural Sciences,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,10.8,2.98,58,0,1,Low,3,No,No
+S0981,20,Female,Indonesia,Public,Business,3,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,3.0,Yes,4,31,19.7,3.67,78,24,2,Low,2,No,No
+S0982,18,Female,Nigeria,Public,Engineering,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,13.9,2.14,49,0,1,Low,4,No,No
+S0983,18,Female,United Kingdom,Private,Business,1,Allowed,Yes,ChatGPT,Writing & Editing,4.3,No,3,16,11.6,2.62,48,15,3,Low,3,No,Yes
+S0984,19,Female,Pakistan,Private,Medicine & Health,1,No clear policy,Yes,ChatGPT,Exam Prep,7.1,No,3,31,22.7,2.76,68,29,5,Medium,2,No,Yes
+S0985,18,Male,India,Private,Business,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,18.1,2.42,45,0,1,Low,4,No,No
+S0986,22,Male,Canada,Private,Business,2,Allowed,Yes,Gemini,Assignments & Homework,1.7,No,2,2,14.8,3.23,57,23,2,Low,2,No,Yes
+S0987,22,Male,Pakistan,Public,Engineering,3,Allowed,No,No AI tool,No AI use,0.0,No,0,0,15.8,2.93,56,0,1,Low,3,No,No
+S0988,21,Male,Egypt,Private,Computer Science,4,Allowed with disclosure,Yes,Claude,Exam Prep,11.9,Yes,4,24,25.5,3.18,63,39,5,Medium,3,No,Yes
+S0989,19,Male,Egypt,Public,Medicine & Health,1,No clear policy,Yes,Perplexity,Brainstorming Ideas,7.0,Yes,3,36,11.2,3.19,59,37,4,Medium,3,No,Yes
+S0990,20,Female,Nigeria,Private,Natural Sciences,3,Banned,Yes,ChatGPT,Translation & Language,1.8,No,2,26,21.2,3.47,70,11,5,Medium,4,No,Yes
+S0991,20,Female,India,Public,Arts & Humanities,3,Allowed,Yes,Claude,Brainstorming Ideas,10.6,No,4,52,17.4,3.41,71,34,8,High,3,No,No
+S0992,21,Female,Indonesia,Private,Social Sciences,4,Banned,No,No AI tool,No AI use,0.0,No,0,0,15.9,2.84,48,0,1,Low,4,No,No
+S0993,22,Male,Canada,Public,Medicine & Health,4,Allowed,Yes,Gemini,Coding Help,12.2,Yes,3,50,15.8,2.55,61,33,6,Medium,4,No,Yes
+S0994,19,Male,Brazil,Private,Business,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,17.2,2.81,64,0,1,Low,3,No,No
+S0995,21,Female,Pakistan,Private,Computer Science,2,No clear policy,Yes,Gemini,Research & Summaries,7.9,Yes,4,30,20.1,3.42,67,39,3,Low,4,Yes,Yes
+S0996,23,Male,Germany,Public,Medicine & Health,4,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,11.4,No,3,39,16.6,3.09,56,37,6,Medium,1,No,No
+S0997,21,Male,Turkey,Private,Computer Science,1,No clear policy,Yes,ChatGPT,Coding Help,2.9,Yes,2,21,17.0,2.26,61,41,1,Low,2,No,Yes
+S0998,23,Male,India,Public,Engineering,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,19.4,2.37,46,0,1,Low,5,No,No
+S0999,21,Female,India,Public,Computer Science,4,No clear policy,Yes,Gemini,Coding Help,11.6,No,3,31,8.3,3.29,72,29,5,Medium,3,No,Yes
+S1000,23,Female,United States,Public,Arts & Humanities,4,No clear policy,Yes,ChatGPT,Writing & Editing,4.9,No,3,17,11.3,3.44,93,41,5,Medium,2,No,Yes
+S1001,19,Female,Canada,Private,Social Sciences,1,No clear policy,Yes,ChatGPT,Writing & Editing,4.3,No,4,23,16.6,3.39,73,29,4,Medium,3,No,Yes
+S1002,20,Female,Pakistan,Private,Engineering,3,Allowed,Yes,ChatGPT,Writing & Editing,4.9,Yes,3,33,24.1,2.84,56,24,3,Low,3,No,Yes
+S1003,20,Male,Brazil,Public,Social Sciences,2,Allowed,Yes,Gemini,Assignments & Homework,0.9,No,4,2,20.4,4.0,93,23,1,Low,3,Yes,No
+S1004,18,Male,Germany,Public,Engineering,1,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,8.8,No,4,30,18.4,2.91,59,31,8,High,3,No,Yes
+S1005,20,Female,Brazil,Public,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,3.7,No,2,11,22.4,3.18,36,22,4,Medium,3,No,Yes
+S1006,21,Female,Pakistan,Private,Natural Sciences,2,Allowed with disclosure,Yes,Microsoft Copilot,Exam Prep,13.8,No,4,43,20.1,3.15,60,38,5,Medium,3,No,Yes
+S1007,20,Female,Egypt,Public,Engineering,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,7.6,2.56,64,0,1,Low,3,No,No
+S1008,19,Male,Pakistan,Private,Computer Science,2,Allowed with disclosure,Yes,Microsoft Copilot,Exam Prep,8.5,No,5,39,19.6,3.42,90,37,4,Medium,4,No,Yes
+S1009,19,Female,Turkey,Public,Business,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,12.8,2.6,51,0,1,Low,3,No,No
+S1010,20,Female,Pakistan,Private,Social Sciences,3,No clear policy,Yes,Claude,Research & Summaries,6.3,Yes,3,37,18.8,3.14,63,26,5,Medium,4,Yes,Yes
+S1011,21,Female,Brazil,Private,Engineering,3,No clear policy,Yes,ChatGPT,Exam Prep,11.4,No,4,33,18.6,3.7,81,26,6,Medium,3,No,Yes
+S1012,18,Male,India,Public,Business,1,Allowed,Yes,ChatGPT,Writing & Editing,11.8,No,2,44,22.5,2.37,49,38,7,High,2,No,Yes
+S1013,19,Male,Bangladesh,Public,Computer Science,2,No clear policy,Yes,ChatGPT,Research & Summaries,7.1,No,3,34,13.8,3.32,65,17,8,High,1,No,No
+S1014,20,Female,Indonesia,Public,Arts & Humanities,1,Allowed,Yes,ChatGPT,Exam Prep,13.2,No,3,44,20.3,3.39,49,38,10,High,3,No,Yes
+S1015,21,Male,United States,Private,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,3.3,Yes,4,27,20.3,2.99,59,27,3,Low,3,No,Yes
+S1016,18,Female,United Kingdom,Public,Natural Sciences,1,Allowed,Yes,ChatGPT,Brainstorming Ideas,6.5,No,2,18,17.9,2.44,47,29,4,Medium,4,No,No
+S1017,20,Male,Germany,Public,Engineering,3,No clear policy,Yes,ChatGPT,Brainstorming Ideas,10.6,No,5,33,18.1,3.54,73,39,5,Medium,3,Yes,Yes
+S1018,20,Male,Pakistan,Public,Computer Science,3,No clear policy,Yes,Microsoft Copilot,Coding Help,5.3,No,5,15,11.0,2.91,49,26,7,High,4,No,Yes
+S1019,20,Male,Nigeria,Private,Arts & Humanities,2,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,20.7,3.24,80,0,1,Low,4,No,No
+S1020,19,Female,Egypt,Public,Computer Science,1,Allowed,Yes,ChatGPT,Exam Prep,2.6,No,4,20,17.9,3.18,71,9,5,Medium,3,No,Yes
+S1021,18,Female,United States,Public,Computer Science,1,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,4.8,No,2,29,19.9,2.76,50,33,6,Medium,4,No,Yes
+S1022,21,Female,Turkey,Public,Engineering,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,22.5,3.22,65,0,1,Low,3,No,No
+S1023,22,Female,India,Private,Computer Science,4,Allowed,No,No AI tool,No AI use,0.0,No,0,0,9.9,2.5,54,0,1,Low,5,No,No
+S1024,22,Male,United Kingdom,Private,Natural Sciences,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,24.4,2.73,56,0,1,Low,3,No,No
+S1025,21,Male,India,Public,Arts & Humanities,1,No clear policy,Yes,Gemini,Exam Prep,1.7,No,2,16,18.0,3.35,53,19,1,Low,3,No,No
+S1026,22,Male,India,Public,Computer Science,4,Banned,Yes,ChatGPT,Coding Help,5.1,No,3,27,18.0,2.98,56,28,3,Low,5,No,Yes
+S1027,21,Male,Nigeria,Public,Social Sciences,4,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,14.6,2.73,48,0,1,Low,4,No,No
+S1028,20,Male,Pakistan,Public,Business,2,No clear policy,Yes,ChatGPT,Research & Summaries,2.1,No,2,19,16.7,3.09,72,36,2,Low,3,No,Yes
+S1029,19,Male,Egypt,Private,Computer Science,2,No clear policy,Yes,Perplexity,Exam Prep,13.7,No,4,39,19.7,3.09,55,35,8,High,4,No,No
+S1030,19,Female,Brazil,Public,Business,1,Allowed with disclosure,Yes,Other,Brainstorming Ideas,7.7,No,4,37,24.2,3.07,68,25,5,Medium,5,No,Yes
+S1031,19,Male,India,Public,Medicine & Health,2,Allowed,Yes,ChatGPT,Research & Summaries,8.8,No,3,37,14.2,3.04,58,19,7,High,1,No,Yes
+S1032,18,Male,Germany,Public,Engineering,1,Allowed,Yes,Gemini,Coding Help,13.8,No,4,69,9.8,3.48,65,52,7,High,3,No,Yes
+S1033,18,Female,Pakistan,Public,Computer Science,1,Allowed,Yes,Gemini,Coding Help,9.8,No,3,46,6.3,3.04,61,21,6,Medium,4,No,Yes
+S1034,21,Male,Nigeria,Public,Medicine & Health,4,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,6.7,No,3,41,18.3,3.12,53,29,4,Medium,2,No,Yes
+S1035,21,Male,Turkey,Public,Social Sciences,1,Allowed with disclosure,Yes,Perplexity,Translation & Language,6.5,Yes,1,25,18.4,2.47,55,19,9,High,4,No,No
+S1036,18,Male,Canada,Private,Engineering,1,No clear policy,Yes,ChatGPT,Research & Summaries,3.7,No,2,14,15.0,2.74,53,15,1,Low,3,No,Yes
+S1037,18,Female,Pakistan,Private,Computer Science,1,Allowed with disclosure,Yes,Microsoft Copilot,Coding Help,7.0,No,3,43,11.0,2.87,70,31,7,High,3,No,Yes
+S1038,18,Male,Pakistan,Private,Medicine & Health,1,Allowed with disclosure,Yes,Gemini,Research & Summaries,2.1,No,4,7,13.3,3.18,63,13,1,Low,2,No,Yes
+S1039,19,Male,Nigeria,Private,Arts & Humanities,1,Allowed with disclosure,Yes,Claude,Writing & Editing,1.8,No,2,21,11.8,2.42,56,24,3,Low,5,No,Yes
+S1040,24,Female,India,Public,Arts & Humanities,4,Allowed,Yes,Gemini,Translation & Language,6.4,Yes,3,18,21.2,2.82,53,19,7,High,4,No,No
+S1041,21,Female,Indonesia,Public,Social Sciences,4,No clear policy,Yes,Microsoft Copilot,Assignments & Homework,3.9,No,3,23,19.4,3.32,71,32,5,Medium,2,No,Yes
+S1042,21,Male,Germany,Public,Computer Science,4,Allowed with disclosure,Yes,ChatGPT,Coding Help,2.8,No,2,16,19.0,2.98,49,22,4,Medium,1,No,No
+S1043,19,Male,United Kingdom,Public,Business,2,Allowed with disclosure,Yes,ChatGPT,Exam Prep,12.1,No,3,57,9.9,2.87,63,44,10,High,3,No,Yes
+S1044,24,Male,Brazil,Private,Business,4,Allowed with disclosure,Yes,Gemini,Coding Help,3.5,No,2,34,16.4,2.29,57,12,1,Low,3,No,Yes
+S1045,21,Female,Indonesia,Private,Computer Science,4,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,7.2,Yes,2,19,25.4,2.88,56,25,1,Low,2,No,Yes
+S1046,19,Female,United States,Public,Computer Science,2,Banned,Yes,ChatGPT,Research & Summaries,6.0,No,3,19,16.1,2.89,43,15,7,High,4,No,Yes
+S1047,20,Female,United Kingdom,Private,Medicine & Health,3,No clear policy,Yes,ChatGPT,Assignments & Homework,3.3,No,3,27,15.0,3.07,70,21,5,Medium,4,No,Yes
+S1048,21,Male,Pakistan,Private,Computer Science,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,4.9,No,1,29,19.6,2.42,36,9,3,Low,4,No,Yes
+S1049,18,Male,Indonesia,Public,Social Sciences,1,Allowed,Yes,ChatGPT,Research & Summaries,6.0,No,3,42,17.3,3.69,68,24,10,High,3,No,Yes
+S1050,22,Female,Indonesia,Public,Business,3,No clear policy,Yes,ChatGPT,Writing & Editing,8.5,Yes,2,51,24.0,2.67,48,32,6,Medium,3,No,Yes
+S1051,22,Female,Pakistan,Public,Computer Science,3,Allowed with disclosure,Yes,DeepSeek,Brainstorming Ideas,7.1,No,5,21,22.6,3.19,60,16,6,Medium,4,No,Yes
+S1052,21,Female,Bangladesh,Private,Engineering,2,Banned,Yes,DeepSeek,Writing & Editing,2.5,Yes,2,14,20.1,2.91,68,15,1,Low,4,No,Yes
+S1053,20,Male,Indonesia,Public,Natural Sciences,3,No clear policy,Yes,ChatGPT,Exam Prep,1.9,No,2,7,25.3,2.71,47,9,3,Low,2,No,Yes
+S1054,20,Female,Germany,Public,Engineering,2,No clear policy,Yes,Other,Research & Summaries,7.6,No,3,27,17.3,2.88,63,15,4,Medium,2,No,No
+S1055,21,Female,Bangladesh,Public,Engineering,1,Banned,Yes,ChatGPT,Research & Summaries,1.7,No,2,10,11.2,2.84,54,6,2,Low,2,No,Yes
+S1056,21,Female,Bangladesh,Public,Engineering,2,Allowed with disclosure,Yes,Gemini,Coding Help,1.8,No,3,20,19.8,2.99,73,36,1,Low,3,No,No
+S1057,18,Male,Nigeria,Public,Computer Science,1,No clear policy,Yes,Claude,Exam Prep,3.6,No,1,24,14.9,2.57,71,12,3,Low,3,No,Yes
+S1058,19,Male,Nigeria,Public,Computer Science,2,Banned,Yes,Microsoft Copilot,Research & Summaries,7.8,No,4,23,20.2,2.56,39,21,5,Medium,4,No,No
+S1059,19,Female,Pakistan,Public,Arts & Humanities,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,2.0,No,2,30,19.2,3.24,64,0,4,Medium,3,No,No
+S1060,18,Female,United States,Private,Natural Sciences,1,Allowed,Yes,Perplexity,Assignments & Homework,4.8,No,2,15,15.7,3.65,78,13,3,Low,2,No,Yes
+S1061,18,Male,Turkey,Private,Social Sciences,1,Allowed with disclosure,Yes,Perplexity,Brainstorming Ideas,5.3,No,3,18,23.4,3.84,83,28,4,Medium,4,No,Yes
+S1062,18,Male,Turkey,Public,Natural Sciences,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,19.9,3.56,80,0,1,Low,4,No,No
+S1063,20,Female,Nigeria,Public,Engineering,3,Allowed,Yes,ChatGPT,Coding Help,14.1,No,3,55,11.6,3.06,66,24,10,High,3,Yes,Yes
+S1064,22,Male,Canada,Public,Natural Sciences,4,No clear policy,Yes,ChatGPT,Assignments & Homework,8.9,No,2,35,16.4,3.41,61,29,8,High,2,No,Yes
+S1065,18,Male,Nigeria,Private,Business,1,Allowed,Yes,Claude,Translation & Language,7.1,Yes,1,32,21.4,2.94,52,28,2,Low,1,No,Yes
+S1066,19,Male,Turkey,Public,Engineering,2,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,8.1,No,4,36,24.3,3.69,87,17,5,Medium,5,Yes,No
+S1067,21,Female,Bangladesh,Public,Business,4,Banned,Yes,DeepSeek,Exam Prep,2.8,No,4,26,20.7,2.94,62,14,3,Low,4,No,Yes
+S1068,21,Male,Pakistan,Public,Engineering,2,Allowed,Yes,Gemini,Assignments & Homework,2.7,No,2,5,12.6,2.46,50,26,1,Low,2,No,Yes
+S1069,20,Female,Pakistan,Public,Arts & Humanities,3,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,2.5,No,1,22,17.8,2.73,46,6,2,Low,1,No,Yes
+S1070,20,Male,Germany,Private,Social Sciences,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,12.6,No,4,44,23.9,3.17,68,47,8,High,4,Yes,Yes
+S1071,22,Male,Pakistan,Public,Engineering,3,Banned,Yes,ChatGPT,Writing & Editing,5.3,No,3,24,17.4,2.84,67,26,3,Low,4,No,Yes
+S1072,22,Male,Turkey,Public,Computer Science,4,No clear policy,Yes,Microsoft Copilot,Brainstorming Ideas,7.9,No,4,28,15.6,3.34,74,23,4,Medium,5,No,Yes
+S1073,18,Male,India,Public,Medicine & Health,1,No clear policy,Yes,ChatGPT,Assignments & Homework,12.0,No,5,29,13.9,2.79,51,38,6,Medium,2,No,Yes
+S1074,18,Male,Turkey,Public,Computer Science,1,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,16.1,2.78,69,0,1,Low,1,No,No
+S1075,24,Female,Bangladesh,Private,Arts & Humanities,4,Allowed,No,No AI tool,No AI use,0.0,No,0,0,10.0,3.15,62,0,1,Low,3,No,No
+S1076,19,Female,Pakistan,Private,Arts & Humanities,2,Allowed with disclosure,Yes,ChatGPT,Writing & Editing,8.6,No,3,45,19.9,3.26,66,35,7,High,4,No,Yes
+S1077,21,Male,Bangladesh,Private,Business,2,No clear policy,Yes,DeepSeek,Exam Prep,6.5,No,4,33,12.1,3.07,72,29,5,Medium,3,No,Yes
+S1078,22,Male,Pakistan,Public,Computer Science,4,Banned,Yes,ChatGPT,Coding Help,6.8,No,3,23,17.0,2.8,56,22,4,Medium,3,No,Yes
+S1079,23,Prefer not to say,India,Private,Natural Sciences,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,6.6,Yes,3,25,13.8,2.98,66,26,4,Medium,4,No,Yes
+S1080,21,Female,Pakistan,Private,Social Sciences,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,4.5,No,3,7,15.9,1.87,47,37,6,Medium,2,Yes,No
+S1081,18,Male,Egypt,Private,Medicine & Health,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,10.8,2.62,72,0,1,Low,3,No,No
+S1082,19,Female,United States,Private,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Exam Prep,1.4,Yes,1,14,11.2,3.37,80,6,3,Low,3,No,No
+S1083,22,Male,United Kingdom,Public,Natural Sciences,4,Allowed with disclosure,Yes,ChatGPT,Exam Prep,14.0,No,4,60,19.4,2.76,51,40,4,Medium,4,Yes,Yes
+S1084,22,Female,Pakistan,Private,Computer Science,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,8.3,3.19,69,0,1,Low,4,No,No
+S1085,20,Male,Pakistan,Public,Medicine & Health,3,Allowed,No,No AI tool,No AI use,0.0,No,0,0,19.3,3.01,61,0,1,Low,3,No,No
+S1086,20,Female,Germany,Public,Engineering,3,Banned,Yes,Perplexity,Exam Prep,2.0,No,3,26,19.0,3.18,58,14,5,Medium,4,No,Yes
+S1087,21,Male,Bangladesh,Public,Arts & Humanities,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,25.5,2.94,54,0,1,Low,3,No,No
+S1088,19,Male,India,Public,Natural Sciences,1,Banned,Yes,Microsoft Copilot,Brainstorming Ideas,1.8,No,2,18,25.0,3.15,67,18,2,Low,5,No,Yes
+S1089,22,Male,India,Public,Computer Science,3,No clear policy,Yes,Claude,Coding Help,3.7,No,2,19,14.8,2.94,62,23,7,High,4,No,Yes
+S1090,21,Female,Brazil,Public,Engineering,4,Allowed with disclosure,Yes,Gemini,Exam Prep,8.9,No,4,20,13.7,3.38,83,17,2,Low,3,No,Yes
+S1091,21,Female,Egypt,Public,Business,2,No clear policy,Yes,ChatGPT,Translation & Language,7.7,No,5,18,15.9,3.67,76,35,6,Medium,2,No,No
+S1092,21,Male,Bangladesh,Public,Arts & Humanities,2,Allowed,No,No AI tool,No AI use,0.0,No,0,0,14.3,2.79,66,0,1,Low,3,No,No
+S1093,21,Female,Bangladesh,Private,Natural Sciences,3,Allowed,Yes,Gemini,Writing & Editing,6.6,No,2,30,22.2,2.81,52,15,1,Low,3,No,Yes
+S1094,18,Female,India,Public,Social Sciences,1,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,20.3,2.8,57,0,1,Low,4,No,No
+S1095,20,Male,India,Private,Computer Science,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,22.0,2.73,56,0,1,Low,4,No,No
+S1096,20,Female,Bangladesh,Public,Medicine & Health,2,Allowed,Yes,ChatGPT,Exam Prep,5.2,No,3,34,10.4,2.99,54,25,4,Medium,1,No,Yes
+S1097,24,Female,Turkey,Public,Natural Sciences,4,Allowed with disclosure,Yes,ChatGPT,Translation & Language,2.8,No,3,19,16.3,2.85,58,32,1,Low,2,No,No
+S1098,21,Female,Pakistan,Public,Engineering,3,No clear policy,Yes,Gemini,Research & Summaries,6.0,Yes,2,14,10.6,2.78,54,21,3,Low,4,No,No
+S1099,22,Male,Turkey,Public,Arts & Humanities,4,No clear policy,Yes,DeepSeek,Assignments & Homework,4.9,No,2,28,17.4,3.39,72,23,3,Low,3,No,Yes
+S1100,19,Female,Pakistan,Private,Engineering,1,Banned,Yes,Gemini,Coding Help,6.3,No,2,9,15.6,3.18,48,33,2,Low,3,No,No
+S1101,18,Female,United Kingdom,Public,Social Sciences,1,Allowed with disclosure,Yes,ChatGPT,Coding Help,8.1,No,3,26,16.9,3.2,51,35,4,Medium,5,No,No
+S1102,24,Male,Canada,Public,Social Sciences,4,Allowed,Yes,ChatGPT,Research & Summaries,8.3,No,3,39,21.7,3.49,78,23,6,Medium,4,No,Yes
+S1103,21,Female,Bangladesh,Public,Arts & Humanities,3,Allowed,Yes,ChatGPT,Brainstorming Ideas,4.8,No,3,29,19.9,2.87,52,30,5,Medium,2,No,Yes
+S1104,22,Female,Indonesia,Private,Social Sciences,4,Allowed,Yes,ChatGPT,Exam Prep,3.9,No,2,27,21.0,3.03,65,14,4,Medium,3,No,Yes
+S1105,20,Female,Canada,Public,Natural Sciences,2,No clear policy,Yes,Microsoft Copilot,Research & Summaries,3.5,No,2,23,14.9,3.31,73,24,1,Low,4,No,Yes
+S1106,18,Male,Nigeria,Private,Medicine & Health,1,Banned,Yes,ChatGPT,Exam Prep,7.9,No,3,16,22.8,3.17,63,22,3,Low,4,No,No
+S1107,21,Male,Bangladesh,Public,Computer Science,3,No clear policy,Yes,DeepSeek,Brainstorming Ideas,6.3,No,2,21,13.5,3.03,42,30,2,Low,3,No,Yes
+S1108,18,Female,Pakistan,Private,Computer Science,1,Allowed,Yes,Claude,Coding Help,4.8,Yes,3,22,19.5,3.21,73,23,3,Low,3,No,Yes
+S1109,18,Male,Germany,Public,Business,1,No clear policy,Yes,ChatGPT,Translation & Language,5.8,No,3,10,9.7,2.87,58,33,7,High,4,No,No
+S1110,19,Female,India,Public,Business,2,Banned,Yes,ChatGPT,Research & Summaries,3.1,No,4,19,21.0,2.68,57,21,2,Low,3,No,Yes
+S1111,21,Female,Indonesia,Private,Engineering,3,Banned,Yes,ChatGPT,Exam Prep,1.7,No,3,8,19.5,3.42,79,26,1,Low,4,No,No
+S1112,20,Male,Indonesia,Public,Business,2,No clear policy,Yes,ChatGPT,Coding Help,4.1,No,2,31,14.8,3.16,69,13,3,Low,4,No,Yes
+S1113,22,Male,United Kingdom,Public,Engineering,2,Allowed,Yes,ChatGPT,Research & Summaries,16.8,No,5,57,14.2,2.8,42,49,7,High,1,Yes,Yes
+S1114,19,Male,Nigeria,Private,Computer Science,2,Allowed with disclosure,Yes,Gemini,Assignments & Homework,8.4,No,2,43,21.3,3.0,74,26,4,Medium,3,No,Yes
+S1115,22,Female,Brazil,Public,Natural Sciences,4,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,25.0,3.44,60,0,1,Low,4,No,No
+S1116,21,Male,Bangladesh,Private,Engineering,4,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,19.9,2.82,68,0,1,Low,3,No,No
+S1117,21,Female,Pakistan,Public,Business,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,21.1,3.0,63,0,1,Low,4,No,No
+S1118,20,Male,United States,Private,Social Sciences,2,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,20.0,2.68,58,0,1,Low,3,Yes,No
+S1119,18,Female,United Kingdom,Public,Computer Science,1,No clear policy,Yes,ChatGPT,Coding Help,2.6,No,3,4,16.6,2.92,51,21,2,Low,4,No,Yes
+S1120,20,Male,Nigeria,Private,Social Sciences,3,No clear policy,Yes,Microsoft Copilot,Writing & Editing,9.0,No,4,53,11.4,3.53,81,28,6,Medium,3,No,Yes
+S1121,21,Female,Nigeria,Private,Arts & Humanities,3,Allowed,Yes,Gemini,Writing & Editing,3.5,No,1,7,15.8,3.41,71,6,3,Low,3,No,Yes
+S1122,19,Male,Pakistan,Public,Medicine & Health,1,No clear policy,Yes,DeepSeek,Assignments & Homework,5.2,No,2,19,14.1,3.29,74,38,8,High,3,No,Yes
+S1123,20,Female,Indonesia,Public,Business,1,No clear policy,Yes,ChatGPT,Exam Prep,4.5,No,3,26,17.2,3.15,54,28,4,Medium,2,No,Yes
+S1124,18,Female,India,Public,Engineering,1,Allowed,Yes,ChatGPT,Exam Prep,5.3,No,2,17,14.1,3.23,64,23,3,Low,3,No,Yes
+S1125,19,Male,India,Public,Computer Science,2,Banned,Yes,Gemini,Research & Summaries,1.1,No,2,17,19.4,2.89,67,2,2,Low,3,No,No
+S1126,20,Male,Pakistan,Public,Medicine & Health,2,Allowed,Yes,ChatGPT,Exam Prep,4.9,No,1,33,19.3,2.78,61,29,5,Medium,2,No,Yes
+S1127,18,Female,United Kingdom,Private,Computer Science,1,Allowed,Yes,Gemini,Research & Summaries,5.5,No,3,27,14.7,3.34,74,32,3,Low,1,No,Yes
+S1128,22,Male,Indonesia,Private,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,5.4,No,4,31,13.7,3.44,73,30,5,Medium,5,No,Yes
+S1129,21,Female,Nigeria,Public,Computer Science,1,No clear policy,Yes,ChatGPT,Research & Summaries,13.7,Yes,3,51,7.1,2.31,45,44,10,High,5,No,Yes
+S1130,19,Male,United Kingdom,Public,Social Sciences,1,No clear policy,Yes,ChatGPT,Writing & Editing,10.8,No,3,47,21.2,3.15,42,38,7,High,3,Yes,Yes
+S1131,22,Female,Turkey,Public,Computer Science,3,No clear policy,Yes,ChatGPT,Research & Summaries,17.8,No,4,50,17.3,2.94,54,25,10,High,2,No,No
+S1132,20,Male,Egypt,Private,Arts & Humanities,3,Allowed,Yes,ChatGPT,Writing & Editing,10.0,Yes,3,48,19.5,3.01,58,41,6,Medium,3,No,Yes
+S1133,22,Male,United Kingdom,Public,Computer Science,4,No clear policy,Yes,ChatGPT,Assignments & Homework,15.0,No,2,60,23.4,3.66,70,26,7,High,3,Yes,Yes
+S1134,22,Male,Canada,Public,Business,4,Allowed with disclosure,No,No AI tool,No AI use,0.0,No,0,0,13.5,2.64,54,0,1,Low,2,No,No
+S1135,22,Male,Egypt,Public,Computer Science,4,No clear policy,Yes,ChatGPT,Translation & Language,13.6,No,3,31,19.2,3.43,47,40,9,High,4,No,Yes
+S1136,20,Male,Pakistan,Private,Business,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,15.8,No,3,50,20.6,2.99,42,36,6,Medium,3,Yes,No
+S1137,19,Male,Germany,Public,Social Sciences,2,Allowed with disclosure,Yes,ChatGPT,Coding Help,2.1,No,2,21,13.3,1.88,41,20,1,Low,3,No,Yes
+S1138,19,Male,Nigeria,Public,Engineering,1,Banned,No,No AI tool,No AI use,0.0,No,0,0,16.7,3.04,63,0,1,Low,2,Yes,No
+S1139,19,Male,United Kingdom,Public,Engineering,2,Allowed with disclosure,Yes,ChatGPT,Brainstorming Ideas,3.0,Yes,3,2,18.1,3.11,76,21,2,Low,4,No,Yes
+S1140,19,Female,India,Public,Business,1,Banned,Yes,Gemini,Writing & Editing,4.8,No,3,20,26.3,2.8,57,25,1,Low,4,No,Yes
+S1141,19,Male,India,Private,Social Sciences,1,Allowed,Yes,Claude,Research & Summaries,7.2,Yes,3,17,13.3,2.49,59,31,5,Medium,4,No,Yes
+S1142,23,Female,Indonesia,Private,Natural Sciences,3,Allowed with disclosure,Yes,Gemini,Translation & Language,11.1,No,3,37,22.0,3.24,54,25,6,Medium,3,No,Yes
+S1143,21,Male,Indonesia,Private,Natural Sciences,1,Allowed,Yes,ChatGPT,Translation & Language,3.4,Yes,2,15,10.6,2.19,53,29,4,Medium,2,No,No
+S1144,21,Male,Pakistan,Public,Social Sciences,3,No clear policy,No,No AI tool,No AI use,0.0,No,0,0,17.0,3.01,74,0,1,Low,1,No,No
+S1145,23,Female,Brazil,Public,Social Sciences,4,Banned,Yes,ChatGPT,Assignments & Homework,6.1,No,3,19,21.5,3.61,69,46,5,Medium,4,No,Yes
+S1146,20,Male,Nigeria,Public,Business,2,No clear policy,Yes,ChatGPT,Assignments & Homework,6.2,No,3,29,22.1,3.25,70,28,7,High,5,No,No
+S1147,21,Male,United States,Public,Business,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,3.0,No,2,13,11.4,2.55,39,3,1,Low,3,No,Yes
+S1148,18,Male,United States,Public,Natural Sciences,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,8.5,2.81,49,0,1,Low,1,No,No
+S1149,21,Male,Bangladesh,Public,Medicine & Health,2,No clear policy,Yes,ChatGPT,Exam Prep,6.7,No,2,20,27.6,3.14,56,22,3,Low,3,No,Yes
+S1150,18,Female,Brazil,Private,Engineering,1,Allowed with disclosure,Yes,Claude,Coding Help,7.2,No,3,36,21.1,3.62,81,11,4,Medium,3,No,Yes
+S1151,18,Female,United States,Private,Engineering,1,No clear policy,Yes,ChatGPT,Assignments & Homework,12.4,No,3,53,15.5,3.21,58,24,9,High,4,No,No
+S1152,19,Male,Nigeria,Public,Computer Science,1,No clear policy,Yes,ChatGPT,Research & Summaries,8.4,No,2,31,23.1,3.1,68,24,7,High,4,No,No
+S1153,20,Female,Nigeria,Public,Arts & Humanities,2,No clear policy,Yes,ChatGPT,Translation & Language,1.8,No,2,23,15.7,3.0,63,20,3,Low,4,No,Yes
+S1154,20,Female,Egypt,Private,Business,3,No clear policy,Yes,ChatGPT,Assignments & Homework,6.9,Yes,2,35,23.6,2.91,47,34,4,Medium,2,No,Yes
+S1155,23,Female,Nigeria,Public,Computer Science,3,No clear policy,Yes,ChatGPT,Coding Help,2.3,No,4,18,13.5,2.96,67,29,2,Low,3,No,Yes
+S1156,23,Female,Pakistan,Public,Arts & Humanities,4,Allowed with disclosure,Yes,ChatGPT,Research & Summaries,6.2,No,3,32,13.9,2.97,68,29,2,Low,5,No,Yes
+S1157,21,Male,India,Private,Natural Sciences,4,No clear policy,Yes,ChatGPT,Translation & Language,10.9,No,3,45,17.5,3.32,67,30,6,Medium,5,No,Yes
+S1158,22,Female,Germany,Public,Arts & Humanities,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,17.5,3.1,63,0,1,Low,4,No,No
+S1159,20,Male,Pakistan,Public,Computer Science,3,Allowed with disclosure,Yes,Gemini,Research & Summaries,5.2,No,4,19,18.9,3.55,74,15,4,Medium,5,No,Yes
+S1160,22,Male,United States,Public,Engineering,3,Banned,No,No AI tool,No AI use,0.0,No,0,0,14.6,2.5,51,0,1,Low,2,No,No
+S1161,18,Male,India,Public,Engineering,1,No clear policy,Yes,Gemini,Exam Prep,3.4,No,4,2,12.5,2.81,52,14,2,Low,3,No,Yes
+S1162,20,Male,India,Private,Engineering,3,Allowed with disclosure,Yes,ChatGPT,Exam Prep,6.0,No,2,25,15.5,2.55,60,9,6,Medium,2,No,Yes
+S1163,20,Female,Pakistan,Public,Computer Science,3,Allowed with disclosure,Yes,Gemini,Research & Summaries,12.8,Yes,4,44,22.9,4.0,82,49,9,High,4,No,Yes
+S1164,22,Female,Pakistan,Public,Computer Science,4,Banned,Yes,ChatGPT,Assignments & Homework,11.0,No,4,39,15.4,3.11,68,35,5,Medium,4,No,Yes
+S1165,19,Female,India,Private,Medicine & Health,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,19.4,2.93,57,0,1,Low,3,No,No
+S1166,21,Male,Indonesia,Private,Computer Science,4,Allowed,Yes,ChatGPT,Brainstorming Ideas,2.6,No,2,21,14.0,2.88,57,14,1,Low,4,Yes,Yes
+S1167,19,Male,Bangladesh,Public,Engineering,1,Allowed,No,No AI tool,No AI use,0.0,No,0,0,17.7,3.38,61,0,1,Low,2,No,No
+S1168,19,Female,Indonesia,Private,Business,1,No clear policy,Yes,DeepSeek,Assignments & Homework,9.0,Yes,3,40,18.5,3.11,66,45,10,High,2,Yes,No
+S1169,20,Female,Pakistan,Public,Arts & Humanities,3,Banned,Yes,ChatGPT,Research & Summaries,7.1,No,2,51,16.8,3.68,75,24,6,Medium,4,No,Yes
+S1170,20,Female,Germany,Public,Medicine & Health,2,Allowed,Yes,Microsoft Copilot,Exam Prep,7.4,No,3,37,18.9,3.79,72,41,3,Low,2,No,Yes
+S1171,20,Male,United Kingdom,Private,Engineering,2,No clear policy,Yes,ChatGPT,Assignments & Homework,3.7,No,3,22,17.3,2.68,43,7,4,Medium,3,No,No
+S1172,22,Female,Nigeria,Private,Engineering,2,No clear policy,Yes,ChatGPT,Coding Help,4.4,No,3,26,20.2,3.96,69,17,5,Medium,2,No,No
+S1173,18,Female,Turkey,Public,Social Sciences,1,Allowed,Yes,ChatGPT,Research & Summaries,11.7,No,4,45,23.5,3.1,62,39,6,Medium,4,Yes,Yes
+S1174,24,Male,United States,Private,Social Sciences,4,No clear policy,Yes,Gemini,Writing & Editing,5.3,No,1,25,23.3,3.62,76,4,5,Medium,5,No,Yes
+S1175,20,Female,Nigeria,Public,Business,3,Allowed,Yes,Gemini,Research & Summaries,5.2,No,3,19,11.4,3.39,59,18,6,Medium,4,No,No
+S1176,18,Male,India,Public,Natural Sciences,1,No clear policy,Yes,DeepSeek,Brainstorming Ideas,2.6,No,2,18,14.5,2.74,60,11,1,Low,4,No,Yes
+S1177,20,Female,Canada,Private,Business,2,Allowed with disclosure,Yes,Microsoft Copilot,Writing & Editing,6.1,No,2,36,11.5,3.18,67,23,6,Medium,2,No,Yes
+S1178,20,Female,United Kingdom,Public,Arts & Humanities,3,Allowed,Yes,ChatGPT,Assignments & Homework,8.6,No,3,51,21.6,3.22,66,31,7,High,3,No,Yes
+S1179,20,Female,Pakistan,Private,Arts & Humanities,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,16.0,2.67,59,0,1,Low,2,No,No
+S1180,20,Male,India,Public,Social Sciences,3,Allowed with disclosure,Yes,Perplexity,Writing & Editing,11.9,No,3,46,25.3,3.21,57,33,6,Medium,3,No,Yes
+S1181,24,Female,Pakistan,Private,Medicine & Health,4,Banned,Yes,DeepSeek,Translation & Language,3.6,No,3,18,20.7,3.36,65,20,3,Low,4,No,Yes
+S1182,23,Male,Brazil,Private,Computer Science,4,Allowed,Yes,Microsoft Copilot,Brainstorming Ideas,5.2,No,2,18,22.3,2.62,77,20,6,Medium,1,No,Yes
+S1183,21,Male,United States,Private,Medicine & Health,3,Allowed with disclosure,Yes,Claude,Exam Prep,12.6,Yes,3,57,18.8,3.23,62,30,8,High,2,No,Yes
+S1184,21,Male,United Kingdom,Public,Natural Sciences,3,Banned,Yes,ChatGPT,Exam Prep,6.3,No,2,4,25.0,3.05,73,14,4,Medium,3,Yes,Yes
+S1185,18,Female,Germany,Private,Engineering,1,Allowed,Yes,Microsoft Copilot,Research & Summaries,7.4,Yes,3,28,22.9,3.01,82,17,5,Medium,3,Yes,Yes
+S1186,22,Male,Bangladesh,Public,Natural Sciences,4,Allowed,No,No AI tool,No AI use,0.0,No,0,0,14.1,2.79,64,0,1,Low,2,No,No
+S1187,20,Male,Egypt,Public,Computer Science,1,No clear policy,Yes,ChatGPT,Coding Help,14.7,No,4,57,12.4,2.93,60,28,10,High,4,No,Yes
+S1188,20,Female,Brazil,Public,Engineering,2,No clear policy,Yes,ChatGPT,Coding Help,13.2,Yes,4,41,15.2,3.14,66,45,8,High,3,Yes,Yes
+S1189,20,Male,Nigeria,Private,Computer Science,3,Allowed,Yes,ChatGPT,Coding Help,7.6,No,4,27,16.6,3.23,73,26,5,Medium,2,No,Yes
+S1190,19,Female,Pakistan,Private,Business,2,Allowed,Yes,Claude,Brainstorming Ideas,9.1,No,2,36,8.2,2.84,50,21,6,Medium,3,No,Yes
+S1191,21,Female,Bangladesh,Public,Computer Science,3,No clear policy,Yes,ChatGPT,Brainstorming Ideas,1.2,No,3,14,14.5,2.9,53,10,3,Low,2,No,No
+S1192,22,Male,Bangladesh,Private,Computer Science,3,Allowed,Yes,Gemini,Exam Prep,13.7,No,3,55,21.6,3.17,54,24,7,High,2,Yes,No
+S1193,22,Female,Brazil,Public,Social Sciences,4,Banned,Yes,Gemini,Exam Prep,6.5,No,3,25,14.5,2.47,47,26,5,Medium,5,No,No
+S1194,18,Male,Pakistan,Private,Social Sciences,1,Allowed with disclosure,Yes,Perplexity,Assignments & Homework,9.0,No,3,50,14.3,3.01,62,17,3,Low,3,Yes,No
+S1195,20,Male,Pakistan,Public,Social Sciences,3,Allowed,Yes,Microsoft Copilot,Writing & Editing,14.1,Yes,2,65,25.1,2.57,35,23,9,High,2,Yes,No
+S1196,18,Female,Canada,Private,Medicine & Health,1,Allowed with disclosure,Yes,ChatGPT,Assignments & Homework,3.4,Yes,1,26,10.9,2.52,65,36,3,Low,3,Yes,Yes
+S1197,18,Male,United States,Public,Engineering,1,Allowed,Yes,ChatGPT,Coding Help,7.1,No,2,15,15.1,2.52,53,29,4,Medium,4,No,Yes
+S1198,22,Female,India,Private,Computer Science,2,No clear policy,Yes,ChatGPT,Translation & Language,1.7,No,3,15,19.1,3.77,77,5,3,Low,1,No,Yes
+S1199,23,Female,Pakistan,Private,Engineering,4,Allowed with disclosure,Yes,Gemini,Brainstorming Ideas,1.9,No,3,17,16.2,2.82,53,21,7,High,3,No,Yes
+S1200,19,Female,Pakistan,Public,Arts & Humanities,2,Banned,No,No AI tool,No AI use,0.0,No,0,0,17.0,3.16,75,0,1,Low,3,No,No
