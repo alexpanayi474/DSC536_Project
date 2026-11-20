@@ -2,3 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+.Renviron
+
+# course material (copyrighted, large) and lab files
+*.pdf
+!report/*.pdf
+*.stan
+nels.RData

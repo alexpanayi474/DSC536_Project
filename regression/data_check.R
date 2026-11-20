@@ -7,12 +7,14 @@
 # Dependencies: base R (+ jsonlite, only for the LLM-response checks).
 #
 # Usage: put campus_ai_pulse_2026.csv (and optionally risposte_groq_oss20b.rds,
-# data_ai_campus_complete.rds) in DATA_DIR, then  Rscript data_check.R
+# data_ai_campus_complete.rds) in data/llm/, then from the project root:
+#        source("regression/data_check.R")
 # ==========================================================================
 
-DATA_DIR <- Sys.getenv("CAMPUS_DATA_DIR", ".")   # folder holding the csv/rds files
-OUT_DIR  <- "data_check_output"
-dir.create(OUT_DIR, showWarnings = FALSE)
+DATA_DIR <- Sys.getenv("CAMPUS_DATA_DIR", "data")                 # folder holding the csv
+LLM_DIR  <- Sys.getenv("LLM_DIR", file.path(DATA_DIR, "llm"))     # folder holding the LLM .rds files
+OUT_DIR  <- Sys.getenv("CHECK_OUT_DIR", file.path("regression", "output", "data_check"))
+dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 
 Y_SCORE <- "critical_thinking_score"
 Y_GPA   <- "cgpa"
@@ -246,8 +248,8 @@ add_check("Rows available vs 300 known + 900 AI",
 # --------------------------------------------------------------------------
 section("D. LLM-PRIOR CHECKS (only if files exist)")
 # --------------------------------------------------------------------------
-f_resp <- file.path(DATA_DIR, "risposte_groq_oss20b.rds")
-f_comp <- file.path(DATA_DIR, "data_ai_campus_complete.rds")
+f_resp <- file.path(LLM_DIR, "risposte_groq_oss20b.rds")
+f_comp <- file.path(LLM_DIR, "data_ai_campus_complete.rds")
 
 if (file.exists(f_resp) && requireNamespace("jsonlite", quietly = TRUE)) {
   resp <- readRDS(f_resp)

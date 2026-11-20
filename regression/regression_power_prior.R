@@ -27,13 +27,15 @@
 #
 # Inputs: llm_split_v2.rds, llm_probs_v2.rds, campus_ai_pulse_2026.csv. Outputs: regression_output/.
 # Base R only. bapr2.R and the data files are not modified.
+# Run from the project root: source("regression/regression_power_prior.R")  (~20 min)
 # Quick test: Sys.setenv(N_REP = "2", B_PB = "50", B_CAL = "50") before source().
 # ==========================================================================
 
-DATA_DIR <- Sys.getenv("CAMPUS_DATA_DIR", ".")
-OUT_DIR  <- Sys.getenv("REG_OUT_DIR", "regression_output")
+DATA_DIR <- Sys.getenv("CAMPUS_DATA_DIR", "data")                  # csv
+LLM_DIR  <- Sys.getenv("LLM_DIR", file.path(DATA_DIR, "llm"))      # llm_split_v2.rds, llm_probs_v2.rds
+OUT_DIR  <- Sys.getenv("REG_OUT_DIR", file.path("regression", "output"))
 TAG      <- "v2"
-dir.create(OUT_DIR, showWarnings = FALSE)
+dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 
 SEED        <- 30175
 LEVEL       <- 0.90                                   # credible level, as in the paper
@@ -66,8 +68,8 @@ data <- data[, setdiff(names(data), DROP_COLS)]
 data$student_id <- as.character(data$student_id)
 N <- nrow(data)
 
-split <- readRDS(file.path(DATA_DIR, paste0("llm_split_", TAG, ".rds")))
-probs <- readRDS(file.path(DATA_DIR, paste0("llm_probs_", TAG, ".rds")))
+split <- readRDS(file.path(LLM_DIR, paste0("llm_split_", TAG, ".rds")))
+probs <- readRDS(file.path(LLM_DIR, paste0("llm_probs_", TAG, ".rds")))
 stopifnot(identical(probs$student_id, split$ai_ids), !anyNA(probs$exp_cgpa), !anyNA(probs$exp_score))
 llm_rows <- match(split$ai_ids, data$student_id)
 

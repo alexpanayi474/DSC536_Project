@@ -13,14 +13,15 @@
 #
 # Setup: add GROQ_API_KEY=... to ~/.Renviron (not in the repo), restart R,
 #        renv::install("httr") once (bapr2.R needs it too).
-# Run:   source("llm_prior_labels.R")       -- resumes from the cache if interrupted
+# Run:   source("regression/llm_prior_labels.R")  (from the project root) -- resumes from the cache
 # Test:  Sys.setenv(LLM_DRY_RUN = "1") -- fake LLM answers, no API calls, tag "dryrun"
 # ==========================================================================
 
 library(jsonlite)
 
-DATA_DIR   <- Sys.getenv("CAMPUS_DATA_DIR", ".")        # where the csv is
-OUT_DIR    <- Sys.getenv("LLM_OUT_DIR", DATA_DIR)       # where outputs go
+DATA_DIR   <- Sys.getenv("CAMPUS_DATA_DIR", "data")                   # where the csv is
+OUT_DIR    <- Sys.getenv("LLM_OUT_DIR", file.path(DATA_DIR, "llm"))   # where the LLM outputs go
+dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 DRY_RUN    <- identical(Sys.getenv("LLM_DRY_RUN"), "1")
 OUT_TAG    <- if (DRY_RUN) "dryrun" else "v2"
 
