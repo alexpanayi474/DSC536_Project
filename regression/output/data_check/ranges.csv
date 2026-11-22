@@ -1,0 +1,12 @@
+"column","min","median","max","n_neg","n_out_4sd"
+"age",18,20,24,0,0
+"year_of_study",1,2,4,0,0
+"ai_hours_per_week",0,5.15,31.6,0,3
+"prompt_skill_level",0,3,5,0,0
+"ai_assignment_share_pct",0,25,99,0,1
+"study_hours_per_week",3.4,17.65,33.2,0,0
+"cgpa",1.87,3.03,4,0,0
+"critical_thinking_score",28,61,100,0,0
+"time_saved_pct",0,23,64,0,0
+"ai_dependency_score",1,4,10,0,0
+"integrity_concern_level",1,3,5,0,0

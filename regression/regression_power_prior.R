@@ -33,8 +33,8 @@
 
 DATA_DIR <- Sys.getenv("CAMPUS_DATA_DIR", "data")                  # csv
 LLM_DIR  <- Sys.getenv("LLM_DIR", file.path(DATA_DIR, "llm"))      # llm_split_v2.rds, llm_probs_v2.rds
-OUT_DIR  <- Sys.getenv("REG_OUT_DIR", file.path("regression", "output"))
-TAG      <- "v2"
+TAG      <- Sys.getenv("LLM_TAG", "v2")                            # "v3" after llm_prior_labels_v3.R
+OUT_DIR  <- Sys.getenv("REG_OUT_DIR", file.path("regression", if (TAG == "v2") "output" else paste0("output_", TAG)))
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 
 SEED        <- 30175

@@ -1,0 +1,8 @@
+"","age","year_of_study","ai_hours_per_week","ai_assignment_share_pct","study_hours_per_week","cgpa","critical_thinking_score"
+"age",1,0.746,0.028,0.011,0.113,0.001,-0.004
+"year_of_study",0.746,1,0.044,0.03,0.164,0.014,-0.006
+"ai_hours_per_week",0.028,0.044,1,0.872,-0.001,0.096,-0.121
+"ai_assignment_share_pct",0.011,0.03,0.872,1,0.005,0.081,-0.091
+"study_hours_per_week",0.113,0.164,-0.001,0.005,1,0.218,0.121
+"cgpa",0.001,0.014,0.096,0.081,0.218,1,0.624
+"critical_thinking_score",-0.004,-0.006,-0.121,-0.091,0.121,0.624,1

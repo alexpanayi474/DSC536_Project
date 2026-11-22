@@ -1,0 +1,334 @@
+---
+title: "AI-powered Bayesian inference: linear regression part"
+subtitle: "DSC536 project, O'Hagan & Ročková (2025), arXiv:2502.19231"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    code_folding: show
+params:
+  rerun_analysis: false   # true = re-run the 100-split study (~20 min) instead of loading saved results
+  llm_tag_extra: "v3"     # second LLM run, shown in Section 5 if its files exist
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
+                      fig.align = "center", out.width = "85%")
+ROOT <- normalizePath(if (file.exists("DSC536_Project.Rproj")) "." else "..")
+knitr::opts_knit$set(root.dir = ROOT)
+library(jsonlite)
+kable <- knitr::kable
+OUT <- file.path(ROOT, "regression", "output")
+LLM <- file.path(ROOT, "data", "llm")
+```
+
+This document contains the code and a short explanation of every step of the regression part of the
+project. It runs offline from the files saved in the repository. The only step that needs the internet
+(asking the LLM for predictions) is shown but not re-run; its outputs are saved in `data/llm/`.
+
+**Question.** How is weekly AI use (`ai_hours_per_week`) related to students' critical-thinking score
+(0-100) and CGPA (0-4), and does an LLM-based prior, built as in O'Hagan & Ročková (2025), improve the
+inference when only a few labelled students are available?
+
+# Data
+
+```{r data}
+data_raw <- read.csv(file.path(ROOT, "data", "campus_ai_pulse_2026.csv"), stringsAsFactors = TRUE)
+dim(data_raw)
+
+# columns removed before modelling (same as the first draft, bapr2.R): the ID and variables that
+# are other outcomes or derived scores rather than predictors
+DROP_COLS <- c("uses_ai", "paid_ai_subscription", "prompt_skill_level", "time_saved_pct",
+               "ai_dependency_score", "ai_dependency_level", "integrity_concern_level",
+               "flagged_by_ai_detector", "would_recommend_ai")
+data <- data_raw[, setdiff(names(data_raw), DROP_COLS)]
+kable(data.frame(column = names(data_raw),
+                 type = sapply(data_raw, function(v) class(v)[1]),
+                 used = ifelse(names(data_raw) %in% names(data) & names(data_raw) != "student_id",
+                               "yes", "no"), row.names = NULL))
+```
+
+```{r outcomes, fig.width = 10, fig.height = 3.2}
+par(mfrow = c(1, 3))
+for (v in c("critical_thinking_score", "cgpa", "ai_hours_per_week"))
+  hist(data[[v]], breaks = 40, main = v, xlab = v, col = "grey80")
+```
+
+## Data checks
+
+`data_check.R` checks types, missing values, duplicates, impossible values, distributions, rare levels,
+leakage, collinearity and the OLS fit. The summary table:
+
+```{r data-check}
+Sys.setenv(CHECK_OUT_DIR = file.path(OUT, "data_check"))
+invisible(capture.output(source(file.path(ROOT, "regression", "data_check.R"), local = new.env())))
+chk <- read.csv(file.path(OUT, "data_check", "summary_checks.csv"))
+kable(chk[!grepl("^LLM|Split|AI rows|NA in LLM", chk$check), c("check", "result", "problem")])
+```
+
+Main points: the data are clean (no missing values, duplicates or impossible values, no leakage), but
+`cgpa` is almost perfectly normal and capped at 4, which suggests the dataset is **simulated**, and the
+signal is weak. `primary_use_case = "No AI use"` is the same 148 rows as `primary_ai_tool = "No AI tool"`,
+so it is dropped from the "all covariates" models.
+
+## The target: OLS on all 1200 students
+
+```{r ols-truth}
+fit_s <- lm(critical_thinking_score ~ ai_hours_per_week, data = data)
+fit_g <- lm(cgpa ~ ai_hours_per_week, data = data)
+kable(rbind(score = c(coef(fit_s)[2], confint(fit_s)[2, ], R2 = summary(fit_s)$r.squared),
+            cgpa  = c(coef(fit_g)[2], confint(fit_g)[2, ], R2 = summary(fit_g)$r.squared)),
+      digits = 4, col.names = c("beta(ai_hours)", "2.5%", "97.5%", "R2"))
+```
+
+One more hour of AI use per week goes with about 0.3 points lower critical-thinking score, and a very
+small positive change in CGPA. Both effects explain only 1-2% of the variance.
+
+# LLM predictions (the AI prior)
+
+`llm_prior_labels.R` splits the students with a fixed seed into **300 labelled** ("known") rows and
+**900 AI rows** whose outcomes are hidden. For every AI row it asks an LLM (`gpt-oss-20b` on Groq) for a
+probability distribution over 8 CGPA bins and 10 score bins, given the student's features only.
+This needs an API key, so it is not re-run here:
+
+```{r llm-run, eval = FALSE}
+# needs GROQ_API_KEY in ~/.Renviron; resumes from the cache if interrupted
+source("regression/llm_prior_labels.R")
+```
+
+One saved answer (students are matched back by their id, not by position):
+
+```{r llm-example}
+split <- readRDS(file.path(LLM, "llm_split_v2.rds"))
+resp  <- readRDS(file.path(LLM, "llm_responses_v2.rds"))
+cat(substr(resp[[1]]$text, 1, 400), "...\n")
+c(known = length(split$known_ids), ai = length(split$ai_ids))
+```
+
+## How good are the LLM predictions?
+
+The true outcomes of the AI rows are used **only** here, to evaluate the LLM.
+
+```{r llm-quality, fig.width = 9, fig.height = 4}
+probs <- readRDS(file.path(LLM, "llm_probs_v2.rds"))
+truth <- data[match(probs$student_id, data$student_id), ]
+llm_quality <- function(pr, tr) data.frame(
+  outcome   = c("critical_thinking_score", "cgpa"),
+  mean_llm  = c(mean(pr$exp_score), mean(pr$exp_cgpa)),
+  mean_true = c(mean(tr$critical_thinking_score), mean(tr$cgpa)),
+  cor       = c(cor(pr$exp_score, tr$critical_thinking_score), cor(pr$exp_cgpa, tr$cgpa)),
+  slope_llm  = c(coef(lm(pr$exp_score ~ tr$ai_hours_per_week))[2], coef(lm(pr$exp_cgpa ~ tr$ai_hours_per_week))[2]),
+  slope_true = c(coef(lm(tr$critical_thinking_score ~ tr$ai_hours_per_week))[2], coef(lm(tr$cgpa ~ tr$ai_hours_per_week))[2]))
+kable(llm_quality(probs, truth), digits = 3)
+par(mfrow = c(1, 2))
+plot(truth$critical_thinking_score, probs$exp_score, pch = 16, col = "#0000ff40",
+     xlab = "true score", ylab = "LLM expected score", main = "critical thinking"); abline(0, 1, col = 2)
+plot(truth$cgpa, probs$exp_cgpa, pch = 16, col = "#0000ff40",
+     xlab = "true CGPA", ylab = "LLM expected CGPA", main = "CGPA"); abline(0, 1, col = 2)
+```
+
+The LLM is too optimistic and its predictions are essentially uncorrelated with the truth. Most
+importantly, its implied effect of AI hours on critical thinking has the **opposite sign** to the data.
+
+# Method
+
+**Setting.** We have $n$ labelled students $(Y_i, X_i)$ and $m$ unlabelled students $X^*_j$ for which
+the LLM gives a predictive distribution $f_{AI}(Y \mid X^*_j)$. The parameter of interest is the
+regression coefficient of `ai_hours_per_week`, defined as the minimiser of the squared-error loss.
+
+**AI prior (paper, Section 3.2).** A Dirichlet process prior $F \sim DP(\alpha, F_{AI})$ on the
+data-generating distribution, whose base measure $F_{AI}$ is "features of the unlabelled students,
+labels drawn from the LLM". The concentration $\alpha$ is the prior strength: the prior is worth
+$\alpha$ data points. $\alpha = 0$ uses only the real data; $\alpha = m$ treats every AI row like a
+real one (what the first draft did).
+
+**Posterior bootstrap (paper, Algorithm 1).** For $t = 1, \dots, B$: draw fake rows from $F_{AI}$,
+draw weights $(w_{1:n}, w^*_{1:m}) \sim \text{Dir}(1, \dots, 1, \alpha/m, \dots, \alpha/m)$, and compute
+the weighted least-squares fit. The $B$ fitted coefficients are draws from the posterior.
+
+A minimal version for `score ~ ai_hours` with the 300 known students:
+
+```{r pb-demo, fig.width = 7, fig.height = 4}
+set.seed(30175)
+X  <- cbind(1, data$ai_hours_per_week); y <- data$critical_thinking_score
+kn <- match(split$known_ids, data$student_id)            # 300 labelled rows
+ai <- match(split$ai_ids, data$student_id)               # 900 AI rows
+P  <- as.matrix(probs[paste0("p_score_", 1:10)])         # LLM distribution per AI row
+lo <- seq(0, 90, 10)
+
+posterior_bootstrap <- function(alpha, B = 1000, m = length(ai)) {
+  replicate(B, {
+    w  <- rgamma(length(kn), 1)                          # Dirichlet(1,...,1) for real rows
+    s  <- sample(length(ai), m, replace = TRUE)          # X* from the unlabelled students
+    ys <- lo[apply(P[s, ], 1, function(p) sample(10, 1, prob = p))] + runif(m, 0, 10)  # Y* ~ LLM
+    ws <- if (alpha > 0) rgamma(m, alpha / m) else rep(0, m)                           # Dir(alpha/m)
+    Xa <- rbind(X[kn, ], X[ai[s], ]); ya <- c(y[kn], ys); wa <- c(w, ws)
+    solve(crossprod(Xa, Xa * wa), crossprod(Xa, ya * wa))[2]
+  })
+}
+alphas <- c(0, 30, 300, 900)
+draws  <- lapply(alphas, posterior_bootstrap)
+plot(NA, xlim = range(unlist(draws)), ylim = c(0, 9), xlab = "beta(ai_hours) on critical thinking",
+     ylab = "posterior density", main = "Posterior bootstrap, n = 300 known students")
+for (k in seq_along(alphas)) lines(density(draws[[k]]), col = k, lwd = 2)
+abline(v = coef(fit_s)[2], lty = 2)
+legend("topright", c(paste("alpha =", alphas), "OLS on all 1200"), col = c(seq_along(alphas), 1),
+       lty = c(rep(1, length(alphas)), 2), lwd = 2, bty = "n")
+```
+
+As $\alpha$ grows, the posterior moves from the real-data estimate towards the LLM's (wrong) positive
+effect. The whole question is therefore **how to choose $\alpha$**.
+
+**Choosing $\alpha$ (paper, Section 4.1).**
+
+* *Out-of-sample:* 10-fold cross-validated log predictive density on the known rows ("CV").
+* *Coverage calibration (Section 4.1.1):* bootstrap the known rows, treat the known-data estimate as
+  the truth of the bootstrap world, and take the **largest** $\alpha$ whose 90% intervals still cover it
+  at least 90% of the time ("cal"). Inside this loop the posterior-bootstrap interval is replaced by its
+  normal approximation from the paper's Theorem 1, which is much faster.
+
+**Comparison prior.** We also fit the "power" (catalytic) AI prior of the paper's Section 2.1, which
+raises the AI-row likelihood to the power $\alpha/m$. With a normal linear model this is conjugate
+(closed form), and we average the AI log-likelihood over the full LLM distribution instead of using one
+sampled label.
+
+The full implementation is `regression_power_prior.R` (see the Appendix). It repeats everything for
+both outcomes, with `ai_hours` only and with all covariates, with 300 and 100 known students, on the
+saved split and on 100 random splits (600 AI rows each; the truth is the OLS fit on all rows not used
+as known rows).
+
+```{r rerun, eval = params$rerun_analysis}
+Sys.setenv(LLM_TAG = "v2")
+source(file.path(ROOT, "regression", "regression_power_prior.R"), local = new.env())
+```
+
+# Results
+
+```{r load-results}
+single  <- read.csv(file.path(OUT, "single_split_summary.csv"))
+rep_sum <- read.csv(file.path(OUT, "replicates_summary.csv"))
+rep_alpha <- read.csv(file.path(OUT, "replicates_by_alpha.csv"))
+getv <- function(model, n, setting, col)
+  rep_sum[rep_sum$model == model & rep_sum$n_known == n & rep_sum$setting == setting, col]
+```
+
+## One split
+
+Posterior mean and 90% interval of the AI-hours coefficient (`a=` gives the chosen $\alpha$):
+
+```{r single-table}
+kable(single[, c("model", "n_known", "truth", "known_only", "pooled_w1", "power_cv", "pb_cal")])
+```
+
+```{r single-fig, echo = FALSE, out.width = "95%"}
+knitr::include_graphics(file.path(OUT, "beta_ai_vs_alpha_n300.png"), rel_path = FALSE)
+```
+
+## 100 random splits
+
+```{r rep-table}
+settings <- c(known_only = "real data only (alpha = 0)", pooled_w1 = "1:1 pooling (alpha = m)",
+              power_cv = "power prior, alpha by CV", power_cal = "power prior, alpha by calibration",
+              pb_cal = "posterior bootstrap, alpha by calibration")
+tab <- rep_sum[rep_sum$setting %in% names(settings),
+               c("model", "n_known", "setting", "mean_alpha", "bias", "rmse", "coverage", "sign_ok")]
+tab$setting <- settings[tab$setting]
+kable(tab, digits = 3, row.names = FALSE,
+      col.names = c("model", "n known", "method", "mean alpha", "bias", "RMSE", "90% coverage", "correct sign"))
+```
+
+```{r rep-figs, echo = FALSE, out.width = "95%"}
+knitr::include_graphics(file.path(OUT, c("calibration_n300.png", "replicates_rmse_by_alpha.png")), rel_path = FALSE)
+```
+
+## What the results show
+
+* **1:1 pooling fails.** For critical thinking with 300 known students, the 90% interval covers the
+  truth in `r round(100 * getv("score_only", 300, "pooled_w1", "coverage"))`% of splits and the sign is
+  correct in `r round(100 * getv("score_only", 300, "pooled_w1", "sign_ok"))`% (real data only:
+  `r round(100 * getv("score_only", 300, "known_only", "coverage"))`% and
+  `r round(100 * getv("score_only", 300, "known_only", "sign_ok"))`%).
+* **Choosing $\alpha$ by CV protects the analysis.** CV gives the AI rows almost no weight (mean
+  $\alpha$ = `r round(getv("score_only", 300, "power_cv", "mean_alpha"), 1)` for `score_only`), so the
+  results are as good as with real data only, and slightly better in the models with many covariates.
+* **Coverage calibration is too permissive with a biased LLM and few labels.** Its bootstrap estimate of
+  coverage follows the actual coverage closely on average (figure above), but choosing the *largest*
+  acceptable $\alpha$ often overshoots: with 100 known students the coverage drops to
+  `r round(100 * getv("score_only", 100, "power_cal", "coverage"))`%.
+* **Posterior bootstrap vs power prior.** Both give almost the same estimates; the posterior bootstrap
+  gives wider, more honest intervals when the AI weight is large.
+* **Where the prior helps.** For CGPA with all covariates the LLM's (near-zero) adjusted effect is close
+  to the truth, and the AI rows stabilise the many coefficients (RMSE
+  `r signif(getv("cgpa_all", 300, "known_only", "rmse"), 2)` → `r signif(getv("cgpa_all", 300, "pooled_w1", "rmse"), 2)`).
+
+# Sensitivity to the LLM and the prompt
+
+`llm_prior_labels_v3.R` repeats the elicitation in the paper's style: one student per call, a detailed
+prompt that explains every feature, temperature 0.7, and a larger model (`gpt-oss-120b`).
+
+```{r v3, results = "asis"}
+f_v3   <- file.path(LLM, paste0("llm_probs_", params$llm_tag_extra, ".rds"))
+out_v3 <- file.path(ROOT, "regression", paste0("output_", params$llm_tag_extra))
+if (!file.exists(f_v3)) {
+  cat("*The", params$llm_tag_extra, "run is not finished yet; this section fills in automatically",
+      "once `", basename(f_v3), "` exists.*\n")
+} else {
+  p3 <- readRDS(f_v3); t3 <- data[match(p3$student_id, data$student_id), ]
+  q  <- rbind(cbind(run = "v2 (gpt-oss-20b, 15 per call)", llm_quality(probs, truth)),
+              cbind(run = paste(params$llm_tag_extra, "(paper style)"), llm_quality(p3, t3)))
+  print(kable(q, digits = 3, row.names = FALSE))
+  if (file.exists(file.path(out_v3, "replicates_summary.csv"))) {
+    r3 <- read.csv(file.path(out_v3, "replicates_summary.csv"))
+    r3 <- r3[r3$setting %in% names(settings) & r3$model %in% c("score_only", "cgpa_only"),
+             c("model", "n_known", "setting", "mean_alpha", "rmse", "coverage", "sign_ok")]
+    r3$setting <- settings[r3$setting]
+    cat("\n\n100 random splits with the", params$llm_tag_extra, "labels:\n\n")
+    print(kable(r3, digits = 3, row.names = FALSE))
+  } else {
+    cat("\n\n*Run `Sys.setenv(LLM_TAG = \"", params$llm_tag_extra,
+        "\"); source(\"regression/regression_power_prior.R\")` to add the 100-split results.*\n", sep = "")
+  }
+}
+```
+
+# Limitations
+
+* The dataset looks simulated, so the LLM has no real-world knowledge to contribute and the effects
+  should not be read as real findings.
+* The effects are weak (R² ≈ 1-2%), so the real data alone already give a wide interval.
+* The LLM prior is only as good as the LLM and the prompt; Section 5 checks a second model and prompt.
+* The posterior is centred at a biased value whenever $\alpha > 0$ and the LLM is biased (paper,
+  discussion after Theorem 1); the method does not correct this bias, it only limits its weight.
+* We did not implement the paper's comparison with prediction-powered inference (PPI), which needs
+  LLM predictions for the labelled rows as well.
+
+# Reproducibility
+
+* `data_check.R`: about 10 s. `regression_power_prior.R`: about 20 min, offline.
+* `llm_prior_labels.R` / `llm_prior_labels_v3.R`: need `GROQ_API_KEY`; their outputs are saved in
+  `data/llm/`.
+* Set `rerun_analysis: true` in the header to recompute the 100-split study while knitting.
+
+```{r session}
+sessionInfo()
+```
+
+# Appendix: full code
+
+## `regression/data_check.R`
+```{r code-check, eval = FALSE, file = file.path(ROOT, "regression", "data_check.R")}
+```
+
+## `regression/llm_prior_labels.R`
+```{r code-llm, eval = FALSE, file = file.path(ROOT, "regression", "llm_prior_labels.R")}
+```
+
+## `regression/llm_prior_labels_v3.R`
+```{r code-llm3, eval = FALSE, file = file.path(ROOT, "regression", "llm_prior_labels_v3.R")}
+```
+
+## `regression/regression_power_prior.R`
+```{r code-reg, eval = FALSE, file = file.path(ROOT, "regression", "regression_power_prior.R")}
+```

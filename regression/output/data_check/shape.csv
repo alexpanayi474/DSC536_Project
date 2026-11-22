@@ -1,0 +1,4 @@
+"variable","mean","sd","skew","ex_kurt","n_unique","max_decimals","pct_at_min","pct_at_max","ks_normal_p","ks_uniform_p"
+"critical_thinking_score",61.67,11.4739913310156,0.1,-0.12,66,0,0.1,0.2,0.0393,7.02e-61
+"cgpa",3.040325,0.377610428534641,0,-0.23,181,2,0.1,0.4,0.974,2.99e-50
+"ai_hours_per_week",5.88241666666667,4.60427322563896,1.09,1.72,181,1,12.3,0.1,5.4e-11,2.38e-286
