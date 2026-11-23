@@ -4,6 +4,10 @@ Group project on O'Hagan & Ročková (2025), *AI-Powered Bayesian Inference*
 ([arXiv:2502.19231](https://arxiv.org/abs/2502.19231)): using LLM predictions to build a Bayesian prior.
 
 Dataset: `campus_ai_pulse_2026.csv` (1200 students; AI use, study habits, CGPA, critical-thinking score).
+It is a **synthetic** dataset by Muhammad Aamir,
+[Campus AI Pulse 2026 on Kaggle](https://www.kaggle.com/datasets/aamir28/student-ai-usage-and-academic-performance-2026),
+licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/); it is redistributed
+here under the same licence, for non-commercial coursework.
 
 ## Folder structure
 

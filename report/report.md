@@ -135,7 +135,11 @@ paper we use two data-driven rules that only use the labelled data:
 
 # 4. Data
 
-**Source.** `campus_ai_pulse_2026.csv` **[TODO: source/link; state whether it is synthetic]**.
+**Source.** *Campus AI Pulse 2026: Student AI Usage & Academic Performance* (Aamir, 2026), file
+`campus_ai_pulse_2026.csv`, published on Kaggle under the CC BY-NC-SA 4.0 licence. The description
+states that the data are **synthetic**: "records are simulated for learning, research practice and
+portfolio projects. They are not responses from real students". We therefore use the data to study how
+the method behaves, not to draw conclusions about real students.
 It contains 1200 students and 24 variables on demographics, study programme, university AI policy,
 AI-tool use, study hours, and outcomes. We use 12 predictors: age, gender, country, university type,
 programme, year of study, university AI policy, main AI tool, main use case, AI hours per week,
@@ -145,9 +149,9 @@ removed. `primary_use_case = "No AI use"` coincides exactly with `primary_ai_too
 (the same 148 students), so `primary_use_case` is dropped from the models with all covariates.
 
 **Quality checks.** The data are clean: no missing values, duplicates or impossible values, no
-leakage from the outcomes, and no rare factor levels. Two features need care. First, CGPA is almost
-exactly normally distributed (skewness 0.00) and capped at 4.0, which together with the name of the
-file suggests that the data are **simulated**. Second, the signal is weak: on all 1200 students,
+leakage from the outcomes, and no rare factor levels. Two features need care. First, consistent with
+the data being simulated, CGPA is almost exactly normally distributed (skewness 0.00) and capped at
+4.0. Second, the signal is weak: on all 1200 students,
 
 | outcome | $\hat\beta$ (AI hours) | 95% CI | $R^2$ |
 |---|---|---|---|
@@ -352,4 +356,6 @@ authors.
   106(2), 479–486.
 * Ferguson, T. S. (1973). A Bayesian analysis of some nonparametric problems. *Annals of Statistics*
   1(2), 209–230.
-* **[TODO: dataset reference]**
+* Aamir, M. (2026). *Campus AI Pulse 2026: Student AI Usage & Academic Performance* [synthetic
+  dataset]. Kaggle. https://www.kaggle.com/datasets/aamir28/student-ai-usage-and-academic-performance-2026
+  (CC BY-NC-SA 4.0).
