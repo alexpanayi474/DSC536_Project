@@ -1,0 +1,22 @@
+"variable","type","test","statistic","p_value"
+"age","numeric","Kruskal-Wallis",93.03,1.55e-18
+"diameter_2","numeric","Kruskal-Wallis",41.06,9.11e-08
+"diameter_1","numeric","Kruskal-Wallis",34.07,2.31e-06
+"region","categorical","Chi-square (simulated p)",324.6,2e-04
+"grew","categorical","Chi-square (simulated p)",235.53,2e-04
+"changed","categorical","Chi-square (simulated p)",197.71,2e-04
+"elevation","categorical","Chi-square (simulated p)",167.63,2e-04
+"itch","categorical","Chi-square (simulated p)",154.47,2e-04
+"bleed","categorical","Chi-square (simulated p)",128.46,2e-04
+"hurt","categorical","Chi-square (simulated p)",83.35,2e-04
+"smoke","categorical","Chi-square (simulated p)",15.82,0.0086
+"fitspatrick","numeric","Kruskal-Wallis",14.61,0.0122
+"pesticide","categorical","Chi-square (simulated p)",11.85,0.0388
+"skin_cancer_history","categorical","Chi-square (simulated p)",9.78,0.0786
+"background_father","categorical","Chi-square (simulated p)",41.22,0.0914
+"gender","categorical","Chi-square (simulated p)",8.89,0.116
+"drink","categorical","Chi-square (simulated p)",6.47,0.268
+"background_mother","categorical","Chi-square (simulated p)",37.29,0.357
+"has_piped_water","categorical","Chi-square (simulated p)",5.14,0.407
+"has_sewage_system","categorical","Chi-square (simulated p)",4.61,0.467
+"cancer_history","categorical","Chi-square (simulated p)",1.73,0.888

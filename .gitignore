@@ -9,3 +9,5 @@
 !report/*.pdf
 *.stan
 nels.RData
+
+CLAUDE.md

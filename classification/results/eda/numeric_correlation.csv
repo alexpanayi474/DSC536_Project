@@ -1,0 +1,5 @@
+"variable","age","fitspatrick","diameter_1","diameter_2"
+"age",1,-0.16,0.11,0.14
+"fitspatrick",-0.16,1,-0.06,-0.07
+"diameter_1",0.11,-0.06,1,0.89
+"diameter_2",0.14,-0.07,0.89,1
