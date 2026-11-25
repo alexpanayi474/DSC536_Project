@@ -72,6 +72,10 @@ split <- readRDS(file.path(LLM_DIR, paste0("llm_split_", TAG, ".rds")))
 probs <- readRDS(file.path(LLM_DIR, paste0("llm_probs_", TAG, ".rds")))
 stopifnot(identical(probs$student_id, split$ai_ids), !anyNA(probs$exp_cgpa), !anyNA(probs$exp_score))
 llm_rows <- match(split$ai_ids, data$student_id)
+# with fewer LLM rows (v3 is limited by the API quota) draw ~85% of them per replicate, so the
+# AI part still varies between splits; v2 (900 rows) keeps 600
+N_AI_REP <- min(N_AI_REP, floor(0.85 * length(llm_rows)))
+cat("LLM tag", TAG, ":", length(llm_rows), "AI rows available,", N_AI_REP, "used per random split\n")
 
 make_llm <- function(cols, lo, hi) {
   P <- matrix(NA_real_, N, length(lo)); P[llm_rows, ] <- as.matrix(probs[cols])

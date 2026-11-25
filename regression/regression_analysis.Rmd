@@ -204,7 +204,10 @@ Sys.setenv(LLM_TAG = "v2")
 source(file.path(ROOT, "regression", "regression_power_prior.R"), local = new.env())
 ```
 
-# Results
+# Results with the first LLM run (v2)
+
+This section uses the v2 labels (`gpt-oss-20b`, 15 students per request, 900 AI students).
+Section 5 repeats the analysis with the paper-style v3 labels, which are the main results of the report.
 
 ```{r load-results}
 single  <- read.csv(file.path(OUT, "single_split_summary.csv"))
@@ -263,10 +266,13 @@ knitr::include_graphics(file.path(OUT, c("calibration_n300.png", "replicates_rms
   to the truth, and the AI rows stabilise the many coefficients (RMSE
   `r signif(getv("cgpa_all", 300, "known_only", "rmse"), 2)` → `r signif(getv("cgpa_all", 300, "pooled_w1", "rmse"), 2)`).
 
-# Sensitivity to the LLM and the prompt
+# Second LLM run in the paper's style (v3): main results
 
 `llm_prior_labels_v3.R` repeats the elicitation in the paper's style: one student per call, a detailed
-prompt that explains every feature, temperature 0.7, and a larger model (`gpt-oss-120b`).
+prompt that explains every feature, temperature 0.7, medium reasoning effort, and a larger model
+(`gpt-oss-120b`). The free daily API quota allowed 611 of the 900 AI students to be labelled;
+`finalize_v3.R` restricts the AI data to these students, and the 100 random splits use 519 (85%) of
+them each. The analysis is run with `Sys.setenv(LLM_TAG = "v3")` and saved in `regression/output_v3/`.
 
 ```{r v3, results = "asis"}
 f_v3   <- file.path(LLM, paste0("llm_probs_", params$llm_tag_extra, ".rds"))
@@ -276,8 +282,11 @@ if (!file.exists(f_v3)) {
       "once `", basename(f_v3), "` exists.*\n")
 } else {
   p3 <- readRDS(f_v3); t3 <- data[match(p3$student_id, data$student_id), ]
-  q  <- rbind(cbind(run = "v2 (gpt-oss-20b, 15 per call)", llm_quality(probs, truth)),
-              cbind(run = paste(params$llm_tag_extra, "(paper style)"), llm_quality(p3, t3)))
+  p2 <- probs[match(p3$student_id, probs$student_id), ]      # v2 on the SAME students
+  cat("Both runs evaluated on the same", nrow(p3), "students (the ones completed in",
+      params$llm_tag_extra, ").\n\n")
+  q  <- rbind(cbind(run = "v2 (gpt-oss-20b, 15 per call)", llm_quality(p2, t3)),
+              cbind(run = paste(params$llm_tag_extra, "(paper style, gpt-oss-120b)"), llm_quality(p3, t3)))
   print(kable(q, digits = 3, row.names = FALSE))
   if (file.exists(file.path(out_v3, "replicates_summary.csv"))) {
     r3 <- read.csv(file.path(out_v3, "replicates_summary.csv"))
@@ -293,12 +302,51 @@ if (!file.exists(f_v3)) {
 }
 ```
 
+```{r v3-findings, results = "asis", echo = FALSE}
+f_sum3 <- file.path(out_v3, "replicates_summary.csv")
+if (file.exists(f_sum3)) {
+  s3 <- read.csv(f_sum3)
+  g3 <- function(model, n, setting, col) s3[s3$model == model & s3$n_known == n & s3$setting == setting, col]
+  cat("\n**What the v3 results show** (100 random splits, AI hours only):\n\n")
+  cat(sprintf(paste0(
+    "* **The AI prior helps when the LLM's belief points the right way.** For critical thinking with 100 ",
+    "labelled students, 1:1 pooling reduces the RMSE from %.3f to %.3f and the interval width from %.2f ",
+    "to %.2f, with coverage %.2f and the correct sign in %.0f%% of splits.\n"),
+    g3("score_only", 100, "known_only", "rmse"), g3("score_only", 100, "pooled_w1", "rmse"),
+    g3("score_only", 100, "known_only", "width"), g3("score_only", 100, "pooled_w1", "width"),
+    g3("score_only", 100, "pooled_w1", "coverage"), 100 * g3("score_only", 100, "pooled_w1", "sign_ok")))
+  cat(sprintf(paste0(
+    "* **It fails when the LLM's belief points the wrong way.** For CGPA, 1:1 pooling covers the truth in ",
+    "%.0f%% (300 labelled) and %.0f%% (100 labelled) of splits.\n"),
+    100 * g3("cgpa_only", 300, "pooled_w1", "coverage"), 100 * g3("cgpa_only", 100, "pooled_w1", "coverage")))
+  cat(sprintf(paste0(
+    "* **CV is safe but cautious** (mean alpha %.1f for critical thinking, RMSE %.3f with 100 labelled), ",
+    "because it judges the AI by its predictions for individual students, which are poor.\n"),
+    g3("score_only", 100, "power_cv", "mean_alpha"), g3("score_only", 100, "power_cv", "rmse")))
+  cat(sprintf(paste0(
+    "* **Coverage calibration captures the benefit but not the risk**: RMSE %.3f for critical thinking, ",
+    "but coverage %.2f for CGPA (posterior bootstrap, 100 labelled).\n"),
+    g3("score_only", 100, "pb_cal", "rmse"), g3("cgpa_only", 100, "pb_cal", "coverage")))
+  cat(sprintf(paste0(
+    "* **The posterior bootstrap keeps more honest intervals than the power prior** under heavy AI ",
+    "weight: coverage %.2f vs %.2f for CGPA with 1:1 pooling (300 labelled).\n\n"),
+    g3("cgpa_only", 300, "pb_pooled", "coverage"), g3("cgpa_only", 300, "pooled_w1", "coverage")))
+}
+```
+
+```{r v3-figs, echo = FALSE, out.width = "95%"}
+figs3 <- file.path(out_v3, c("beta_ai_vs_alpha_n100.png", "replicates_rmse_by_alpha.png"))
+if (all(file.exists(figs3))) knitr::include_graphics(figs3, rel_path = FALSE)
+```
+
 # Limitations
 
-* The dataset looks simulated, so the LLM has no real-world knowledge to contribute and the effects
-  should not be read as real findings.
+* The dataset is synthetic (stated in its Kaggle description), so the LLM cannot have real-world
+  knowledge about these students and the effects should not be read as real findings.
 * The effects are weak (R² ≈ 1-2%), so the real data alone already give a wide interval.
-* The LLM prior is only as good as the LLM and the prompt; Section 5 checks a second model and prompt.
+* The LLM prior is only as good as the LLM and the prompt: v2 and v3 imply opposite effects of AI
+  use on critical thinking.
+* The v3 run covers 611 of the 900 AI students because of the free API quota.
 * The posterior is centred at a biased value whenever $\alpha > 0$ and the LLM is biased (paper,
   discussion after Theorem 1); the method does not correct this bias, it only limits its weight.
 * We did not implement the paper's comparison with prediction-powered inference (PPI), which needs

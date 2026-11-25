@@ -9,12 +9,12 @@ author: "[TODO: names]"
 > * **Who writes what.** Sections 1–3 (problem, methodology, assumptions) and 10–11 (discussion,
 >   conclusion) are shared: extend them for the classification part. Sections 4–8 are the regression
 >   part. Section 9 is for the classification part.
-> * **Length.** The brief asks for about 10–20 pages in total. The regression part is currently ~7–8
->   pages, so it can be shortened if needed.
+> * **Length.** The brief asks for about 10–20 pages in total. The regression part is currently ~9
+>   pages, so it can be shortened if needed (e.g. Section 8 or Table 2).
 > * **Working together.** Always `git pull` before editing and push soon after, so we do not overwrite
 >   each other. Items marked **[TODO]** need input.
-> * **Figures** are taken from the analysis folders (e.g. `regression/output/`); keep paths relative to
->   this file. Regression numbers currently come from the v2 LLM labels; they will be updated with v3.
+> * **Numbers and figures** come from `regression/output_v3/` (main analysis, v3 LLM labels) and
+>   `regression/output/` (first LLM run, v2). Keep figure paths relative to this file.
 
 # 1. Problem and research question
 
@@ -28,7 +28,7 @@ Their answer is to treat the AI model as a source of *prior information*: AI pre
 into "imaginary data" that define a prior distribution, and the strength of this prior is a tuning
 parameter that can be chosen from the data.
 
-We apply this idea to a continuous-outcome problem. Using survey data on university students, we ask:
+We apply this idea to a continuous-outcome problem. Using data on university students, we ask:
 
 * How is weekly use of AI tools (`ai_hours_per_week`) related to students' **critical-thinking score**
   (0–100) and **CGPA** (0–4)?
@@ -82,8 +82,8 @@ Algorithm 1). For $t = 1, \dots, B$:
    $\theta^{(t)} = \arg\min_\theta \sum_i w_i (Y_i - X_i^\top\theta)^2 + \sum_j w_j^* (Y_j^* - X_j^{*\top}\theta)^2$.
 
 The draws $\theta^{(1)}, \dots, \theta^{(B)}$ are independent posterior samples, so the algorithm is
-simple and embarrassingly parallel. We report the posterior mean and the 5%–95% quantiles (90%
-credible interval), as in the paper.
+simple and embarrassingly parallel. We use $B = 200$ and report the posterior mean and the 5%–95%
+quantiles (90% credible interval), as in the paper.
 
 **Intuition from the theory.** The paper's Theorem 1 shows that, with $\alpha = \gamma n$, the
 posterior is approximately normal and centred at the minimiser of
@@ -117,7 +117,7 @@ paper we use two data-driven rules that only use the labelled data:
   estimate from the original labelled data (the "truth" of the bootstrap world). Choose the **largest**
   $\alpha$ whose estimated coverage is at least 90%. To keep this fast, the posterior-bootstrap
   interval inside the loop is replaced by its normal approximation from Theorem 1; we checked that the
-  two agree closely (`theorem1_check.csv`).
+  two agree well (`theorem1_check.csv`).
 
 # 3. Assumptions
 
@@ -140,18 +140,23 @@ paper we use two data-driven rules that only use the labelled data:
 states that the data are **synthetic**: "records are simulated for learning, research practice and
 portfolio projects. They are not responses from real students". We therefore use the data to study how
 the method behaves, not to draw conclusions about real students.
-It contains 1200 students and 24 variables on demographics, study programme, university AI policy,
-AI-tool use, study hours, and outcomes. We use 12 predictors: age, gender, country, university type,
-programme, year of study, university AI policy, main AI tool, main use case, AI hours per week,
-percentage of assignment work done with AI, and study hours per week. Variables that are other
-outcomes or derived scores (e.g. AI-dependency score, time saved, detector flags) and the ID are
-removed. `primary_use_case = "No AI use"` coincides exactly with `primary_ai_tool = "No AI tool"`
-(the same 148 students), so `primary_use_case` is dropped from the models with all covariates.
+
+The file contains 1200 students and 24 variables on demographics, study programme, university AI
+policy, AI-tool use, study habits and outcomes. We use 12 predictors: age, gender, country, university
+type, programme, year of study, university AI policy, main AI tool, main use case, AI hours per week,
+percentage of assignment work done with AI, and study hours per week. The other variables are the
+student ID, two further indicators of AI use (`uses_ai`, which is already implied by zero AI hours,
+and `paid_ai_subscription`), the self-rated prompt skill, and six variables that describe consequences of AI use measured at the
+same time as the outcomes (AI-dependency score and level, time saved, integrity concern, AI-detector
+flag, would recommend AI); these are not used. `primary_use_case = "No AI use"` coincides exactly with
+`primary_ai_tool = "No AI tool"` (the same 148 students), so `primary_use_case` is dropped from the
+models with all covariates.
 
 **Quality checks.** The data are clean: no missing values, duplicates or impossible values, no
-leakage from the outcomes, and no rare factor levels. Two features need care. First, consistent with
-the data being simulated, CGPA is almost exactly normally distributed (skewness 0.00) and capped at
-4.0. Second, the signal is weak: on all 1200 students,
+leakage from the outcomes (no single variable explains more than 5% of either outcome), and no rare
+factor levels. Two features need care. First, consistent with the data being simulated, CGPA is
+almost exactly normally distributed (skewness 0.00) and capped at 4.0. Second, the signal is weak: on
+all 1200 students,
 
 | outcome | $\hat\beta$ (AI hours) | 95% CI | $R^2$ |
 |---|---|---|---|
@@ -170,31 +175,52 @@ negligible change in CGPA. AI hours are strongly correlated with the share of as
 **Split.** With a fixed seed the students are split into 300 labelled and 900 unlabelled ("AI")
 students; the outcomes of the AI students are hidden from the analysis and used only for evaluation.
 
-**Prompt and model.** For every AI student we send the student's features to an LLM
-(`gpt-oss-20b` via the Groq API, temperature 0.4) and ask for a probability distribution over 8 CGPA
-bins (width 0.5) and 10 critical-thinking bins (width 10), returned as JSON. Students are sent in
-batches of 15 and matched back by their ID. The base measure $F_{AI}$ draws a bin from the LLM's
-probabilities and then a value uniformly within the bin.
+**Two elicitations.** For every AI student we send the student's features to an LLM through the Groq
+API and ask for a probability distribution over 8 CGPA bins (width 0.5) and 10 critical-thinking bins
+(width 10), returned as JSON. The base measure $F_{AI}$ draws a bin from these probabilities and then
+a value uniformly within the bin. We ran this twice:
+
+| | first run (v2) | main run (v3), in the style of the paper |
+|---|---|---|
+| model | `gpt-oss-20b` | `gpt-oss-120b` (larger reasoning model; the paper used OpenAI's o4-mini) |
+| students per request | 15 | 1 (as in the paper) |
+| prompt | short description of the task | detailed prompt following the paper's Appendix A.1: role, meaning and scale of every feature, task, output format |
+| temperature / reasoning effort | 0.4 / low | 0.7 / medium (as in the paper) |
+| students labelled | 900 | 611 (limited by the free daily API quota) |
+
+Like the paper's prompt, the v3 prompt explains the inputs in detail. Unlike the paper, it gives no
+expert guidance on how each feature affects the outcomes (the paper's "disease profiles"), because
+here that would mean writing our own answer into the prior.
 
 **Lessons from implementation.** A first version of the pipeline had three problems that would have
 invalidated the results: the random seed was set *after* the split, so cached LLM answers were
 attached to different students on every run; answers were matched by their position in the reply
-rather than by ID; and many answers were degenerate (all probability on one bin, or the same answer
-for all 15 students in a batch). Fixing these was necessary before any analysis. This illustrates a
-practical point: the method is simple, but the AI-elicitation step needs careful engineering.
+rather than by student ID; and many answers were degenerate (all probability on one bin, or the same
+answer for all 15 students in a batch). These were fixed before any analysis. The method itself is
+simple, but the elicitation step needs careful engineering.
 
-**Quality of the LLM predictions** (evaluated against the hidden true outcomes of the 900 AI students;
-"LLM" = mean of the LLM's distribution):
+**Quality of the LLM predictions.** Table 1 compares both runs with the hidden true outcomes on the
+same 611 students ("LLM" = mean of the LLM's distribution for each student).
 
-| outcome | mean LLM | mean true | correlation | MSE LLM | MSE of the mean | AI-hours slope LLM | true |
-|---|---|---|---|---|---|---|---|
-| critical thinking | 71.5 | 61.8 | −0.03 | 317 | 138 | **+0.33** | **−0.30** |
-| CGPA | 3.19 | 3.05 | −0.01 | 0.28 | 0.15 | +0.022 | +0.008 |
+**Table 1.** LLM predictions vs true outcomes, 611 AI students.
 
-The LLM is too optimistic, its predictions are essentially uncorrelated with the true values, and it
-does worse than always predicting the average. Most importantly for our question, it implies that more
-AI use goes with **higher** critical thinking, the opposite of the data. This is a demanding but
-realistic test of the method: a confident AI prior that is wrong.
+| outcome | run | mean | correlation with truth | MSE | AI-hours slope |
+|---|---|---|---|---|---|
+| critical thinking | v2 | 72.0 | −0.06 | 338 | **+0.27** |
+| | v3 | **62.3** | 0.06 | 170 | **−0.41** |
+| | truth | 62.0 | | 145 (variance) | −0.24 |
+| CGPA | v2 | 3.17 | −0.02 | 0.30 | +0.022 |
+| | v3 | 2.88 | 0.07 | 0.22 | −0.007 |
+| | truth | 3.06 | | 0.15 (variance) | +0.009 |
+
+Neither run can predict individual students: the correlations are close to zero and both MSEs are
+larger than the variance, i.e. worse than always predicting the average. But the two runs hold very
+different *beliefs about the population*. The v3 run gets the average critical-thinking score right
+and implies the right direction of the effect of AI use (though about 1.7 times too strong), whereas
+v2 is ten points too optimistic and implies the **opposite** direction. For CGPA it is the other way
+round: v2 has the right direction (but more than twice too strong) and v3 the wrong one. As the
+results show, it is this population-level relationship, not the accuracy for individual students,
+that determines whether the AI prior helps.
 
 # 6. Experimental design
 
@@ -204,99 +230,139 @@ We compare: real data only ($\alpha = 0$), 1:1 pooling ($\alpha = m$, i.e. treat
 real), and $\alpha$ chosen by CV or by coverage calibration, for both the posterior bootstrap and the
 power prior.
 
-To evaluate the methods we repeat the analysis on **100 random splits**. In each split 600 of the 900
-AI-labelled students form the AI data, the labelled students are drawn from the remaining real rows,
-and the "truth" is the least-squares coefficient on all students *not* used as labelled data. We
-report bias, root mean squared error (RMSE), coverage of the 90% interval, and how often the estimate
-has the correct sign.
+The **main analysis uses the v3 labels**. On the saved split the AI data are the $m = 611$ students
+labelled by v3. To evaluate the methods we repeat the analysis on **100 random splits**: in each split
+519 of the 611 AI-labelled students (85%) form the AI data, the labelled students are drawn from the
+remaining students, and the "truth" is the least-squares coefficient on all students *not* used as
+labelled data. We report bias, root mean squared error (RMSE), coverage of the 90% interval, its
+average width, and how often the estimate has the correct sign. The same design with the v2 labels
+(600 of the 900 AI students per split) is summarised in Section 8.
 
 # 7. Results
 
 ## 7.1 One split
 
-Table 1 shows the posterior for the AI-hours coefficient on the saved split, and Figure 2 shows how
-it changes with $\alpha$.
+**Table 2.** Posterior mean [90% interval] of the AI-hours coefficient on the saved split, v3 labels
+($m = 611$). In brackets after the estimate: the chosen $\alpha$.
 
-**Table 1.** Posterior mean [90% interval] of the AI-hours coefficient, critical-thinking score.
-
-| model | n | truth | real data only | 1:1 pooling | power prior, $\alpha$ by CV | posterior bootstrap, $\alpha$ by calibration |
+| outcome | n | truth | real data only | 1:1 pooling | power prior, $\alpha$ by CV | posterior bootstrap, $\alpha$ by calibration |
 |---|---|---|---|---|---|---|
-| AI hours only | 300 | −0.295 | −0.318 [−0.541, −0.094] | **+0.182** [−0.026, 0.391] | −0.318 [−0.541, −0.094] ($\alpha$=0) | −0.258 [−0.479, 0.009] ($\alpha$=30) |
-| AI hours only | 100 | −0.305 | −0.265 [−0.607, 0.077] | **+0.290** [0.052, 0.527] | −0.258 [−0.606, 0.091] ($\alpha$=1) | −0.099 [−0.506, 0.317] ($\alpha$=30) |
-| all covariates | 300 | −0.381 | −0.687 [−1.14, −0.23] | −0.093 [−0.53, 0.345] | −0.659 [−1.14, −0.175] ($\alpha$=10) | −0.479 [−1.04, 0.142] ($\alpha$=100) |
+| critical thinking | 300 | −0.295 | −0.318 [−0.541, −0.094] | −0.380 [−0.560, −0.200] | −0.318 [−0.542, −0.095] (1) | −0.384 [−0.626, −0.165] (1000) |
+| critical thinking | 100 | −0.305 | −0.265 [−0.607, 0.077] | −0.385 [−0.598, −0.171] | −0.269 [−0.615, 0.078] (3) | −0.394 [−0.678, −0.140] (1000) |
+| CGPA | 300 | 0.0083 | 0.0065 [−0.0011, 0.0141] | −0.0026 [−0.0101, 0.0049] | 0.0065 [−0.0011, 0.0141] (0) | 0.0035 [−0.0053, 0.0130] (100) |
+| CGPA | 100 | 0.0077 | 0.0090 [−0.0041, 0.0221] | −0.0047 [−0.0138, 0.0044] | 0.0088 [−0.0044, 0.0220] (1) | 0.0019 [−0.0112, 0.0161] (100) |
 
 ![**Figure 2.** Posterior mean and 90% interval of the AI-hours coefficient as a function of $\alpha$
-(the effective number of AI data points), 300 labelled students, saved split. Blue: power prior;
-orange: posterior bootstrap (Dirichlet-process prior). Dashed line: truth. Stars and triangles mark the
-$\alpha$ chosen by cross-validation and by coverage calibration.](../regression/output/beta_ai_vs_alpha_n300.png){width=100%}
+(the effective number of AI data points), 100 labelled students, saved split, v3 labels. Blue: power
+prior; orange: posterior bootstrap (Dirichlet-process prior). Dashed line: truth. The star and the
+triangles mark the $\alpha$ chosen by cross-validation and by coverage calibration.](../regression/output_v3/beta_ai_vs_alpha_n100.png){width=100%}
 
-With 1:1 pooling the 900 AI rows outweigh the real data and the estimated effect becomes **positive**;
-with 100 labelled students the interval even excludes zero on the wrong side. CV gives the AI rows
-almost no weight and stays close to the real-data estimate. Coverage calibration chooses a larger
-$\alpha$ and moves the estimate towards the LLM.
+For critical thinking, adding the AI prior moves the estimate towards the LLM's slope, which points
+in the right direction. With 100 labelled students the real data alone are inconclusive (the interval
+contains zero), while 1:1 pooling gives −0.385 [−0.598, −0.171]: a clearly negative effect, with an
+interval that still contains the truth (−0.305). For CGPA the LLM's slope has the wrong sign, and
+1:1 pooling pushes the estimate below zero, so that its interval no longer contains the truth. CV
+gives the AI rows almost no weight in all four cases; coverage calibration gives them a large weight.
 
 ## 7.2 100 random splits
 
-**Table 2.** Performance over 100 random splits, AI-hours coefficient (90% intervals).
+**Table 3.** Performance over 100 random splits, AI-hours coefficient, v3 labels (90% intervals; 1:1
+pooling and CV use the power prior).
 
-| outcome, model | n | method | mean $\alpha$ | bias | RMSE | coverage | correct sign |
-|---|---|---|---|---|---|---|---|
-| score, AI hours only | 300 | real data only | 0 | 0.012 | 0.146 | 0.91 | 0.99 |
-| | | 1:1 pooling | 600 | 0.432 | 0.442 | **0.01** | **0.02** |
-| | | power prior, CV | 1.3 | 0.015 | 0.146 | 0.91 | 0.99 |
-| | | posterior bootstrap, calibration | 53 | 0.095 | 0.191 | 0.86 | 0.95 |
-| score, AI hours only | 100 | real data only | 0 | 0.052 | 0.293 | 0.85 | 0.82 |
-| | | 1:1 pooling | 600 | 0.557 | 0.563 | **0.00** | **0.00** |
-| | | power prior, CV | 1.3 | 0.060 | 0.292 | 0.86 | 0.80 |
-| | | posterior bootstrap, calibration | 180 | 0.231 | 0.377 | **0.73** | 0.58 |
-| score, all covariates | 100 | real data only | 0 | −0.049 | 0.632 | 0.84 | 0.78 |
-| | | power prior, CV | 14.8 | 0.043 | 0.511 | 0.94 | 0.81 |
-| CGPA, AI hours only | 300 | real data only | 0 | 0.000 | 0.0050 | 0.87 | 0.97 |
-| | | 1:1 pooling | 600 | 0.009 | 0.0097 | 0.48 | 1.00 |
-| | | power prior, CV | 1.0 | 0.000 | 0.0050 | 0.88 | 0.98 |
-| CGPA, all covariates | 300 | real data only | 0 | −0.002 | 0.0114 | 0.81 | 0.76 |
-| | | 1:1 pooling | 600 | −0.004 | 0.0071 | 1.00 | 0.91 |
-| | | posterior bootstrap, calibration | 958 | −0.004 | 0.0072 | 1.00 | 0.90 |
+| outcome, model | n | method | mean $\alpha$ | bias | RMSE | coverage | width | correct sign |
+|---|---|---|---|---|---|---|---|---|
+| critical thinking, AI hours only | 300 | real data only | 0 | −0.062 | 0.160 | 0.85 | 0.46 | 1.00 |
+| | | 1:1 pooling | 519 | −0.101 | 0.126 | 0.89 | 0.38 | 1.00 |
+| | | CV | 4.7 | −0.063 | 0.158 | 0.85 | 0.47 | 1.00 |
+| | | posterior bootstrap, calibration | 861 | −0.092 | 0.134 | 0.98 | 0.52 | 1.00 |
+| critical thinking, AI hours only | 100 | real data only | 0 | −0.036 | 0.237 | 0.89 | 0.81 | 0.92 |
+| | | 1:1 pooling | 519 | −0.102 | **0.113** | 1.00 | **0.46** | 1.00 |
+| | | CV | 5.0 | −0.041 | 0.227 | 0.92 | 0.81 | 0.93 |
+| | | posterior bootstrap, calibration | 653 | −0.077 | 0.150 | 0.99 | 0.67 | 0.98 |
+| critical thinking, all covariates | 100 | real data only | 0 | 0.089 | 0.597 | 0.81 | 1.63 | 0.76 |
+| | | 1:1 pooling | 519 | 0.363 | 0.384 | 0.82 | 0.99 | 0.88 |
+| | | CV | 111 | 0.215 | 0.422 | 0.92 | 1.59 | 0.82 |
+| CGPA, AI hours only | 300 | real data only | 0 | −0.0011 | 0.0052 | 0.89 | 0.016 | 0.97 |
+| | | 1:1 pooling | 519 | −0.0099 | 0.0102 | **0.21** | 0.016 | **0.08** |
+| | | CV | 1.8 | −0.0012 | 0.0051 | 0.90 | 0.016 | 0.97 |
+| | | posterior bootstrap, calibration | 213 | −0.0052 | 0.0077 | 0.77 | 0.020 | 0.67 |
+| CGPA, AI hours only | 100 | real data only | 0 | 0.0001 | 0.0088 | 0.90 | 0.028 | 0.85 |
+| | | 1:1 pooling | 519 | −0.0123 | 0.0124 | **0.07** | 0.020 | **0.00** |
+| | | CV | 1.7 | −0.0002 | 0.0086 | 0.90 | 0.028 | 0.84 |
+| | | posterior bootstrap, calibration | 329 | −0.0066 | 0.0107 | 0.76 | 0.030 | 0.48 |
 
-The complete table is `replicates_summary.csv`. The main findings are:
+The complete tables are in `regression/output_v3/`. The main findings are:
 
-1. **Treating AI labels as real data fails.** For critical thinking, 1:1 pooling gives the wrong sign
-   in 98–100% of splits and its 90% interval almost never covers the truth.
-2. **Choosing $\alpha$ by cross-validation protects the analysis.** CV gives the AI rows a weight
-   of about one data point in the AI-hours-only models, so the results match the real-data analysis.
-   In the model with many covariates and only 100 labelled students, a small AI weight
-   ($\alpha \approx 15$) even improves the results (RMSE 0.63 → 0.51, coverage 0.84 → 0.94),
-   because the AI rows stabilise the estimates of the ~35 other coefficients.
-3. **Coverage calibration is too permissive when the AI is biased and labels are few.** Its bootstrap
-   estimate of coverage tracks the actual coverage well on average (Figure 3, compare the paper's
-   Figure 3), but the rule "choose the largest acceptable $\alpha$" is noisy and
-   often overshoots. With 100 labelled students it lets the LLM's bias through: coverage 0.73 and the
-   correct sign in only 58% of splits. The reason is that inside the bootstrap, the "truth" is the
-   noisy estimate from the small labelled sample, so a moderate bias is hidden by the wide intervals.
-4. **The posterior bootstrap and the power prior give almost the same estimates.** With large
-   $\alpha$ the posterior bootstrap gives wider, more honest intervals (e.g. coverage 0.11 vs 0.01 at
-   1:1 pooling), in line with the paper's argument for the non-parametric approach.
-5. **The AI prior can help where the LLM happens to be right.** For CGPA with all covariates the
-   LLM's adjusted effect is close to zero, as is the true one, and a large AI weight reduces the RMSE
-   from 0.011 to 0.007 with full coverage (Figure 4, bottom right).
+1. **When the LLM's belief points the right way, the AI prior helps, most of all with few labels.**
+   For critical thinking with 100 labelled students, 1:1 pooling halves the RMSE (0.237 → 0.113),
+   almost halves the width of the interval (0.81 → 0.46), and gives the correct sign in every split.
+   With 300 labelled students the gain is smaller (RMSE 0.160 → 0.126), as expected when the real
+   data are already informative. The estimates are slightly too negative (bias −0.10) because the
+   LLM exaggerates the effect, but the intervals still contain the truth in 89% (300 labelled) and
+   100% (100 labelled) of splits. The RMSE falls steadily as $\alpha$ grows (Figure 4).
+2. **When the LLM's belief points the wrong way, a large AI weight fails.** For CGPA, 1:1 pooling
+   covers the truth in only 21% (300 labelled) and 7% (100 labelled) of splits and gives the wrong
+   sign almost always. A moderate weight still helps slightly (with 100 labelled students the RMSE
+   falls from 0.0088 at $\alpha = 0$ to 0.0072 at $\alpha = 30$), because pulling a noisy estimate
+   towards a near-zero value reduces its variance more than it adds bias; beyond $\alpha \approx 100$
+   the coverage collapses.
+3. **CV is safe but too cautious.** CV gives the AI rows a weight of about 2–5 data points in the
+   AI-hours-only models. This protects the CGPA analysis (coverage 0.90), but it also misses most of
+   the benefit for critical thinking (RMSE 0.227 instead of 0.113 with 100 labelled students). The
+   reason is that CV judges the AI by how well it predicts *individual* students, which the LLM cannot
+   do (Table 1), while the useful information is the population-level relationship.
+4. **Coverage calibration captures the benefit but not the risk.** It gives the AI a large weight in
+   both cases: for critical thinking this works well (RMSE 0.150, coverage 0.99 with 100 labelled
+   students), but for CGPA it lets the LLM's bias through (coverage 0.76, correct sign in 48% of
+   splits). Its bootstrap estimate of coverage follows the actual coverage only roughly (Figure 3).
+5. **The posterior bootstrap gives more honest intervals than the power prior.** The two give almost
+   the same estimates, but with a large AI weight the posterior bootstrap's intervals are wider and
+   cover the truth more often: 0.98 vs 0.76 for critical thinking with calibration (300 labelled), and
+   0.63 vs 0.21 for CGPA with 1:1 pooling (300 labelled). This supports the paper's argument for the
+   non-parametric prior.
+6. **With many covariates, a moderate AI weight is best.** For critical thinking with all covariates
+   and 100 labelled students, the RMSE falls from 0.597 to 0.367 at $\alpha = 100$ and rises again for
+   larger $\alpha$ (Figure 4); CV chooses $\alpha \approx 111$ on average and reaches coverage 0.92.
 
-![**Figure 3.** Coverage of the 90% intervals over 100 random splits (300 labelled students) as a
-function of $\alpha$. Solid: actual coverage (using the truth); dashed: bootstrap estimate used by the
-calibration rule (labelled data only). Dotted line: nominal 90%.](../regression/output/calibration_n300.png){width=100%}
+![**Figure 3.** Coverage of the 90% intervals over 100 random splits (100 labelled students, v3 labels)
+as a function of $\alpha$. Solid: actual coverage (using the truth); dashed: bootstrap estimate used by
+the calibration rule (labelled data only). Dotted line: nominal 90%.](../regression/output_v3/calibration_n100.png){width=100%}
 
-![**Figure 4.** Root mean squared error of the AI-hours coefficient over 100 random splits as a function
-of $\alpha$, for the power prior (blue) and the posterior bootstrap (orange), with 300 (solid) and 100
-(dashed) labelled students.](../regression/output/replicates_rmse_by_alpha.png){width=100%}
+![**Figure 4.** RMSE of the AI-hours coefficient over 100 random splits as a function of $\alpha$, v3
+labels, for the power prior (blue) and the posterior bootstrap (orange), with 300 (solid) and 100
+(dashed) labelled students.](../regression/output_v3/replicates_rmse_by_alpha.png){width=100%}
 
-# 8. Sensitivity to the LLM and the prompt
+# 8. Comparison with the first LLM run (v2)
 
-**[TODO – fill in when v3 has finished.]** To check whether the results depend on our choice of LLM and
-prompt, we repeated the elicitation in the style of the paper (Section 5.1.2 and Appendix A.1): one
-student per call, a detailed prompt that explains the meaning and scale of every feature, temperature
-0.7, and a larger reasoning model (`gpt-oss-120b`, medium reasoning effort). Unlike the paper, we did
-not add expert guidance on how each feature affects the outcomes, because this would mean writing our
-own answer into the prior. Results: **[TODO: LLM quality table v2 vs v3, and key rows of the
-100-split table with v3 labels — generated automatically in Section 5 of `regression_analysis.html`].**
+The same analysis with the v2 labels shows what happens when the LLM's belief is wrong for the main
+outcome. v2 implies that more AI use goes with *higher* critical thinking (Table 1), and Table 4 shows
+the consequence.
+
+**Table 4.** Critical thinking, AI hours only, 100 random splits, v2 labels (600 of 900 AI students
+per split).
+
+| n | method | mean $\alpha$ | bias | RMSE | coverage | correct sign |
+|---|---|---|---|---|---|---|
+| 300 | real data only | 0 | 0.012 | 0.146 | 0.91 | 0.99 |
+| | 1:1 pooling | 600 | 0.432 | 0.442 | **0.01** | **0.02** |
+| | CV | 1.3 | 0.015 | 0.146 | 0.91 | 0.99 |
+| | posterior bootstrap, calibration | 53 | 0.095 | 0.191 | 0.86 | 0.95 |
+| 100 | real data only | 0 | 0.052 | 0.293 | 0.85 | 0.82 |
+| | 1:1 pooling | 600 | 0.557 | 0.563 | **0.00** | **0.00** |
+| | CV | 1.3 | 0.060 | 0.292 | 0.86 | 0.80 |
+| | posterior bootstrap, calibration | 180 | 0.231 | 0.377 | 0.73 | 0.58 |
+
+With v2, treating the AI labels as real data turns the negative effect into a positive one in almost
+every split (Figure 5). CV again gives the AI almost no weight and protects the analysis, while
+coverage calibration lets part of the bias through when only 100 labelled students are available.
+(The rows for "real data only" differ slightly from Table 3 because the random splits differ.)
+
+![**Figure 5.** As Figure 2, but with the v2 labels and 300 labelled students: with $\alpha = m$ the
+estimate becomes positive.](../regression/output/beta_ai_vs_alpha_n300.png){width=100%}
+
+The same data, the same method and the same family of models therefore lead to opposite conclusions
+depending on the prompt and the LLM: the v3 prior sharpens the inference on critical thinking, while
+the v2 prior reverses it.
 
 # 9. Application to a multiclass outcome
 
@@ -310,36 +376,51 @@ the two parts can be compared in the discussion.
 
 **Advantages.** The method is simple to implement (a weighted least-squares fit repeated $B$ times),
 does not require a correct parametric model, gives fully Bayesian uncertainty quantification, and has a
-single interpretable tuning parameter: $\alpha$, the number of data points the AI is worth. It also
-uses the AI's full predictive distribution rather than a single predicted value.
+single interpretable tuning parameter: $\alpha$, the number of data points the AI is worth. It uses the
+AI's full predictive distribution rather than a single predicted value. In our application a good AI
+prior halved the error of the estimated effect when only 100 labelled students were available.
+
+**What the AI prior contributes.** Neither LLM could predict individual students, yet one of them
+improved the inference. For a regression coefficient, what matters is whether the relationship implied
+by the LLM's predictions is close to the true one. A plausible reason why the v3 LLM got the direction
+right for critical thinking is that the synthetic data were generated under the same common belief
+that heavy AI use harms critical thinking; on synthetic data an LLM can only contribute such general
+beliefs, not real knowledge about the students.
 
 **Limitations and failure modes observed in our application.**
 
-* *Bias is not corrected, only weighted.* When the AI is biased, any $\alpha > 0$ moves the posterior
-  towards the wrong answer (Theorem 1). Our LLM reversed the sign of the effect, so the safe choice
-  was $\alpha \approx 0$.
-* *The choice of $\alpha$ is critical.* Fixing $\alpha$ in advance, in particular $\alpha = m$, gave
-  confidently wrong conclusions. Data-driven choices work only if the labelled sample can detect the
-  bias: CV worked well here, while coverage calibration was too permissive with $n = 100$.
-* *No gain without AI knowledge.* On this (probably simulated) dataset the LLM had no useful
-  knowledge, so the method could at best protect the analysis. The potential benefit shown in the
-  paper requires an AI model that is better than chance at the task.
-* *Dependence on elicitation.* The prior depends on the LLM, the prompt and the output format; our
-  first implementation shows how easily the elicitation step can go wrong.
+* *Bias is not corrected, only weighted.* When the AI's belief is wrong (v2 for critical thinking,
+  v3 for CGPA), any large $\alpha$ moves the posterior towards the wrong answer (Theorem 1), up to
+  reversing the sign of the effect.
+* *Choosing $\alpha$ involves a trade-off.* CV was always safe but missed most of the benefit, because
+  it measures predictive accuracy for individuals rather than the quality of the implied relationship.
+  Coverage calibration captured the benefit when the LLM was right but let its bias through when it was
+  wrong, especially with few labelled students. Neither rule was both safe and efficient, so results
+  should be reported over a range of $\alpha$.
+* *Dependence on the elicitation.* Two prompts and models gave opposite priors for the same question,
+  and a first implementation contained errors that would have invalidated the results.
+* *Practical constraints.* The paper-style elicitation (one student per request) used the free API
+  quota quickly, so the v3 prior is based on 611 rather than 900 students.
+* *Synthetic data.* The estimated effects describe the simulated data, not real students.
 
-**Practical recommendations.** Never treat AI labels as real data; evaluate the AI's predictions on
-the labelled data first; choose $\alpha$ out-of-sample and report results for a range of $\alpha$;
-and be cautious with coverage calibration when the labelled sample is small.
+**Practical recommendations.** Never treat AI labels as real data without checking them; compare the
+relationship implied by the AI's predictions with the labelled data before trusting it; report results
+for a range of $\alpha$, not only for one selected value; prefer the non-parametric posterior bootstrap,
+whose intervals stayed more honest under heavy AI weight; and be cautious with coverage calibration
+when the labelled sample is small.
 
 # 11. Conclusion
 
 We applied the AI-powered Bayesian inference framework to estimate the effect of AI use on students'
-critical thinking and CGPA, using an LLM to build the prior. The LLM's predictions were overconfident
-and implied the wrong direction of the effect. Treating them as real data reversed the conclusion,
-while the Dirichlet-process AI prior with $\alpha$ chosen by cross-validation correctly gave them
-almost no weight and kept valid inference. The application illustrates both the main strength of the
-approach, an explicit and tunable trust in the AI, and its main limitation, that this trust must be
-learned from the labelled data.
+critical thinking and CGPA, using an LLM to build the prior. With an LLM prompted in the style of the
+paper, the AI prior pointed in the right direction for critical thinking and, with only 100 labelled
+students, halved the error of the estimated effect while keeping valid coverage. For CGPA, and for
+critical thinking with a weaker first prompt, the LLM's belief pointed the wrong way, and giving it a
+large weight produced confidently wrong conclusions. Cross-validation protected against this but was
+too cautious to exploit a good prior, while coverage calibration did the opposite. The application
+shows both the main strength of the approach, an explicit and tunable trust in the AI, and its main
+limitation: how much to trust the AI must be learned from the labelled data, and this is hard when
+labelled data are scarce.
 
 # Use of AI tools
 
