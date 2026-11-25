@@ -71,14 +71,14 @@ class_tab <- data.frame(class = names(cc), n = as.integer(cc), pct = round(100 *
 print(class_tab, row.names = FALSE)
 save_tab(class_tab, "class_counts.csv")
 
-png(file.path(OUT_DIR, "class_counts.png"), width = 1600, height = 1000, res = 200)
+
 par(mar = c(4, 5, 3, 1), fg = GREY, col.axis = INK, col.lab = INK)
 bp <- barplot(rev(class_tab$n), names.arg = rev(class_tab$class), horiz = TRUE, las = 1,
               col = BLUE, border = NA, xlim = c(0, max(class_tab$n) * 1.2),
               xlab = "Patients", main = "Class counts (one lesion per patient)", col.main = INK)
 text(rev(class_tab$n), bp, sprintf("%d (%.1f%%)", rev(class_tab$n), rev(class_tab$pct)),
      pos = 4, cex = 0.8, col = INK)
-dev.off()
+
 
 section("2. NUMERIC FEATURES")
 num_sum <- function(x) c(n = length(x), mean = mean(x), sd = sd(x), min = min(x),
@@ -96,7 +96,7 @@ num_cor <- round(cor(d[NUM_VARS], method = "spearman"), 2)
 cat("\nSpearman correlations:\n"); print(num_cor)
 save_tab(data.frame(variable = rownames(num_cor), num_cor, row.names = NULL), "numeric_correlation.csv")
 
-png(file.path(OUT_DIR, "numeric_by_class.png"), width = 2000, height = 1600, res = 200)
+
 par(mfrow = c(2, 2), mar = c(4, 4, 3, 1), fg = GREY, col.axis = INK, col.lab = INK)
 labs <- c(age = "Age (years)", fitspatrick = "Fitzpatrick skin type",
           diameter_1 = "Diameter 1 (mm)", diameter_2 = "Diameter 2 (mm)")
@@ -104,7 +104,7 @@ for (v in NUM_VARS) {
   boxplot(d[[v]] ~ d$diagnostic, col = "#cce3fd", border = "#1757ac", outcol = "#1757ac",
           pch = 16, cex = 0.5, xlab = "", ylab = labs[[v]], main = labs[[v]], col.main = INK, las = 1)
 }
-dev.off()
+
 
 section("3. CATEGORICAL FEATURES")
 cat_tab <- do.call(rbind, lapply(names(cat_df), function(v) {
@@ -122,7 +122,7 @@ heat <- function(tab, file, main) {
   M <- as.matrix(tab[CLASSES])
   rn <- paste(tab$variable, tab$level, sep = ": ")
   h <- 400 + 55 * nrow(M)
-  png(file.path(OUT_DIR, file), width = 1700, height = h, res = 200)
+  
   par(mar = c(1, 13, 4, 1), fg = GREY)
   image(seq_along(CLASSES), seq_len(nrow(M)), t(M[nrow(M):1, , drop = FALSE]), col = RAMP,
         zlim = c(0, 100), axes = FALSE, xlab = "", ylab = "", main = main, col.main = INK)
@@ -133,7 +133,7 @@ heat <- function(tab, file, main) {
        sprintf("%.0f", Mr), cex = 0.6, col = ifelse(Mr > 55, "#ffffff", INK))
   abline(h = which(diff(as.integer(factor(rev(tab$variable), levels = unique(rev(tab$variable))))) != 0) + 0.5,
          col = "#ffffff", lwd = 3)
-  dev.off()
+  
 }
 patient_vars <- c("gender", "background_father", "background_mother", LOGICALS)
 lesion_vars  <- c("region", "itch", "grew", "hurt", "changed", "bleed", "elevation")
