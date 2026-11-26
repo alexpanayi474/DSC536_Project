@@ -388,7 +388,7 @@ main findings are:
    and these LLM predictions do not (Table 1), so the correction mostly adds noise. PPI++ detects this
    and gives the predictions almost no weight ($\lambda \approx 0.03$–$0.17$), reproducing the
    real-data results. Unlike the AI prior, PPI cannot exploit the LLM's correct belief about the
-   direction of the effect.
+   direction of the effect (Figure 5).
 7. **With many covariates, a moderate AI weight is best.** For critical thinking with all covariates
    and 100 labelled students, the RMSE of the power prior falls from 0.632 at $\alpha = 0$ to 0.345 at
    $\alpha = 100$ and rises again for larger $\alpha$; CV chooses $\alpha \approx 139$ on average and
@@ -401,6 +401,12 @@ the calibration rule (labelled data only). Dotted line: nominal 90%.](../regress
 ![**Figure 4.** RMSE of the AI-hours coefficient over 100 random splits as a function of $\alpha$, v3
 labels, for the power prior (blue) and the posterior bootstrap (orange), with 300 (solid) and 100
 (dashed) labelled students.](../regression/output_v3/replicates_rmse_by_alpha.png){width=100%}
+
+![**Figure 5.** Method comparison, in the style of the paper's Figure 2. Each line is the 90% interval
+of the AI-hours coefficient on the saved split (v3 labels, AI hours only); the dashed line is the truth.
+On the right: coverage and RMSE over the 100 random splits (Table 3). For critical thinking the AI
+prior gives narrower intervals around the truth; for CGPA, where the LLM's belief points the wrong way,
+1:1 pooling misses the truth, while CV and PPI stay valid.](../regression/output_v3/method_comparison.png){width=100%}
 
 # 8. Comparison with the first LLM run (v2)
 

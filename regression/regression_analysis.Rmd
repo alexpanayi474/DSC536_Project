@@ -361,7 +361,7 @@ if (file.exists(f_sum3)) {
 ```
 
 ```{r v3-figs, echo = FALSE, out.width = "95%"}
-figs3 <- file.path(out_v3, c("beta_ai_vs_alpha_n100.png", "replicates_rmse_by_alpha.png"))
+figs3 <- file.path(out_v3, c("method_comparison.png", "beta_ai_vs_alpha_n100.png", "replicates_rmse_by_alpha.png"))
 if (all(file.exists(figs3))) knitr::include_graphics(figs3, rel_path = FALSE)
 ```
 

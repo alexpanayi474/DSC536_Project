@@ -91,5 +91,48 @@ make_figures <- function(out_dir, level = 0.90) {
   legend_below(legend = c(sprintf("power prior, %d labelled", nks), sprintf("posterior bootstrap, %d labelled", nks)),
                col = rep(cols, each = length(nks)), lty = rep(c(1, 2), 2), pch = 16)
   dev.off()
+
+  # 4. Method comparison (like the paper's Fig. 2): 90% intervals on the saved split, side by side,
+  #    annotated with coverage and RMSE over the random splits. Only when PPI results exist.
+  A_all <- read.csv(file.path(out_dir, "single_split_grid.csv"))
+  if (any(A_all$method == "ppi")) {
+    meth <- list(
+      list(lab = "real data only",           set = "known_only", col = "grey25",
+           pick = function(s) s[s$method == "power" & s$alpha == 0, ]),
+      list(lab = "AI prior, 1:1 pooling",    set = "pooled_w1",  col = cols[["power"]],
+           pick = function(s) s[s$method == "power" & as.logical(s$pooled), ]),
+      list(lab = "AI prior, alpha by CV",    set = "power_cv",   col = cols[["power"]],
+           pick = function(s) s[s$method == "power" & as.logical(s$cv_best), ]),
+      list(lab = "posterior bootstrap,\nalpha by calibration", set = "pb_cal", col = cols[["pb"]],
+           pick = function(s) s[s$method == "pb" & as.logical(s$cal_best), ]),
+      list(lab = "PPI",                      set = "ppi",        col = "#1b9e77",
+           pick = function(s) s[s$method == "ppi", ]),
+      list(lab = "PPI++",                    set = "ppi_pp",     col = "#1b9e77",
+           pick = function(s) s[s$method == "ppi_pp", ]))
+    yy <- rev(seq_along(meth))
+    png(file.path(out_dir, "method_comparison.png"), width = 1500, height = 1150, res = 120)
+    par(mfrow = c(2, 2), mar = c(4.5, 11.5, 3.5, 7.5), oma = c(2.2, 0, 0, 0))
+    for (mn in c("score_only", "cgpa_only")) for (nk in nks) {
+      s  <- A_all[A_all$model == mn & A_all$n_known == nk, ]
+      ci <- t(vapply(meth, function(m) { r <- m$pick(s); c(r$mean[1], r$lo[1], r$hi[1]) }, numeric(3)))
+      tr <- s$truth[1]
+      plot(NA, xlim = range(c(ci, tr, 0)), ylim = c(0.5, length(meth) + 0.5), yaxt = "n", ylab = "",
+           xlab = "coefficient of AI hours (90% interval, saved split)",
+           main = sprintf("%s, %d labelled", title[mn], nk))
+      axis(2, at = yy, labels = vapply(meth, `[[`, "", "lab"), las = 1, cex.axis = 0.85, tick = FALSE)
+      abline(v = tr, lty = 2); abline(v = 0, col = "grey70")
+      mc <- vapply(meth, `[[`, "", "col")
+      segments(ci[, 2], yy, ci[, 3], yy, lwd = 3, col = mc); points(ci[, 1], yy, pch = 16, cex = 1.3, col = mc)
+      rep_row <- function(set, col) { v <- rs[rs$model == mn & rs$n_known == nk & rs$setting == set, col]
+                                      if (length(v)) v[1] else NA }
+      lab_r <- vapply(meth, function(m) sprintf("%.2f | %s", rep_row(m$set, "coverage"),
+                                                formatC(rep_row(m$set, "rmse"), digits = 2, format = "fg", flag = "#")), "")
+      text(par("usr")[2], yy, lab_r, pos = 4, xpd = NA, cex = 0.8)
+      mtext("coverage | RMSE", side = 3, at = par("usr")[2], adj = 0, line = 0.2, cex = 0.65)
+    }
+    legend_below(legend = c("truth", "zero", "coverage | RMSE: over the random splits"),
+                 lty = c(2, 1, NA), col = c("black", "grey70", NA))
+    dev.off()
+  }
   invisible(list.files(out_dir, pattern = "\\.png$"))
 }
