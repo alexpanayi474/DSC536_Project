@@ -194,6 +194,14 @@ raises the AI-row likelihood to the power $\alpha/m$. With a normal linear model
 (closed form), and we average the AI log-likelihood over the full LLM distribution instead of using one
 sampled label.
 
+**Benchmark (PPI).** Prediction-powered inference (Angelopoulos et al. 2023), the method the paper
+compares with, estimates the coefficient as $\hat\theta^{Y}_{L} + \lambda(\hat\theta^{f}_{U} - \hat\theta^{f}_{L})$:
+OLS on the real labels of the labelled students, plus the difference between OLS on the AI predictions
+of the unlabelled and of the labelled students. With $\lambda = 1$ (PPI) the AI's bias, measured on the
+labelled students, is removed; PPI++ tunes $\lambda \in [0, 1]$ to minimise the variance. It needs one
+prediction per student (we use the mean of the LLM's distribution), including the labelled students,
+which is why the v3 run also labels them.
+
 The full implementation is `regression_power_prior.R` (see the Appendix). It repeats everything for
 both outcomes, with `ai_hours` only and with all covariates, with 300 and 100 known students, on the
 saved split and on 100 random splits (600 AI rows each; the truth is the OLS fit on all rows not used
@@ -234,7 +242,8 @@ knitr::include_graphics(file.path(OUT, "beta_ai_vs_alpha_n300.png"), rel_path = 
 ```{r rep-table}
 settings <- c(known_only = "real data only (alpha = 0)", pooled_w1 = "1:1 pooling (alpha = m)",
               power_cv = "power prior, alpha by CV", power_cal = "power prior, alpha by calibration",
-              pb_cal = "posterior bootstrap, alpha by calibration")
+              pb_cal = "posterior bootstrap, alpha by calibration",
+              ppi = "PPI (lambda = 1)", ppi_pp = "PPI++ (tuned lambda)")      # PPI only in the v3 results
 tab <- rep_sum[rep_sum$setting %in% names(settings),
                c("model", "n_known", "setting", "mean_alpha", "bias", "rmse", "coverage", "sign_ok")]
 tab$setting <- settings[tab$setting]
@@ -270,9 +279,19 @@ knitr::include_graphics(file.path(OUT, c("calibration_n300.png", "replicates_rms
 
 `llm_prior_labels_v3.R` repeats the elicitation in the paper's style: one student per call, a detailed
 prompt that explains every feature, temperature 0.7, medium reasoning effort, and a larger model
-(`gpt-oss-120b`). The free daily API quota allowed 611 of the 900 AI students to be labelled;
-`finalize_v3.R` restricts the AI data to these students, and the 100 random splits use 519 (85%) of
-them each. The analysis is run with `Sys.setenv(LLM_TAG = "v3")` and saved in `regression/output_v3/`.
+(`gpt-oss-120b`, served by Groq). All 900 AI students were labelled (611 through Groq's free tier, the
+remaining 289 through OpenRouter routed to Groq, i.e. the same model and provider), and so were the 300
+labelled students, whose predictions are needed for PPI:
+
+```{r llm-run-v3, eval = FALSE}
+Sys.setenv(LLM_PROVIDER = "openrouter")                     # paid key OPENROUTER_API_KEY, pinned to Groq
+source("regression/llm_prior_labels_v3.R")                  # 900 AI students
+Sys.setenv(LLM_TARGET = "known"); source("regression/llm_prior_labels_v3.R")   # 300 labelled students
+Sys.setenv(LLM_TARGET = "ai", LLM_TAG = "v3"); source("regression/regression_power_prior.R")
+```
+
+The 100 random splits use 600 of the 900 AI students each, exactly the same splits as the v2 analysis
+in Section 4, so the two runs can be compared split by split. Results are in `regression/output_v3/`.
 
 ```{r v3, results = "asis"}
 f_v3   <- file.path(LLM, paste0("llm_probs_", params$llm_tag_extra, ".rds"))
@@ -283,15 +302,14 @@ if (!file.exists(f_v3)) {
 } else {
   p3 <- readRDS(f_v3); t3 <- data[match(p3$student_id, data$student_id), ]
   p2 <- probs[match(p3$student_id, probs$student_id), ]      # v2 on the SAME students
-  cat("Both runs evaluated on the same", nrow(p3), "students (the ones completed in",
-      params$llm_tag_extra, ").\n\n")
+  cat("LLM predictions vs truth: both runs evaluated on the same", nrow(p3), "AI students.\n\n")
   q  <- rbind(cbind(run = "v2 (gpt-oss-20b, 15 per call)", llm_quality(p2, t3)),
               cbind(run = paste(params$llm_tag_extra, "(paper style, gpt-oss-120b)"), llm_quality(p3, t3)))
   print(kable(q, digits = 3, row.names = FALSE))
   if (file.exists(file.path(out_v3, "replicates_summary.csv"))) {
     r3 <- read.csv(file.path(out_v3, "replicates_summary.csv"))
     r3 <- r3[r3$setting %in% names(settings) & r3$model %in% c("score_only", "cgpa_only"),
-             c("model", "n_known", "setting", "mean_alpha", "rmse", "coverage", "sign_ok")]
+             c("model", "n_known", "setting", "mean_alpha", "mean_lambda", "rmse", "coverage", "width", "sign_ok")]
     r3$setting <- settings[r3$setting]
     cat("\n\n100 random splits with the", params$llm_tag_extra, "labels:\n\n")
     print(kable(r3, digits = 3, row.names = FALSE))
@@ -329,8 +347,16 @@ if (file.exists(f_sum3)) {
     g3("score_only", 100, "pb_cal", "rmse"), g3("cgpa_only", 100, "pb_cal", "coverage")))
   cat(sprintf(paste0(
     "* **The posterior bootstrap keeps more honest intervals than the power prior** under heavy AI ",
-    "weight: coverage %.2f vs %.2f for CGPA with 1:1 pooling (300 labelled).\n\n"),
+    "weight: coverage %.2f vs %.2f for CGPA with 1:1 pooling (300 labelled).\n"),
     g3("cgpa_only", 300, "pb_pooled", "coverage"), g3("cgpa_only", 300, "pooled_w1", "coverage")))
+  if (any(s3$setting == "ppi")) cat(sprintf(paste0(
+    "* **PPI is safe but gains nothing here.** It corrects the LLM's bias, so it stays valid for CGPA ",
+    "(coverage %.2f with 100 labelled, vs %.2f for 1:1 pooling), but it is less precise than the real data ",
+    "for critical thinking (RMSE %.3f vs %.3f), because the LLM cannot predict individual students. PPI++ ",
+    "gives the predictions little weight (mean lambda %.2f) and reproduces the real-data results.\n\n"),
+    g3("cgpa_only", 100, "ppi", "coverage"), g3("cgpa_only", 100, "pooled_w1", "coverage"),
+    g3("score_only", 100, "ppi", "rmse"), g3("score_only", 100, "known_only", "rmse"),
+    g3("score_only", 100, "ppi_pp", "mean_lambda")))
 }
 ```
 
@@ -346,11 +372,12 @@ if (all(file.exists(figs3))) knitr::include_graphics(figs3, rel_path = FALSE)
 * The effects are weak (R² ≈ 1-2%), so the real data alone already give a wide interval.
 * The LLM prior is only as good as the LLM and the prompt: v2 and v3 imply opposite effects of AI
   use on critical thinking.
-* The v3 run covers 611 of the 900 AI students because of the free API quota.
+* The LLM's predictive distribution is elicited as probabilities over value ranges in one call; the
+  paper's view of the AI as a random label generator would suggest repeated prompting, which we did
+  not do.
 * The posterior is centred at a biased value whenever $\alpha > 0$ and the LLM is biased (paper,
   discussion after Theorem 1); the method does not correct this bias, it only limits its weight.
-* We did not implement the paper's comparison with prediction-powered inference (PPI), which needs
-  LLM predictions for the labelled rows as well.
+  PPI corrects it, but gains no precision when the LLM cannot predict individual students.
 
 # Reproducibility
 

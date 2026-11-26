@@ -34,7 +34,16 @@
 DATA_DIR <- Sys.getenv("CAMPUS_DATA_DIR", "data")                  # csv
 LLM_DIR  <- Sys.getenv("LLM_DIR", file.path(DATA_DIR, "llm"))      # llm_split_v2.rds, llm_probs_v2.rds
 TAG      <- Sys.getenv("LLM_TAG", "v2")                            # "v3" after llm_prior_labels_v3.R
-OUT_DIR  <- Sys.getenv("REG_OUT_DIR", file.path("regression", if (TAG == "v2") "output" else paste0("output_", TAG)))
+# How the AI rows enter the prior:
+#   "sample" (default): labels drawn from the LLM's full predictive distribution (paper Sec. 3.2.1)
+#   "point"           : ONE prediction per student = mean of the LLM's distribution, as in the paper's
+#                       regression example (Sec. 5.4), where F_AI is the empirical distribution of
+#                       single AI predictions. Because OLS is linear in y, both give the same expected
+#                       estimate; "point" drops the LLM's stated uncertainty (narrower intervals).
+AI_LABELS <- Sys.getenv("AI_LABELS", "sample")
+stopifnot(AI_LABELS %in% c("sample", "point"))
+OUT_BASE <- file.path("regression", if (TAG == "v2") "output" else paste0("output_", TAG))
+OUT_DIR  <- Sys.getenv("REG_OUT_DIR", if (AI_LABELS == "point") paste0(OUT_BASE, "_point") else OUT_BASE)
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 
 SEED        <- 30175
@@ -88,6 +97,26 @@ draw_llm <- function(L, idx) {                      # one label per row from the
   k <- pmin(1 + rowSums(L$cum[idx, , drop = FALSE] < runif(length(idx))), length(L$lo))
   runif(length(idx), L$lo[k], L$hi[k])
 }
+
+if (AI_LABELS == "point") {                         # paper's regression set-up: one prediction per case
+  for (y in names(LLM)) LLM[[y]]$m2 <- LLM[[y]]$m1^2  # no within-student spread
+  draw_llm <- function(L, idx) L$m1[idx]             # posterior bootstrap uses the point prediction
+}
+cat("AI labels used in the prior:", if (AI_LABELS == "point") "one point prediction per student (paper Sec. 5.4)"
+    else "drawn from the LLM's full distribution", "\n")
+
+# Point predictions (mean of the LLM distribution) for every student that has one, for the PPI
+# comparison: AI rows from llm_probs_<tag>.rds, labelled rows from llm_probs_known_<tag>.rds.
+f_known <- file.path(LLM_DIR, paste0("llm_probs_known_", TAG, ".rds"))
+HAS_PPI <- file.exists(f_known)
+PRED <- list(cgpa = LLM$cgpa$m1, critical_thinking_score = LLM$critical_thinking_score$m1)
+if (HAS_PPI) {
+  pk <- readRDS(f_known); kr <- match(pk$student_id, data$student_id)
+  stopifnot(!anyNA(kr), !anyNA(pk$exp_cgpa), !anyNA(pk$exp_score))
+  PRED$cgpa[kr] <- pk$exp_cgpa; PRED$critical_thinking_score[kr] <- pk$exp_score
+}
+cat("PPI comparison:", if (HAS_PPI) paste("yes,", sum(!is.na(PRED$cgpa)), "students with LLM predictions")
+    else "no (no LLM predictions for the labelled students)", "\n")
 
 covars_all <- setdiff(names(data), c("student_id", OUTCOMES, EXCLUDE_ALL))
 models <- list(score_only = list(y = "critical_thinking_score", x = X_KEY),
@@ -160,6 +189,32 @@ pb_asym <- function(Xk, yk, aiX, alpha, j) {
 }
 
 # --------------------------------------------------------------------------
+# 3b. Benchmark used by the paper (Sec. 5.4): prediction-powered inference for an OLS coefficient
+#     (Angelopoulos et al. 2023) and its power-tuned version PPI++ (Angelopoulos, Duchi & Zrnic 2023).
+#     theta(lambda) = theta_Y[labelled] + lambda * (theta_f[unlabelled] - theta_f[labelled]),
+#     where theta_f is OLS on the LLM point predictions. lambda = 1: PPI (the "rectifier"
+#     theta_f[labelled] - theta_Y[labelled] removes the LLM's bias); lambda = 0: real data only;
+#     PPI++ chooses the lambda that minimises the variance. Sandwich (robust) standard errors.
+# --------------------------------------------------------------------------
+ols_if <- function(X, y, j) {                        # coefficient j and its influence values
+  H  <- crossprod(X) / nrow(X); diag(H) <- diag(H) + PRIOR_PREC
+  Hi <- solve(H); b <- drop(Hi %*% (crossprod(X, y) / nrow(X)))
+  list(b = unname(b[j]), psi = drop(X %*% Hi[j, ]) * drop(y - X %*% b))
+}
+ppi <- function(Xk, yk, fk, Xu, fu, j) {
+  n <- nrow(Xk); M <- nrow(Xu)
+  oy <- ols_if(Xk, yk, j); ofl <- ols_if(Xk, fk, j); ofu <- ols_if(Xu, fu, j)
+  vyy <- var(oy$psi) / n; vfl <- var(ofl$psi) / n; vfu <- var(ofu$psi) / M
+  cyf <- cov(oy$psi, ofl$psi) / n
+  est <- function(lam) {
+    m  <- oy$b + lam * (ofu$b - ofl$b)
+    se <- sqrt(max(vyy - 2 * lam * cyf + lam^2 * (vfl + vfu), 0))
+    c(mean = m, lo = m - Z * se, hi = m + Z * se, lambda = lam)
+  }
+  list(ppi = est(1), ppi_pp = est(min(max(cyf / (vfl + vfu), 0), 1)))
+}
+
+# --------------------------------------------------------------------------
 # 4. One analysis (all models x all alphas) for given known / AI / test rows
 # --------------------------------------------------------------------------
 analyse <- function(known_idx, ai_idx, test_idx, rep_id) {
@@ -210,9 +265,24 @@ analyse <- function(known_idx, ai_idx, test_idx, rep_id) {
       qd <- quantile(d, c((1 - LEVEL) / 2, 1 - (1 - LEVEL) / 2), names = FALSE)
       base <- c(rep = rep_id, model = mi, n_known = nk, n_ai = n_ai, alpha = al, truth = truth)
       out[[length(out) + 1]] <- c(base, method = 1, mean = ci[[1]], lo = ci[[2]], hi = ci[[3]],
-                                  cal_cov = cov_pp[a], cv_lpd = cv, test_lpd = te_lpd, test_rmse = te_rmse)
+                                  cal_cov = cov_pp[a], cv_lpd = cv, test_lpd = te_lpd, test_rmse = te_rmse,
+                                  lambda = NA)
       out[[length(out) + 1]] <- c(base, method = 2, mean = mean(d), lo = qd[1], hi = qd[2],
-                                  cal_cov = cov_pb[a], cv_lpd = NA, test_lpd = NA, test_rmse = NA)
+                                  cal_cov = cov_pb[a], cv_lpd = NA, test_lpd = NA, test_rmse = NA,
+                                  lambda = NA)
+    }
+
+    # PPI / PPI++ with the same labelled and unlabelled students (needs LLM predictions for both)
+    fk <- PRED[[md$y]][known_idx]; fu <- PRED[[md$y]][ai_idx]
+    if (HAS_PPI && !anyNA(fk) && !anyNA(fu)) {
+      pr <- ppi(Xk, yk, fk, Xa, fu, j)
+      for (k in 1:2) {
+        r <- pr[[k]]
+        out[[length(out) + 1]] <- c(rep = rep_id, model = mi, n_known = nk, n_ai = n_ai, alpha = 0,
+                                    truth = truth, method = 2 + k, mean = r[["mean"]], lo = r[["lo"]],
+                                    hi = r[["hi"]], cal_cov = NA, cv_lpd = NA, test_lpd = NA,
+                                    test_rmse = NA, lambda = r[["lambda"]])
+      }
     }
   }
   do.call(rbind, out)
@@ -221,12 +291,12 @@ analyse <- function(known_idx, ai_idx, test_idx, rep_id) {
 finish <- function(mat) {
   d <- as.data.frame(mat)
   d$model  <- names(models)[d$model]
-  d$method <- c("power", "pb")[d$method]
+  d$method <- c("power", "pb", "ppi", "ppi_pp")[d$method]
   key <- paste(d$rep, d$model, d$n_known, d$method)
   d$cv_best <- d$method == "power" &
     as.logical(ave(ifelse(is.na(d$cv_lpd), -Inf, d$cv_lpd), key, FUN = function(v) v == max(v)))
-  d$cal_best <- as.logical(ave(seq_len(nrow(d)), key, FUN = function(i) {
-    ok <- d$cal_cov[i] >= LEVEL
+  d$cal_best <- d$method %in% c("power", "pb") & as.logical(ave(seq_len(nrow(d)), key, FUN = function(i) {
+    ok <- !is.na(d$cal_cov[i]) & d$cal_cov[i] >= LEVEL
     a  <- if (any(ok)) max(d$alpha[i][ok]) else 0
     d$alpha[i] == a
   }))
@@ -241,7 +311,9 @@ SETTINGS <- list(                                    # named selection rules
   power_cal  = function(d) d$method == "power" & d$cal_best,
   pb_alpha0  = function(d) d$method == "pb" & d$alpha == 0,
   pb_pooled  = function(d) d$method == "pb" & d$pooled,
-  pb_cal     = function(d) d$method == "pb" & d$cal_best)
+  pb_cal     = function(d) d$method == "pb" & d$cal_best,
+  ppi        = function(d) d$method == "ppi",
+  ppi_pp     = function(d) d$method == "ppi_pp")
 
 # --------------------------------------------------------------------------
 # 5. A. Saved split
@@ -305,7 +377,7 @@ B <- finish(do.call(rbind, B))
 write.csv(B, file.path(OUT_DIR, "replicates_raw.csv"), row.names = FALSE)
 
 metrics <- function(s) data.frame(
-  n = nrow(s), mean_alpha = mean(s$alpha),
+  n = nrow(s), mean_alpha = mean(s$alpha), mean_lambda = mean(s$lambda),
   bias = mean(s$mean - s$truth), rmse = sqrt(mean((s$mean - s$truth)^2)),
   coverage = mean(s$covers), width = mean(s$hi - s$lo),
   sign_ok = mean(sign(s$mean) == sign(s$truth)),
@@ -322,82 +394,23 @@ rep_grid <- aggregate(cbind(coverage = covers, cal_cov, rmse2 = (mean - truth)^2
 rep_grid$rmse <- sqrt(rep_grid$rmse2); rep_grid$rmse2 <- NULL
 write.csv(rep_grid, file.path(OUT_DIR, "replicates_by_alpha.csv"), row.names = FALSE)
 
-cal_dist <- with(B[B$cal_best, ], table(paste(model, n_known, method), alpha))
+cal_dist <- with(B[B$cal_best & B$method %in% c("power", "pb"), ], table(paste(model, n_known, method), alpha))
 write.csv(as.data.frame.matrix(cal_dist), file.path(OUT_DIR, "replicates_cal_alpha_chosen.csv"))
 
 show <- rep_sel; num <- sapply(show, is.numeric); show[num] <- lapply(show[num], round, 4)
 old <- options(width = 250)
 cat("\n=====", N_REP, "random splits (", N_AI_REP, "AI rows each): beta(ai_hours) vs truth on unseen rows,",
     LEVEL * 100, "% intervals =====\n")
-print(show[, c("model", "n_known", "setting", "mean_alpha", "bias", "rmse", "coverage", "width", "sign_ok", "test_lpd")],
+print(show[, c("model", "n_known", "setting", "mean_alpha", "mean_lambda", "bias", "rmse", "coverage", "width", "sign_ok", "test_lpd")],
       row.names = FALSE)
 cat("\nalpha chosen by bootstrap coverage calibration (counts over splits):\n"); print(cal_dist)
 options(old)
 
 # --------------------------------------------------------------------------
-# 7. Plots
+# 7. Plots: drawn from the saved tables by make_figures.R (shared legend below the panels), so they
+#    can also be redrawn later without re-running the analysis
 # --------------------------------------------------------------------------
-cols <- c(power = "#1f77b4", pb = "#d95f02")
-alab <- function(a) ifelse(a >= 1000, paste0(a / 1000, "k"), as.character(a))
-
-for (nk in N_KNOWN_SET) {
-  png(file.path(OUT_DIR, sprintf("beta_ai_vs_alpha_n%d.png", nk)), width = 1400, height = 1100, res = 120)
-  par(mfrow = c(2, 2), mar = c(4.5, 4.5, 3, 1))
-  for (mn in names(models)) {
-    s <- A[A$model == mn & A$n_known == nk, ]; al <- sort(unique(s$alpha)); xp <- seq_along(al)
-    plot(NA, xlim = c(0.6, length(al) + 0.4), ylim = range(c(s$lo, s$hi, s$truth)), xaxt = "n",
-         xlab = "alpha = effective number of AI data points", ylab = "beta(ai_hours)",
-         main = sprintf("%s, n_known = %d (saved split)", mn, nk))
-    axis(1, xp, alab(al)); abline(h = s$truth[1], lty = 2); abline(h = 0, col = "grey60")
-    for (me in c("power", "pb")) {
-      q <- s[s$method == me, ]; q <- q[order(q$alpha), ]; off <- if (me == "power") -0.12 else 0.12
-      arrows(xp + off, q$lo, xp + off, q$hi, angle = 90, code = 3, length = 0.03, col = cols[me])
-      points(xp + off, q$mean, pch = 16, col = cols[me])
-      sel <- q$cal_best; points((xp + off)[sel], q$mean[sel], pch = 2, cex = 2, col = cols[me])
-      if (me == "power") points((xp + off)[q$cv_best], q$mean[q$cv_best], pch = 8, cex = 2, col = cols[me])
-    }
-    legend("topleft", bty = "n", cex = 0.75,
-           c("power prior", "posterior bootstrap (DP)", "truth (unseen rows)", "chosen by CV", "chosen by calibration"),
-           col = c(cols, "black", "black", "black"), pch = c(16, 16, NA, 8, 2), lty = c(NA, NA, 2, NA, NA))
-  }
-  dev.off()
-}
-
-# Like the paper's Fig. 3: actual (oracle) coverage over splits vs bootstrap-estimated coverage
-for (nk in N_KNOWN_SET) {
-  png(file.path(OUT_DIR, sprintf("calibration_n%d.png", nk)), width = 1400, height = 1100, res = 120)
-  par(mfrow = c(2, 2), mar = c(4.5, 4.5, 3, 1))
-  for (mn in names(models)) {
-    s <- rep_grid[rep_grid$model == mn & rep_grid$n_known == nk, ]; al <- sort(unique(s$alpha)); xp <- seq_along(al)
-    plot(NA, xlim = range(xp), ylim = c(0, 1), xaxt = "n", xlab = "alpha", ylab = "coverage",
-         main = sprintf("%s, n_known = %d, %d splits", mn, nk, N_REP))
-    axis(1, xp, alab(al)); abline(h = LEVEL, col = "grey40", lty = 3)
-    for (me in c("power", "pb")) {
-      q <- s[s$method == me, ]; q <- q[order(q$alpha), ]
-      lines(xp, q$coverage, type = "b", pch = 16, col = cols[me])
-      lines(xp, q$cal_cov, type = "b", pch = 1, lty = 2, col = cols[me])
-    }
-    legend("bottomleft", bty = "n", cex = 0.75,
-           c("power: actual", "power: bootstrap estimate", "PB: actual", "PB: bootstrap estimate"),
-           col = rep(cols, each = 2), lty = c(1, 2, 1, 2), pch = c(16, 1, 16, 1))
-  }
-  dev.off()
-}
-
-png(file.path(OUT_DIR, "replicates_rmse_by_alpha.png"), width = 1400, height = 1100, res = 120)
-par(mfrow = c(2, 2), mar = c(4.5, 4.5, 3, 1))
-for (mn in names(models)) {
-  s <- rep_grid[rep_grid$model == mn, ]; al <- sort(unique(s$alpha)); xp <- seq_along(al)
-  plot(NA, xlim = range(xp), ylim = range(s$rmse), xaxt = "n", xlab = "alpha", ylab = "RMSE of beta(ai_hours)",
-       main = sprintf("%s, %d splits", mn, N_REP))
-  axis(1, xp, alab(al))
-  for (me in c("power", "pb")) for (nk in N_KNOWN_SET) {
-    q <- s[s$method == me & s$n_known == nk, ]; q <- q[order(q$alpha), ]
-    lines(xp, q$rmse, type = "b", pch = 16, lty = if (nk == 300) 1 else 2, col = cols[me])
-  }
-  legend("topleft", bty = "n", cex = 0.75, c("power, n=300", "power, n=100", "PB, n=300", "PB, n=100"),
-         col = rep(cols, each = 2), lty = c(1, 2, 1, 2), pch = 16)
-}
-dev.off()
+source(file.path("regression", "make_figures.R"))
+make_figures(OUT_DIR, level = LEVEL)
 
 cat("\nOutputs in", normalizePath(OUT_DIR), ":", paste(list.files(OUT_DIR), collapse = ", "), "\n")

@@ -24,8 +24,11 @@ data/
 regression/                     linear-regression half (cgpa, critical_thinking_score ~ ai_hours_per_week)
   data_check.R                  dataset quality / suitability checks
   llm_prior_labels.R            asks the LLM for label distributions (v2: gpt-oss-20b, 15 students per call)
-  llm_prior_labels_v3.R         same in the paper's style (v3: gpt-oss-120b, one student per call, detailed prompt)
-  finalize_v3.R                 turns the v3 answers completed within the free API quota into analysis files
+  llm_prior_labels_v3.R         same in the paper's style (v3: gpt-oss-120b, one student per call, detailed prompt);
+                                LLM_TARGET = "known" also labels the 300 labelled students (for PPI);
+                                LLM_PROVIDER = "openrouter" uses a paid OpenRouter key, pinned to Groq
+  finalize_v3.R                 (only needed for a partial v3 run) analysis files from the completed answers
+  llm_bins_sensitivity.R        optional check: other output formats (finer bins, mean + SD) on 300 students
   regression_analysis.Rmd       Markdown document: code + explanations of the whole regression analysis
   regression_power_prior.R      AI-prior analysis: power prior + posterior bootstrap (paper Alg. 1),
                                 alpha chosen by CV and by bootstrap coverage calibration
@@ -44,8 +47,10 @@ source("regression/data_check.R")              # ~10 s, writes regression/output
 source("regression/regression_power_prior.R")  # ~20 min, offline, writes regression/output/
 ```
 
-For the v3 labels: `source("regression/finalize_v3.R")`, then
-`Sys.setenv(LLM_TAG = "v3"); source("regression/regression_power_prior.R")` (results in `regression/output_v3/`).
+For the v3 labels (main results, 900 AI + 300 labelled students, with the PPI comparison):
+`Sys.setenv(LLM_TAG = "v3"); source("regression/regression_power_prior.R")` (~1 h, results in
+`regression/output_v3/`). Adding `AI_LABELS = "point"` uses one prediction per student instead of the
+LLM's full distribution (the paper's regression set-up; results in `regression/output_v3_point/`).
 Knit `regression/regression_analysis.Rmd` to get the Markdown document with all results.
 
 `regression/llm_prior_labels.R` calls the Groq API and is only needed to regenerate `data/llm/`.
